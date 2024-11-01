@@ -36,7 +36,7 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 1920px;
+	width: 100%;
 	height: 40px;
 	font-size: 11px;
 	color: #fff;
@@ -580,7 +580,7 @@
 	width: 255px;
 	height: 176px;
 }
-.qb482d4sp2fo0c9e61eukw2zpcm-icon {
+.first_photo {
 	position: absolute;
 	top: 325px;
 	left: 690px;
@@ -1289,7 +1289,7 @@
 	position: absolute;
 	top: 4583px;
 	left: 0px;
-	width: 1920px;
+	width: 100%;
 	height: 316px;
 	font-size: 12px;
 }
