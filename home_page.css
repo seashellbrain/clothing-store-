@@ -1,39 +1,57 @@
-.sale {
+.sale-background {
+	position: absolute;
+	height: 100%;
 	width: 100%;
-	min-height: 40px;
-	font-size: 11px;
-	color: #fff;
-	background-color: #6D7B99;
+	top: 0%;
+	right: 0%;
+	bottom: 0%;
+	left: 0%;
+	background-color: #a0aecd;
+}
+.sale-heading {
+	position: absolute;
+	top: calc(50% - 7px);
+	left: calc(50% - 302px);
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding: 10px;
-	position: relative;
-  }
-  
-  .sale-heading {
-	text-decoration: underline;
-	font-family: Montserrat;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-  }
-  
-  .sale-close-icon {
+	width: 604px;
+	height: 15px;
+}
+.sale-close-icon {
 	position: absolute;
-	right: 12.7vw; /* Отступ от текста в зависимости от ширины экрана */
-	top: 50%;
-	transform: translateY(-50%);
-  }
-  
-  .logo {
-	height: 100%; 
-	width: auto; 
-	max-width: 100%; 
-	max-height: 100%; 
-	object-fit: cover; 
-  }
-  
+	height: 25%;
+	width: 0.52%;
+	top: 40%;
+	right: 36.2%;
+	bottom: 35%;
+	left: 63.28%;
+	max-width: 100%;
+	overflow: hidden;
+	max-height: 100%;
+}
+.sale {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 40px;
+}
+.img-0839-icon {
+	position: absolute;
+	height: 106.67%;
+	width: 16.67%;
+	top: -6.67%;
+	right: 83.33%;
+	bottom: 0%;
+	left: 0%;
+	max-width: 100%;
+	overflow: hidden;
+	max-height: 100%;
+	object-fit: cover;
+}
 .div1 {
 	position: absolute;
 	top: 9px;
@@ -180,37 +198,38 @@
 .parent {
 	position: absolute;
 	height: 68%;
-	width: 31.45%;
+	width: 42.43%;
 	top: 16%;
-	right: 28.55%;
+	right: 22.77%;
 	bottom: 16%;
-	left: 40%;
+	left: 34.8%;
 }
 .div7 {
 	position: absolute;
-	height: 34.29%;
-	width: 54.05%;
+	height: 38.71%;
+	width: 53.95%;
 	top: 0%;
-	left: 46.03%;
-	display: inline-block;
+	left: 46%;
+	display: flex;
+	align-items: center;
 	cursor: pointer;
 }
 .div8 {
 	position: absolute;
-	height: 34.29%;
+	height: 38.71%;
 	width: 100%;
-	top: 65.71%;
+	top: 61.29%;
 	left: 0%;
 	display: inline-block;
 }
 .group {
 	position: absolute;
-	height: 70%;
-	width: 28.55%;
-	top: 14%;
-	right: 0.02%;
+	height: 62%;
+	width: 45.32%;
+	top: 22%;
+	right: 0%;
 	bottom: 16%;
-	left: 71.43%;
+	left: 54.68%;
 	text-align: right;
 }
 .header-cart {
@@ -221,6 +240,7 @@
 	right: 0.05%;
 	bottom: 33.33%;
 	left: 84.36%;
+	font-size: 14px;
 }
 .header {
 	position: absolute;
@@ -228,9 +248,8 @@
 	left: 405px;
 	width: 1110px;
 	height: 150px;
-	font-size: 11px;
 }
-.sub-menu-child {
+.sub-menu-heading-child {
 	position: absolute;
 	height: 100%;
 	width: 100%;
@@ -238,7 +257,7 @@
 	right: 0%;
 	bottom: 0%;
 	left: 0%;
-	background-color: #a0aecd;
+	background-color: #6d7b99;
 }
 .div9 {
 	position: absolute;
@@ -343,6 +362,7 @@
 	left: 0px;
 	width: 1920px;
 	height: 55px;
+	font-size: 14px;
 	color: #fff;
 }
 .main-menu-child {
@@ -356,9 +376,12 @@
 	height: 329px;
 }
 .icon {
-  width: 30px;
-  height: 30px;
-  object-fit: cover;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
 }
 .p {
 	margin: 0;
@@ -395,7 +418,7 @@
 	left: 45px;
 	letter-spacing: 0.05em;
 	display: inline-block;
-	width: 93px;
+	width: 129px;
 	height: 14px;
 }
 .main-menu-item1 {
@@ -405,6 +428,15 @@
 	width: 215px;
 	height: 45px;
 	cursor: pointer;
+}
+.div15 {
+	position: absolute;
+	top: 8px;
+	left: 45px;
+	letter-spacing: 0.05em;
+	display: inline-block;
+	width: 93px;
+	height: 14px;
 }
 .main-menu-item2 {
 	position: absolute;
@@ -470,11 +502,13 @@
 	left: 405px;
 	width: 255px;
 	height: 329px;
+	font-size: 15px;
 }
 .div18 {
 	position: absolute;
 	top: 10px;
 	left: 46px;
+	font-size: 14px;
 	letter-spacing: 0.01em;
 	font-weight: 600;
 	display: inline-block;
@@ -491,53 +525,56 @@
 }
 .tiktok1 {
 	position: absolute;
-	top: 6px;
+	top: calc(50% - 13.5px);
 	left: 35px;
 	text-decoration: underline;
 	letter-spacing: 0.05em;
-	display: inline-block;
-	width: 48px;
-	height: 14px;
+	display: flex;
+	align-items: center;
+	width: 74px;
+	height: 27px;
 }
 .tiktok {
 	position: absolute;
 	top: 34px;
 	left: 20px;
-	width: 83px;
+	width: 109px;
 	height: 27px;
 }
 .instagram1 {
 	position: absolute;
-	top: 6.3px;
+	top: calc(50% - 13.5px);
 	left: 35px;
 	text-decoration: underline;
 	letter-spacing: 0.05em;
-	display: inline-block;
-	width: 82px;
-	height: 12.6px;
+	display: flex;
+	align-items: center;
+	width: 127px;
+	height: 27px;
 }
 .instagram {
 	position: absolute;
 	top: 128px;
 	left: 20px;
-	width: 117px;
+	width: 162px;
 	height: 27px;
 }
 .telegram1 {
 	position: absolute;
-	top: 6.3px;
+	top: calc(50% - 13.5px);
 	left: 35px;
 	text-decoration: underline;
 	letter-spacing: 0.05em;
-	display: inline-block;
-	width: 76px;
-	height: 12.6px;
+	display: flex;
+	align-items: center;
+	width: 110px;
+	height: 27px;
 }
 .telegram {
 	position: absolute;
 	top: 81px;
 	left: 20px;
-	width: 111px;
+	width: 145px;
 	height: 27px;
 }
 .social-networks-child {
@@ -556,8 +593,9 @@
 	left: 405px;
 	width: 255px;
 	height: 176px;
+	font-size: 16px;
 }
-.first_photo {
+.qb482d4sp2fo0c9e61eukw2zpcm-icon {
 	position: absolute;
 	top: 325px;
 	left: 690px;
@@ -591,7 +629,7 @@
 }
 .hot-products {
 	position: absolute;
-	top: 910px;
+	top: 915px;
 	left: 405px;
 	width: 1110px;
 	height: 140px;
@@ -625,7 +663,7 @@
 }
 .louis-vuitton-paris-container {
 	position: absolute;
-	top: 338px;
+	top: 336px;
 	left: 76px;
 	font-size: 20px;
 	letter-spacing: 0.01em;
@@ -853,6 +891,16 @@
 	text-align: center;
 	font-size: 24px;
 }
+.louis-vuitton-paris-container1 {
+	position: absolute;
+	top: 338px;
+	left: 76px;
+	font-size: 20px;
+	letter-spacing: 0.01em;
+	display: inline-block;
+	width: 197px;
+	height: 43px;
+}
 .trucker {
 	position: absolute;
 	top: 333px;
@@ -1069,17 +1117,16 @@
 	left: 15px;
 	width: 300px;
 	height: 241px;
-	font-size: 13px;
 }
 .div27 {
 	position: absolute;
 	top: 0px;
 	left: 20px;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 20px;
 	font-weight: 600;
 	display: inline-block;
-	width: 108px;
+	width: 130px;
 	height: 15px;
 }
 .div28 {
@@ -1093,20 +1140,11 @@
 }
 .div29 {
 	position: absolute;
-	top: 62px;
+	top: 67px;
 	left: 40px;
 	display: inline-block;
-	width: 170px;
-	height: 12px;
-	cursor: pointer;
-}
-.div30 {
-	position: absolute;
-	top: 89px;
-	left: 40px;
-	display: inline-block;
-	width: 170px;
-	height: 27px;
+	width: 185px;
+	height: 51px;
 	cursor: pointer;
 }
 .footer-links1-child {
@@ -1122,42 +1160,53 @@
 	position: absolute;
 	top: 53px;
 	left: 394px;
-	width: 210px;
+	width: 225px;
 	height: 142px;
 }
-.div32 {
+.div30 {
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	font-size: 16px;
+	line-height: 20px;
+	font-weight: 600;
+	display: inline-block;
+	width: 134px;
+	height: 15px;
+}
+.div31 {
 	position: absolute;
 	top: 35px;
 	left: 40px;
 	display: inline-block;
-	width: 108px;
+	width: 120px;
+	height: 12px;
+	cursor: pointer;
+}
+.div32 {
+	position: absolute;
+	top: 62px;
+	left: 40px;
+	display: inline-block;
+	width: 151px;
 	height: 12px;
 	cursor: pointer;
 }
 .div33 {
 	position: absolute;
-	top: 62px;
+	top: 89px;
 	left: 40px;
 	display: inline-block;
-	width: 116px;
+	width: 177px;
 	height: 12px;
 	cursor: pointer;
 }
 .div34 {
 	position: absolute;
-	top: 89px;
-	left: 40px;
-	display: inline-block;
-	width: 136px;
-	height: 12px;
-	cursor: pointer;
-}
-.div35 {
-	position: absolute;
 	top: 116px;
 	left: 40px;
 	display: inline-block;
-	width: 108px;
+	width: 120px;
 	height: 12px;
 	cursor: pointer;
 }
@@ -1165,34 +1214,34 @@
 	position: absolute;
 	top: 53px;
 	left: 649px;
-	width: 176px;
+	width: 217px;
 	height: 142px;
 }
-.div36 {
+.div35 {
 	position: absolute;
 	top: 0px;
 	left: 19px;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 20px;
 	font-weight: 600;
 	display: inline-block;
 	width: 108px;
 	height: 15px;
 }
-.div37 {
+.div36 {
 	position: absolute;
 	top: 35px;
 	left: 39px;
 	display: inline-block;
-	width: 130px;
+	width: 153px;
 	height: 27px;
 }
-.div38 {
+.div37 {
 	position: absolute;
 	top: 77px;
 	left: 39px;
 	display: inline-block;
-	width: 130px;
+	width: 153px;
 	height: 12px;
 }
 .royalattuegmailcom {
@@ -1200,14 +1249,14 @@
 	top: 104px;
 	left: 39px;
 	display: inline-block;
-	width: 150px;
+	width: 177px;
 	height: 12px;
 }
 .footer-contacts {
 	position: absolute;
 	top: 53px;
 	left: 869px;
-	width: 189px;
+	width: 216px;
 	height: 142px;
 }
 .mir-logo-icon {
@@ -1245,6 +1294,7 @@
 	position: absolute;
 	top: 287px;
 	left: calc(50% - 95px);
+	font-size: 12px;
 }
 .footer-line {
 	position: absolute;
@@ -1268,7 +1318,7 @@
 	left: 0px;
 	width: 1920px;
 	height: 316px;
-	font-size: 12px;
+	font-size: 14px;
 }
 .div {
 	width: 100%;
@@ -1277,7 +1327,7 @@
 	height: 4899px;
 	overflow: hidden;
 	text-align: left;
-	font-size: 14px;
+	font-size: 11px;
 	color: #000;
 	font-family: Montserrat;
 }
