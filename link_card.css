@@ -1,0 +1,135 @@
+body {
+    background-image: url('img/login_account/photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-container {
+    width: 790px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 5px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #A0AECD;
+}
+
+.form-label {
+    margin-bottom: 10px; /* Уменьшение отступа между метками */
+    font-size: 12px;
+    font-weight: 400;
+    color: #000000;
+    text-align: left;
+}
+
+
+.form-control {
+    border: 2px solid #a0aecd;
+    font-size: 12px;
+    padding-left: 5px; /* Отступ для начала текста */
+    margin-left: 0; /* Поля в начале блока */
+}
+
+/* Настройки для конкретных полей */
+#cardNumber, #email {
+    margin-left: 0; /* Убедиться, что поля начинаются в начале */
+}
+
+/* Сдвиг полей для выравнивания с началом меток */
+#cardNumber, #email {
+    margin-left: 0;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #a0aecd;
+}
+
+.btn-primary {
+    width: 118px;
+    height: 28px;
+    background-color: #A0AECD;
+    border: none;
+    font-size: 11px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #A0AECD;
+    color: #000000;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    width: 90px;
+    height: 28px;
+    background-color: #ffffff;
+    color: #A0AECD;
+    font-size: 11px;
+    font-weight: 400;
+    border: 1px solid #DCDCDC;
+    text-align: center;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #ffffff;
+    color: #A0AECD;
+    box-shadow: none;
+}
+
+.form-check-label {
+    font-size: 12px;
+    color: #000000;
+}
+
+.d-flex .form-label {
+    margin-bottom: 5px;
+}
+
+.d-flex input[type="text"],
+.d-flex input[type="email"] {
+    font-size: 12px;
+}
+
+/* Поля для CVV и срока действия */
+.me-2,
+.ms-2 {
+    width: 193px;
+    display: inline-block; /* Убедиться, что поля ровно выровнены */
+}
+
+/* Адаптация для ноутбуков */
+@media (max-width: 1200px) {
+    .login-container {
+        width: 650px;
+    }
+    .form-control {
+        width: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login-container {
+        width: 550px;
+    }
+    .form-control {
+        width: 160px;
+    }
+    .me-2,
+    .ms-2 {
+        width: 160px;
+    }
+}

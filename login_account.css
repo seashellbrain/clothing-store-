@@ -1,0 +1,167 @@
+body {
+    background-image: url('img/login_account/photo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-container {
+    width: 790px;
+    height: 473px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.divider {
+    width: 210px;
+    border-top: 1px solid #AEAEAE;
+    margin: 15px auto; /* Центрирование */
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 32px;
+    font-weight: bold; /* Жирный текст */
+    color: #A0AECD;
+}
+
+.form-label {
+    font-size: 12px;
+    font-weight: 400; /* Обычная жирность */
+    color: #000000;
+    text-align: left;
+    width: 210px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/* Ссылка Забыли пароль? */
+.form-link {
+    font-size: 12px; /* Размер текста */
+    font-weight: 400; /* Обычная жирность */
+    color: #000000; /* Черный цвет текста */
+}
+
+.form-link a {
+    font-size: 12px; /* Размер текста */
+    font-weight: 400; /* Обычная жирность */
+    color: #000000; /* Черный цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.form-link a:hover,
+.form-link a:focus {
+    color: #000000; /* Оставляем черный цвет */
+}
+
+/* Поля ввода */
+.form-control {
+    width: 210px;
+    height: 30px;
+    border: 2px solid #a0aecd;
+}
+
+.form-control:focus {
+    outline: none; /* Убираем синюю подсветку */
+    box-shadow: none; /* Убираем подсветку */
+    border-color: #a0aecd; /* Оставляем тот же цвет */
+}
+
+/* Кнопка Войти */
+.btn-primary {
+    width: 118px;
+    height: 28px;
+    background-color: #A0AECD;
+    border: none;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400; /* Обычная жирность */
+    color: #000000; /* Черный цвет текста */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #A0AECD; /* Оставляем тот же цвет */
+    color: #000000; /* Оставляем тот же цвет текста */
+    box-shadow: none; /* Убираем подсветку */
+}
+
+/* Кнопка Главная */
+/* Кнопка Войти */
+.btn-primary {
+    width: 118px;
+    height: 28px;
+    background-color: #A0AECD;
+    border: none;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400; /* Обычная жирность */
+    color: #000000; /* Черный цвет текста */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #A0AECD; /* Оставляем тот же цвет */
+    color: #000000; /* Оставляем тот же цвет текста */
+    box-shadow: none; /* Убираем подсветку */
+}
+
+/* Кнопка Главная */
+.btn-secondary {
+    width: 90px;
+    height: 28px;
+    background-color: #ffffff; /* Белый фон */
+    color: #A0AECD; /* Цвет текста */
+    font-size: 11px;
+    font-weight: 400; /* Regular */
+    border: 1px solid #DCDCDC; /* Обводка */
+    text-align: center;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    background-color: #ffffff; /* Оставляем тот же цвет */
+    color: #A0AECD; /* Оставляем тот же цвет текста */
+    box-shadow: none; /* Убираем подсветку */
+}
+/* Полоска между элементами */
+.divider {
+    width: 210px;
+    height: 1px;
+    background-color: #DCDCDC;
+    margin: 15px auto;
+}
+
+/* Адаптация для ноутбуков */
+@media (max-width: 1200px) {
+    .login-container {
+        width: 650px;
+        height: auto;
+    }
+    .form-control {
+        width: 180px;
+    }
+    .btn-primary {
+        width: 100px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 992px) {
+    .login-container {
+        width: 550px;
+        height: auto;
+    }
+    .form-control {
+        width: 160px;
+    }
+    .btn-primary {
+        width: 90px;
+        height: 22px;
+    }
+}
