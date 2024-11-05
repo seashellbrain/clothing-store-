@@ -12,7 +12,7 @@ body {
     height: 473px;
     margin: auto;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.97);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -64,6 +64,7 @@ h2 {
     width: 210px;
     height: 30px;
     border: 2px solid #a0aecd;
+    border-radius: 3px;
 }
 
 .form-control:focus {
@@ -82,6 +83,7 @@ h2 {
     font-size: 11px;
     font-weight: 400; /* Обычная жирность */
     color: #000000; /* Черный цвет текста */
+    border-radius: 3px;
 }
 
 .btn-primary:hover,
@@ -91,18 +93,6 @@ h2 {
     box-shadow: none; /* Убираем подсветку */
 }
 
-/* Кнопка Главная */
-/* Кнопка Войти */
-.btn-primary {
-    width: 118px;
-    height: 28px;
-    background-color: #A0AECD;
-    border: none;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 400; /* Обычная жирность */
-    color: #000000; /* Черный цвет текста */
-}
 
 .btn-primary:hover,
 .btn-primary:focus {
@@ -121,6 +111,7 @@ h2 {
     font-weight: 400; /* Regular */
     border: 1px solid #DCDCDC; /* Обводка */
     text-align: center;
+    border-radius: 3px;
 }
 
 .btn-secondary:hover,
