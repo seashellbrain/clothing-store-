@@ -1,359 +1,283 @@
-.sale-background {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    background-color: #a0aecd;
-}
-.sale-heading {
-    position: absolute;
-    top: calc(50% - 7px);
-    left: calc(50% - 302px);
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 604px;
-    height: 15px;
-}
-.sale-close-icon {
-    position: absolute;
-    height: 25%;
-    width: 0.52%;
-    top: 40%;
-    right: 36.2%;
-    bottom: 35%;
-    left: 63.28%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-}
-.sale {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1920px;
-    height: 40px;
-}
-.img-0839-icon {
-    position: absolute;
-    height: 106.67%;
-    width: 16.67%;
-    top: -6.67%;
-    right: 83.33%;
-    bottom: 0%;
-    left: 0%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-.div1 {
-    position: absolute;
-    top: 9px;
-    left: 40.3px;
-    display: inline-block;
-    width: 149px;
-    height: 10px;
-}
-.icons8-100 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-}
-.header-info-2 {
-    position: absolute;
-    top: 0px;
-    left: 243.7px;
-    width: 189.3px;
-    height: 30px;
-}
-.div2 {
-    position: absolute;
-    top: 9px;
-    left: 40px;
-    white-space: pre-wrap;
-    display: inline-block;
-    width: 185px;
-    height: 10px;
-}
-.header-info-1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 225px;
-    height: 30px;
-}
-.div3 {
-    position: absolute;
-    top: calc(50% - 6px);
-    left: 39.68px;
-    display: inline-block;
-    width: 217px;
-    height: 10px;
-}
-.header-info-3 {
-    position: absolute;
-    top: 0px;
-    left: 453.32px;
-    width: 256.7px;
-    height: 30px;
-}
-.header-info-2-parent {
-    position: absolute;
-    top: 0px;
-    left: 18px;
-    width: 710px;
-    height: 30px;
-}
-.header-search-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 3px;
-    border: 1px solid #dcdcdc;
+/* Сброс отступов и установка базового шрифта */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    width: 444px;
-    height: 32px;
+    font-family: Arial, sans-serif;
 }
-.header-search-btn-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 3px;
-    background-color: #dcdcdc;
-    width: 45px;
-    height: 32px;
+
+/* Цветовые переменные */
+:root {
+    --header-line-color:#9BA8C6;
+    --header-text-color: #333;    /* Основной цвет текста */
+    --header-icon-color: #000;    /* Цвет иконок */
+    --header-white-color: #fff;   /* Белый цвет для текста и иконок на фоне */
 }
-.header-search-btn {
-    position: absolute;
-    top: 0px;
-    left: 474px;
-    width: 45px;
-    height: 32px;
+
+/* Sale Section */
+.sale {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Vertical alignment */
+    background-color: var(--header-bg-color);
+    color: var(--header-white-color);
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative; /* Ensure the container has relative positioning */
 }
-.header-search {
-    position: absolute;
-    top: 58px;
-    left: 101px;
-    width: 519px;
-    height: 32px;
+
+/* Sale Heading */
+.sale-heading {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 12px; /* Decrease text size */
+    color: #000;
+    text-align: center; /* Center text inside the heading */
+    font-weight: 100; /* Light font weight */
+    font-family: 'Roboto', sans-serif; /* Use connected font */
+    background-color: #9BA8C6;
+    padding: 10px 400px;
 }
-.icons8-512 {
-    position: absolute;
-    top: 62px;
-    left: 585px;
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
-    cursor: pointer;
+
+/* Close Icon */
+.sale-close-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 20px; /* Minimum space between text and icon */
+    cursor: pointer; /* Pointer cursor */
 }
-.div4 {
-    position: absolute;
-    top: 67px;
-    left: 106px;
-    font-size: 12px;
-    color: #dcdcdc;
-    display: inline-block;
-    width: 74px;
-    height: 12px;
-}
-.header-center {
-    position: absolute;
-    height: 60%;
-    top: 20%;
-    bottom: 20%;
-    left: calc(50% - 370px);
-    width: 740px;
-}
-.basket2-icon {
-    position: absolute;
-    height: 100%;
-    width: 28.55%;
-    top: 0%;
-    right: 71.45%;
-    bottom: 0%;
-    left: 0%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-.div5 {
-    position: absolute;
-    height: 34.41%;
-    width: 100%;
-    top: 0%;
-    left: 0%;
-    display: inline-block;
-}
-.div6 {
-    position: absolute;
-    height: 35.29%;
-    width: 100%;
-    top: 64.71%;
-    left: 0%;
-    display: inline-block;
-}
-.parent {
-    position: absolute;
-    height: 68%;
-    width: 42.43%;
-    top: 16%;
-    right: 22.77%;
-    bottom: 16%;
-    left: 34.8%;
-}
-.div7 {
-    position: absolute;
-    height: 38.71%;
-    width: 53.95%;
-    top: 0%;
-    left: 46%;
+
+/* Header Section */
+.header {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px; /* Adjust padding for better responsiveness */
+    border-bottom: 2px solid var(--header-bg-color);
+    width: 100%; /* Ensure header takes full width */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the header on larger screens */
 }
-.div8 {
-    position: absolute;
-    height: 38.71%;
-    width: 100%;
-    top: 61.29%;
-    left: 0%;
-    display: inline-block;
+
+/* Logo Image */
+.img-0839-icon {
+    height: 150px; /* Fixed height for logo */
+    width: auto; /* Maintain aspect ratio */
 }
-.group {
-    position: absolute;
-    height: 62%;
-    width: 45.32%;
-    top: 22%;
-    right: 0%;
-    bottom: 16%;
-    left: 54.68%;
-    text-align: right;
+
+/* Header Info Container */
+.header-info-container {
+    display: flex; /* Align information blocks in a row */
+    align-items: center; /* Vertical alignment */
+    gap: 20px; /* Space between info blocks */
+    margin-bottom: 25px;
 }
+
+/* Individual Info Blocks */
+.header-info-1, .header-info-2, .header-info-3 {
+    display: flex; /* Flex for alignment */
+    align-items: center; /* Center icon and text vertically */
+    font-size: 12px; /* Text size */
+    color: var(--header-text-color);
+}
+
+/* Icons */
+.icon {
+    width: 30px; /* Size of icons */
+    height: 30px; /* Height of icons */
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Search Container */
+.header-search-container {
+    display: flex; /* Flex for horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    margin-left: 100px;
+}
+
+/* Search Input */
+.header-search {
+    display: flex;
+    align-items: center;
+    background-color: #fff; /* White background */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 0; /* No rounding */
+    padding: 5px; /* Padding */
+    height: 30px; /* Fixed height */
+    width: 400px; /* Fixed width for search bar */
+}
+
+/* Input Field */
+.header-search input {
+    border: none; /* No border */
+    background: none; /* No background */
+    outline: none; /* No outline */
+    flex: 1; /* Fill container */
+    padding: 5px;
+    color: #555; /* Text color */
+    font-size: 14px; /* Font size */
+}
+
+/* Search Button */
+.header-search-btn {
+    background-color: #ccc; /* Gray button */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    padding: 5px 10px; /* Padding */
+    height: 30px; /* Fixed height */
+    display: flex; /* Flex container */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center content */
+    margin-left: 5px; /* Space between input and button */
+}
+
+/* Search Button Image */
+.header-search-btn img {
+    width: 22px; /* Size of button icon */
+    height: 22px; /* Height of button icon */
+}
+
+/* Cart Section */
 .header-cart {
-    position: absolute;
-    height: 33.33%;
-    width: 15.59%;
-    top: 33.33%;
-    right: 0.05%;
-    bottom: 33.33%;
-    left: 84.36%;
-    font-size: 14px;
+    margin-left: 20px; /* Space on the left */
+    display: flex; /* Flex for icon and groups */
+    align-items: flex-start; /* Align to top */
+    gap: 10px; /* Space between icon and groups */
 }
-.header {
-    position: absolute;
-    top: 50px;
-    left: calc(50% - 555px);
-    width: 1110px;
-    height: 150px;
+
+/* Basket Icon */
+.basket2-icon {
+    width: 44px; /* Size of basket icon */
+    height: 44px; /* Height of basket icon */
 }
-.sub-menu-heading-child {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    background-color: #6d7b99;
+
+/* Parent and Group Sections */
+.parent, .group {
+    display: flex; /* Flex for labels and values */
+    flex-direction: column; /* Column layout */
+    align-items: flex-start; /* Left align */
+    gap: 2px; /* Space between label and value */
 }
-.div9 {
-    position: absolute;
-    height: 25.45%;
-    width: 56.47%;
-    top: 36.36%;
-    left: 33.73%;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    display: inline-block;
+
+/* Label Styles */
+.div5, .div6 {
+    font-weight: 200; /* Light font */
+    font-size: 14px; /* Font size */
 }
-.group-child {
-    position: absolute;
-    height: 13.04%;
-    width: 87.5%;
-    top: 43.48%;
-    right: 12.5%;
-    bottom: 43.48%;
-    left: 0%;
-    background-color: #dcdcdc;
+
+/* Value Styles */
+.div7, .div8 {
+    margin-top: 3px; /* Space above */
+    color: var(--header-text-color); /* Text color */
+    font-size: 14px; /* Font size */
+    font-weight: 200; /* Light font weight */
 }
-.group-item {
-    position: absolute;
-    height: 13.04%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 86.96%;
-    left: 0%;
-    background-color: #dcdcdc;
+
+/* Responsive Design: Ensure the header scales properly */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Stack elements on small screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .header-info-container {
+        flex-wrap: wrap; /* Wrap elements */
+        justify-content: center; /* Center content */
+        gap: 10px; /* Space between items */
+    }
+
+    .header-search {
+        width: 100%; /* Full width on small screens */
+        max-width: none; /* Remove max width */
+    }
+
+    .header-search-btn {
+        width: 100%; /* Full width button on small screens */
+    }
 }
-.group-inner {
-    position: absolute;
-    height: 13.04%;
-    width: 75%;
-    top: 86.96%;
-    right: 25%;
-    bottom: 0%;
-    left: 0%;
-    background-color: #dcdcdc;
+
+.sub-menu {
+    display: flex;
+    align-items: center;
+    background-color: #A0AECD; /* Light blue background */
+    height: 66px; /* Match the height of the image */
+    max-width: 1520px; /* Set a maximum width */
+    max-height: 50px;
+    width: 100%; /* Allow it to take the full width of the container but not exceed max-width */
+    margin: 0 auto; /* Center the sub-menu if it's less than the full width of the container */
 }
-.rectangle-parent {
-    position: absolute;
-    height: 41.82%;
-    width: 15.69%;
-    top: 29.09%;
-    right: 74.12%;
-    bottom: 29.09%;
-    left: 10.2%;
+
+
+.sale-background {
+    flex: 0 0 40px; /* Adjust width as necessary for the icon */
+    background-color: #9BA8C6; /* Background color for the icon area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .sub-menu-heading {
-    position: absolute;
-    height: 100%;
-    width: 13.28%;
-    top: 0%;
-    right: 65.63%;
-    bottom: 0%;
-    left: 21.09%;
+    flex: 1; /* Takes the remaining space */
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: flex-start; /* Align items to the top */
+    margin: 0; /* Remove margins to prevent spacing issues */
+    padding: 0; /* Remove padding to keep it tight */
+    margin-left: 130px;
 }
-.div10 {
-    position: absolute;
-    height: 100%;
-    width: 15.19%;
-    top: 0%;
-    left: 0%;
-    letter-spacing: 0.05em;
-    display: inline-block;
-    cursor: pointer;
+.category-button {
+    background-color: #5B6D94; 
+    color: white; /* Text color */
+    border: none; /* No border */
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Montserrat; 
+    cursor: pointer; /* Cursor style */
+    display: flex; /* Align items inside */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: background-color 0.3s; /* Transition effect */
+    padding: 14px 20px;
 }
-.div11 {
-    position: absolute;
-    height: 100%;
-    width: 31.07%;
-    top: 0%;
-    left: 22.2%;
-    letter-spacing: 0.05em;
-    display: inline-block;
-    cursor: pointer;
+
+.icon {
+    display: inline-block; /* Makes the span act like an inline block */
+    width: 20px; /* Width of the icon */
+    height: 20px; /* Height of the icon */
+    background-color: white; /* Icon color */
+    margin-right: 8px; /* Space between icon and text */
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="%235C7FA1" stroke-width="2" d="M2 8h12M2 4h12M2 12h12"/></svg>') no-repeat center; /* Custom icon using SVG */
+    mask-size: contain; /* Size of the icon */ 
 }
-.div12 {
-    position: absolute;
-    height: 100%;
-    width: 39.72%;
-    top: 0%;
-    left: 60.28%;
-    letter-spacing: 0.05em;
-    display: inline-block;
+
+.category-button:hover {
+    background-color: #4a657e; /* Darker background on hover */
 }
+
+.sub-menu-nav {
+    display: flex;
+    flex: 1; /* Takes the remaining space */
+}
+
+.nav-item {
+    color: #000000; 
+    cursor: pointer; 
+    transition: color 0.3s; 
+    padding: 15px 20px;
+    font-size: 12px;
+    font-family: Montserrat;
+    font-weight: 400;
+}
+
+.nav-item:hover {
+    color: #ffffff; /* Change text color on hover */
+}
+
 .sub-menu-nav {
     position: absolute;
     height: 21.82%;
