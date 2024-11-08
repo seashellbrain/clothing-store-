@@ -4,25 +4,24 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1, width=device-width">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./../header-footer/header-footer.css">
 	<link rel="stylesheet" href="./home_page.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+	 integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" />
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-
-
 </head>
 
 <body>
-	<heder class="div">
+	<heder class="div ">
 		<div class="sale">
 			<div class="sale-heading">
 				Получите ежедневную скидку на покупки от 100 рублей. Обновление акций каждый день!
 				<img class="sale-close-icon" alt="Закрыть" src="./../../img/header/sale__close.png">
 			</div>
 		</div>
+	</heder>
 
 
 		<div class="header">
@@ -70,10 +69,30 @@
 		<div class="sub-menu">
 			<div class="sale-background"></div>
 			<div class="sub-menu-heading">
-				<button class="category-button">
-					<span class="icon"></span>
-					ВСЕ КАТЕГОРИИ
-				</button>
+				<div class="category-container">
+					<button class="category-button" onclick="toggleCategories()">ВСЕ КАТЕГОРИИ</button>
+					<div id="category-dropdown" class="category-dropdown">
+						<div class="menu-item">
+							<img src="./../../img/header/man cloth.png" alt="Мужская одежда" class="icon1">
+							<p>Мужская одежда</p>
+						</div>
+						<hr>
+						<div class="menu-item">
+							<img src="./../../img/header/women cloth.png" alt="Женская одежда" class="icon1">
+							<p>Женская одежда</p>
+						</div>
+						<hr>
+						<div class="menu-item">
+							<img src="./../../img/header/accessories.png" alt="Аксессуары" class="icon1">
+							<p>Аксессуары</p>
+						</div>
+						<hr>
+						<div class="menu-item">
+							<img src="./../../img/header/bonuses.png" alt="Бонусы" class="icon1">
+							<p>Бонусы</p>
+						</div>
+					</div>
+				</div>
 				<div class="nav-item">ГЛАВНАЯ</div>
 				<div class="nav-item" id="text1">ЛИЧНЫЙ КАБИНЕТ</div>
 				<div class="nav-item">ДОСТАВКА И ОПЛАТА</div>					
@@ -83,73 +102,39 @@
 	</heder>
 
 <main class="main">
-	<div class="main-menu">
-		<div class="main-menu-child">
-		</div>
-		<div class="main-menu-item" id="mainMenuItemContainer">
-			<img class="icon" alt="" src="img/home_page/man cloth.png">
-
-			<div class="div13">
-				<p class="p">Мужская одежда</p>
-			</div>
-			<div class="main-menu-item-child">
-			</div>
-		</div>
-		<div class="main-menu-item1" id="mainMenuItemContainer1">
-			<img class="icon" alt="" src="img/home_page/accessories.png">
-
-			<div class="div14">Аксессуары</div>
-			<div class="main-menu-item-child">
+	<div class="main-content-right">
+		<!-- Социальные сети -->
+		<div class="social-networks">
+			<p>СОЦИАЛЬНЫЕ СЕТИ:</p>
+			<div class="social-icons">
+				<a href="https://tiktok.com" class="social-icon">
+					<img src="./../../img/home_page/tik tok.png" alt="TikTok"> TikTok
+				</a>
+				<a href="https://telegram.org" class="social-icon">
+					<img src="./../../img/home_page/tg.png" alt="Telegram"> Telegram
+				</a>
+				<a href="https://instagram.com" class="social-icon">
+					<img src="./../../img/home_page/instagram.png" alt="Instagram"> Instagram
+				</a>
 			</div>
 		</div>
-		<div class="main-menu-item2" id="mainMenuItemContainer2">
-			<img class="icon" alt="" src="img/home_page/bonuses.png">
-
-			<div class="div15">Бонусы</div>
-		</div>
-		<div class="main-menu-item3" id="mainMenuItemContainer3">
-			<img class="icon" alt="" src="img/home_page/women cloth.png">
-
-			<div class="div16">Женская одежда</div>
-			<div class="main-menu-item-child">
-			</div>
-		</div>
-		<div class="main-menu-item4">
-			<div class="news_btn" id="newsContainer">
-				<img class="icon" alt="" src="img/home_page/nws.png">
-
-				<div class="div17">Новости</div>
-			</div>
-			<div class="line-div">
-			</div>
-		</div>
+		
+		<!-- Большое изображение -->
+		<img src="./../../img/home_page/first photo.png" alt="Большое изображение" class="large-image">
 	</div>
-	<div class="social-networks">
-		<div class="div18">СОЦИАЛЬНЫЕ СЕТИ:</div>
-		<div class="tiktok">
-			<img class="galaxy-tik-tok-logo-15-icon" alt="" src="img/home_page/tik tok.png">
 
-			<div class="tiktok1">TikTok</div>
+	<div class="container">
+		<div class="row justify-content-center g-1">
+			<div class="col-md-4 col-6">
+				<img src="./../../img/home_page/photo line 1.png" alt="Product 1" class="img-fluid">
+			</div>
+			<div class="col-md-4 col-6">
+				<img src="./../../img/home_page/photo line 2.png" alt="Product 2" class="img-fluid">
+			</div>
+			<div class="col-md-4 col-6">
+				<img src="./../../img/home_page/photo line 3.png" alt="Product 3" class="img-fluid">
+			</div>
 		</div>
-		<div class="instagram">
-			<img class="galaxy-tik-tok-logo-15-icon" alt="" src="img/home_page/instagram.png">
-
-			<div class="instagram1">Instagram</div>
-		</div>
-		<div class="telegram">
-			<img class="galaxy-tik-tok-logo-15-icon" alt="" src="img/home_page/tg.png">
-
-			<div class="telegram1">Telegram</div>
-		</div>
-		<div class="social-networks-child">
-		</div>
-	</div>
-	<img class="qb482d4sp2fo0c9e61eukw2zpcm-icon" alt="" src="img/home_page/first photo.png">
-
-	<div class="hot-products">
-		<img src="img/home_page/photo line 1.png" alt="Product 1">
-		<img src="img/home_page/photo line 2.png" alt="Product 2">
-		<img src="img/home_page/photo line 3.png" alt="Product 3">
 	</div>
 	<section class="products" data-ref="products">
 		<div class="container__small">
@@ -159,7 +144,7 @@
 			<ul class="products__cards">
 				<li class="mix PC fade-in" id="product-1">
 					<article class="products__card">
-						<img class="products__card-img" src="image.png"
+						<img class="products__card-img" src=""
 							alt="photo of furniture" />
 						<h4  class="products__card-title">Louis Vuitton 
 							<br>paris</h4>
@@ -219,7 +204,7 @@
 				</li>
 			</ul>
 
-			<img class="i-icon" alt="" src="img/home_page/2 photo.png">
+			<img class="i-icon" alt="" src="./../../img/home_page/2 photo.png">
 			<div class="text">
                 <h3 class="title-2">Новые поступления</h3>
             </div>
@@ -295,7 +280,7 @@
 			<ul class="news__cards">
 				<li class="mix PC fade-in" id="news-1">
 					<article class="news__card">
-						<img class="news__card-img" src="img/home_page/news 1.png"
+						<img class="news__card-img" src="./../../img/home_page/news 1.png"
 							alt="photo of furniture" />
 						<h4  class="news__card-title">Открытие</h4>
 						<span class="news__card-price">Мы рады пригласить вас на открытие нового магазина</span>
@@ -304,7 +289,7 @@
 
 				<li class="mix PC fade-in" id="news-2">
 					<article class="news__card">
-						<img class="news__card-img" src="img/home_page/news 2.png"
+						<img class="news__card-img" src="./../../img/home_page/news 2.png"
 							alt="photo of furniture" />
 						<h4  class="news__card-title">Аксессуары</h4>
 						<span class="news__card-price">Лучшие аксессуары чтобы подчеркнуть ваш образ</span>
@@ -313,15 +298,15 @@
 
 				<li class="mix PC fade-in" id="news-3">
 					<article class="news__card">
-						<img class="news__card-img" src="img/home_page/news 3.png"
+						<img class="news__card-img" src="./../../img/home_page/news 3.png"
 							alt="photo of furniture" />
 						<h4  class="news__card-title">Магазин</h4>
-						<span class="news__card-price">Открытие магазина уже сегодня></span>
+						<span class="news__card-price">Открытие магазина уже сегодня</span>
 					</article>
 				</li>
 				<li class="mix PC fade-in" id="news-4">
 					<article class="news__card">
-						<img class="news__card-img" src="img/home_page/news 4.png"
+						<img class="news__card-img" src="./../../img/home_page/news 4.png"
 							alt="photo of furniture" />
 						<h4  class="news__card-title">Социальные сети</h4>
 						<span class="news__card-price">Присоединяйтесь к нам, чтобы следить за всеми новинками</span>
@@ -334,7 +319,7 @@
     <div class="footer">
         <div class="footer-info">
             <div class="footer-left">
-                <img class="footer-logo" alt="Royal Attue Logo" src="img/подвал/логотип.png">
+                <img class="footer-logo" alt="Royal Attue Logo" src="./../../img/подвал/логотип.png">
                 <div class="footer-text">
                     <p class="royal-attue">Royal Attue предлагает эксклюзивные коллекции одежды и аксессуаров от мировых брендов.</p>
                     <p class="quote">“Каждая деталь создана для тех, кто ценит стиль, качество и роскошь”</p>
@@ -363,9 +348,9 @@
             </div>
         </div>
         <div class="footer-logos">
-            <img class="payment-logo" alt="Мир" src="img/подвал/mir-logo.png">
-            <img class="payment-logo" alt="MasterCard" src="img/подвал/master_card.png">
-            <img class="payment-logo" alt="Visa" src="img/подвал/Visa.png">
+            <img class="payment-logo" alt="Мир" src="./../../img/подвал/mir-logo.png">
+            <img class="payment-logo" alt="MasterCard" src="./../../img/подвал/master_card.png">
+            <img class="payment-logo" alt="Visa" src="./../../img/подвал/Visa.png">
         </div>
         <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
     </div>
@@ -376,7 +361,7 @@
 
 
 
-	<script> </script>
+	<script src="./home_page.js"> </script>
 </body>
 
 </html>
