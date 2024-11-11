@@ -1,3 +1,5 @@
+
+
 .main-content-right {
     display: flex;
     align-items: flex-start; /* Выровнять блоки по верхнему краю */
@@ -16,6 +18,8 @@
     border-radius: 5px; /* Закругление углов */
     max-width: 200px; /* Ширина блока */
 }
+
+
 
 /* Стили для заголовка блока "СОЦИАЛЬНЫЕ СЕТИ" */
 .social-networks p {

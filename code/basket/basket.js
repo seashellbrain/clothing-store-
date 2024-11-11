@@ -1,38 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-      var checkoutButton = document.getElementById("rectangle");
-      if (checkoutButton) {
-          checkoutButton.addEventListener("click", function () {
-              window.location.href = "./delivery_payment.html";
-          });
-      }
-  });
+function toggleCategories() {
+    const dropdown = document.getElementById("category-dropdown");
+    const button = document.querySelector(".category-button");
 
-// Изменение количества товара
-var increaseButton = document.querySelector(".clicker-inner"); 
-var decreaseButton = document.querySelector(".clicker-item"); 
-var quantityDisplay = document.querySelector(".div18");
-
-if (increaseButton && decreaseButton && quantityDisplay) {
-    let quantity = parseInt(quantityDisplay.innerText) || 1;
-    
-    increaseButton.addEventListener("click", function () {
-        quantity++;
-        quantityDisplay.innerText = quantity;
-        updateTotalPrice(); // Обновление итоговой цены
-    });
-
-    decreaseButton.addEventListener("click", function () {
-        if (quantity > 1) {
-            quantity--;
-            quantityDisplay.innerText = quantity;
-            updateTotalPrice(); // Обновление итоговой цены
-        }
-    });
-}
-
-// Функция для обновления итоговой цены
-function updateTotalPrice() {
-    let pricePerItem = 2500; // Цена за единицу товара (заменить на актуальную)
-    let totalPrice = pricePerItem * quantity;
-    document.querySelector(".byn").innerText = "Итого: " + totalPrice + " BYN";
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+        dropdown.classList.remove("rounded-corners"); // Убираем верхние скругления
+        button.classList.add("button-opened"); // Добавляем класс для открытой кнопки
+        dropdown.classList.add("dropdown-opened"); // Добавляем класс для открытого меню
+        button.textContent = "Скрыть категории";
+    } else {
+        dropdown.style.display = "none";
+        button.classList.remove("button-opened"); // Убираем класс для закрытой кнопки
+        dropdown.classList.remove("dropdown-opened"); // Убираем класс для закрытого меню
+        button.textContent = "ВСЕ КАТЕГОРИИ";
+    }
 }

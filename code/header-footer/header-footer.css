@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Montserrat, sans-serif;
 }
 
 /* Цветовые переменные */
@@ -43,8 +43,8 @@
 
 /* Close Icon */
 .sale-close-icon {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 1px;
     margin-left: 20px; /* Minimum space between text and icon */
     cursor: pointer; /* Pointer cursor */
 }
@@ -84,13 +84,6 @@
     color: var(--header-text-color);
 }
 
-/* Icons */
-.icon {
-    width: 30px; /* Size of icons */
-    height: 30px; /* Height of icons */
-    margin-right: 5px; /* Space between icon and text */
-}
-
 /* Search Container */
 .header-search-container {
     display: flex; /* Flex for horizontal alignment */
@@ -125,7 +118,7 @@
 .header-search-btn {
     background-color: #ccc; /* Gray button */
     border: 1px solid #ccc; /* Gray border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 3px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor */
     padding: 5px 10px; /* Padding */
     height: 30px; /* Fixed height */
@@ -141,18 +134,22 @@
     height: 22px; /* Height of button icon */
 }
 
-/* Cart Section */
-.header-cart {
-    margin-left: 20px; /* Space on the left */
-    display: flex; /* Flex for icon and groups */
-    align-items: flex-start; /* Align to top */
-    gap: 10px; /* Space between icon and groups */
+
+.cart-container {
+    display: flex;
+    align-items: center; /* Выравнивает иконку и текст по центру по вертикали */
+    gap: 10px; /* Расстояние между иконкой и текстом */
 }
 
-/* Basket Icon */
-.basket2-icon {
-    width: 44px; /* Size of basket icon */
-    height: 44px; /* Height of basket icon */
+.cart-icon {
+    width: 50px; /* Ширина иконки */
+    height: 50px; /* Высота иконки */
+}
+
+.cart-text {
+    display: flex;
+    flex-direction: column; /* Размещает текстовые строки вертикально */
+    font-size: 14px;
 }
 
 /* Parent and Group Sections */
@@ -161,20 +158,6 @@
     flex-direction: column; /* Column layout */
     align-items: flex-start; /* Left align */
     gap: 2px; /* Space between label and value */
-}
-
-/* Label Styles */
-.div5, .div6 {
-    font-weight: 200; /* Light font */
-    font-size: 14px; /* Font size */
-}
-
-/* Value Styles */
-.div7, .div8 {
-    margin-top: 3px; /* Space above */
-    color: var(--header-text-color); /* Text color */
-    font-size: 14px; /* Font size */
-    font-weight: 200; /* Light font weight */
 }
 
 /* Responsive Design: Ensure the header scales properly */
@@ -263,8 +246,9 @@
 .menu-item {
     display: flex;
     align-items: center;
-    padding: 10px 0; /* Отступы сверху и снизу */
+    padding: 12px 0; /* Увеличенный отступ для визуальной лёгкости */
 }
+
 
 .icon1 {
     width: 30px; /* Размер иконки */
@@ -273,24 +257,29 @@
     color: #fff;
 }
 
+.header-icon {
+    width: 25px; /* Установите нужную ширину */
+    height: 25px; /* Установите нужную высоту */
+    margin-right: 10px;
+}
+
 hr {
     border: none;
-    border-top: 1px solid #fff; /* Белая линия */
-    margin: 5px 0; /* Отступы сверху и снизу */
-    opacity: 0.5; /* Прозрачность для более мягкого эффекта */
+    border-top: 1px solid rgba(255, 255, 255, 0.5); /* Прозрачная белая линия */
+    margin: 5px 0;
 }
 
 .category-dropdown {
-    display: none; /* Изначально скрыто */
-    background-color: #6D7B99;
-    width: 100%; /* Ширина совпадает с шириной кнопки */
-    padding: 10px; /* Уменьшите или увеличьте, если нужно тоньше или толще */
-    border-radius: 3px;
+    display: none;
+    background-color: rgba(109, 123, 153, 0.9); /* Прозрачный синий фон */
+    width: 255px;
+    padding: 10px;
+    border-radius: 3px; /* Более заметное скругление углов */
     position: absolute;
-    top: 100%; /* Начинается сразу под кнопкой */
-    left: 0; /* Выравнено по левой стороне кнопки */
+    top: 100%;
+    left: 0;
     z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Добавляет тень */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Добавление тени */
     color: #fff;
 }
 
@@ -299,10 +288,16 @@ hr {
     padding: 8px 0; /* Отступы между пунктами */
 }
 
+/* Стили для кнопки при открытом меню */
+.category-button.button-opened {
+    border-bottom-left-radius: 0; /* Убираем нижние скругления */
+    border-bottom-right-radius: 0;
+}
 
-.category-dropdown.rounded-corners {
-    border-bottom-right-radius: 0px; /* Скругление нижнего правого угла */
-    border-bottom-left-radius: 0px; /* Прямой нижний левый угол */
+/* Стили для выпадающего меню при открытом состоянии */
+.category-dropdown.dropdown-opened {
+    border-top-left-radius: 0; /* Убираем верхние скругления */
+    border-top-right-radius: 0;
 }
 
 .main-menu-item {
@@ -484,6 +479,7 @@ hr {
     margin-top: 10px;
     text-align: center;
     width: 100%;
+    max-height: 316;
     padding-top: 20px;
     border-top: 1px solid #000000;
 }
