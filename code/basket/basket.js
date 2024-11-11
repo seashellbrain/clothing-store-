@@ -1,55 +1,38 @@
-var icons8512 = document.getElementById("icons8512");
-if(icons8512) {
-      icons8512.addEventListener("click", function (e) {
-            // Add your code here
-      });
+document.addEventListener("DOMContentLoaded", function () {
+      var checkoutButton = document.getElementById("rectangle");
+      if (checkoutButton) {
+          checkoutButton.addEventListener("click", function () {
+              window.location.href = "./delivery_payment.html";
+          });
+      }
+  });
+
+// Изменение количества товара
+var increaseButton = document.querySelector(".clicker-inner"); 
+var decreaseButton = document.querySelector(".clicker-item"); 
+var quantityDisplay = document.querySelector(".div18");
+
+if (increaseButton && decreaseButton && quantityDisplay) {
+    let quantity = parseInt(quantityDisplay.innerText) || 1;
+    
+    increaseButton.addEventListener("click", function () {
+        quantity++;
+        quantityDisplay.innerText = quantity;
+        updateTotalPrice(); // Обновление итоговой цены
+    });
+
+    decreaseButton.addEventListener("click", function () {
+        if (quantity > 1) {
+            quantity--;
+            quantityDisplay.innerText = quantity;
+            updateTotalPrice(); // Обновление итоговой цены
+        }
+    });
 }
 
-var basket2Icon = document.getElementById("basket2Icon");
-if(basket2Icon) {
-      basket2Icon.addEventListener("click", function (e) {
-            window.location.href = "Frame.html"
-      });
-}
-
-var text = document.getElementById("text");
-if(text) {
-      text.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text1 = document.getElementById("text1");
-if(text1) {
-      text1.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var rectangle = document.getElementById("rectangle");
-if(rectangle) {
-      rectangle.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text2 = document.getElementById("text2");
-if(text2) {
-      text2.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text3 = document.getElementById("text3");
-if(text3) {
-      text3.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text4 = document.getElementById("text4");
-if(text4) {
-      text4.addEventListener("click", function (e) {
-            // Add your code here
-      });
+// Функция для обновления итоговой цены
+function updateTotalPrice() {
+    let pricePerItem = 2500; // Цена за единицу товара (заменить на актуальную)
+    let totalPrice = pricePerItem * quantity;
+    document.querySelector(".byn").innerText = "Итого: " + totalPrice + " BYN";
 }

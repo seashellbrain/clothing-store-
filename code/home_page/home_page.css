@@ -53,12 +53,27 @@
     height: 24px;
     border-radius: 50%;
 }
+.main-image-container {
+    margin-top: 20px; /* Установите нужное значение отступа */
+}
 .large-image {
     width: 825px;
     height: 525px;
     margin-left: 30px; /* Отступ слева, чтобы не прилипало к краю */
-    border-radius: 5px;
+    border-radius: 3px;
 }
+
+
+
+
+.custom-spacing .col-md-4 .img-fluid,
+.custom-spacing .col-6 .img-fluid {
+    width: 1000px; /* Ширина каждой фотографии */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .text { 
     width: 100%;
     max-width: 1530px; 

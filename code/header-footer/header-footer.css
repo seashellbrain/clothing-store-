@@ -1,3 +1,4 @@
+
 /* Сброс отступов и установка базового шрифта */
 * {
     margin: 0;
@@ -210,6 +211,7 @@
     margin: 0 auto; /* Center the sub-menu if it's less than the full width of the container */
     justify-content: space-between;
     margin: 0 auto; /* Center the header on larger screens */
+    
 }
 
 
@@ -236,7 +238,9 @@
 .category-container {
     position: relative;
     display: inline-block; /* Чтобы меню не растягивалось на всю ширину */
+    max-width: 1200px;
 }
+
 
 .category-button {
     background-color: #6D7B99;
@@ -246,7 +250,7 @@
     border: none;
     border-radius: 5px;
     width: 255px; /* Ширина кнопки для соответствия ширине меню */
-    height: 55;
+    height: 50px;
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
