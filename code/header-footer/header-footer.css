@@ -340,7 +340,7 @@ hr {
     color: #000000; 
     cursor: pointer; 
     transition: color 0.3s; 
-    padding: 15px 20px;
+    padding: 15px 30px;
     font-size: 12px;
     font-family: Montserrat;
     font-weight: 400;
@@ -354,7 +354,7 @@ hr {
 
 .footer-background {
     background-color: #9BA8C6; /* Soft blue background color */
-    padding: 20px 0;
+    padding: 15px 0;
     width: 100%;
     margin: 0 auto; /* Центрирование фона */
 }
@@ -493,4 +493,22 @@ hr {
     border-top: 1px solid #000000;
 }
 
+/* Основной стиль ссылки */
+.dynamic-link {
+    color: #333; /* Основной цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Указываем, что это кликабельный элемент */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+
+/* Стиль при наведении */
+.dynamic-link:hover {
+    color: #ffffff; /* Белый цвет при наведении */
+    cursor: pointer;
+}
+
+/* Стиль при нажатии */
+.dynamic-link:active {
+    color: #ffffff; /* Белый цвет при нажатии */
+}
 

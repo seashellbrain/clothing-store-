@@ -179,10 +179,9 @@
  
 .text-2 { 
     width: 100%;
-    max-width: 1530px; 
     height: auto;
-    padding: 20px;
-    margin: 30px auto  auto; 
+    padding: 10px;
+    margin: 20px auto  auto; 
     display: flex; 
     justify-content: flex-start; /* Устанавливаем начало выравнивания */
 }
@@ -201,68 +200,32 @@
     justify-content: center; /* Центрирование карточек */
 }
 
-.news__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Центрирование карточек в контейнере */
-    margin-bottom: 60px; /* Устанавливаем отступ 60px снизу для контейнера карточек */
-    list-style-type: none;
+
+.news-wrapper {
+    max-width: 95%; /* Настройте значение по вашему усмотрению */
+    margin: 0 auto; /* Центрирование блока */
+}
+.card {
+    border: none; /* Убираем стандартную рамку Bootstrap */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем легкую тень */
 }
 
-.news__card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Устанавливаем выравнивание по левому краю */
-    justify-content: flex-start; /* Устанавливаем выравнивание по верхнему краю */
-    margin: 0 15px 30px; /* Отступы между карточками */
-    padding: 35px 20px 40px;
-    width: 255.23px;
-    min-height: 260px;
-    border-radius: 3px;
-}
-
-.news__card:hover .news__card-nav {
-    opacity: 1;
-}
-
-.news__card-title {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    margin-bottom: 15px;
-    text-align: left; /* Выравнивание текста по левому краю */
+.card-title {
+    color: black;
     font-family: Montserrat;
     font-size: 18px;
-    font-style: normal;
-    font-weight: 600; /* Убедитесь, что этот стиль применяется */
-    line-height: normal;
-    letter-spacing: 0.2px;
-    margin-top: 20px;
+    font-weight: 600;
 }
 
-.news__card-price {
-    color: var(--Accent_2, #5e5e5e);
-    font-weight: 300;
-	width: 230px;
+.card-text {
+    color: black;
+    font-feature-settings: 'dnom' on;
+    font-family: Montserrat;
     font-size: 13px;
+    font-weight: 300;
+    line-height: 20px; 
 }
-
-.news__card-nav {
-    left: 50%;
-    top: 53%;
-    display: flex;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s;
+.news__card-link {
+    text-decoration: none !important; /* Убирает подчеркивание */
+    color: black !important; /* Устанавливает черный цвет */
 }
-
-.news__card-item:not(:last-child) {
-    margin-right: 15px; /* Этот отступ можно оставить без изменений, так как он применяется только к элементам навигации внутри карточки */
-}
-
-
-
-
-

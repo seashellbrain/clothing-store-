@@ -1,0 +1,118 @@
+.user-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.personal-data-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.filter-box ul li a {
+    white-space: nowrap; /* Запрет переноса текста */
+    display: inline-flex; /* Чтобы текст и иконка были на одной строке */
+    align-items: center; /* Центрирование текста и иконки */
+}
+.filter-box ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.filter-box{
+    width: 400px;
+    height: 200px;
+    border-radius: 3px;
+    border: 1px solid  #DCDCDC;
+}
+.text{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 700;
+
+}
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Отступ для разделения с полями формы */
+    text-align: left;
+}
+.personal-data-form{
+    border-radius: 3px;
+    border: 3px solid  #A0AECD;
+    width: 800px;
+}
+.form-label{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+}
+.input{
+    width: 265px;
+    height: 25px;
+}
+.filter-icon {
+    width: 16px; /* ширина иконки */
+    height: 16px; /* высота иконки */
+    margin-right: 8px; /* отступ между иконкой и текстом */
+    vertical-align: middle; /* выравнивание иконки по центру текста */
+}
+.line{
+    margin-top: 5px;
+    width: 255px;
+    border: 2px solid  #000000;
+}
+
+.form-control-custom-input{
+    width: 265px;
+    height: 25px;
+    flex-shrink: 0;
+}
+.form-container {
+    width: 730px; /* Ширина всей формы */
+    margin: 0 auto; /* Центрирование формы */
+    padding: 20px;
+}
+
+.personal-data-form .custom-input {
+    width: 265px;
+    height: 25px;
+    border-radius: 3px; /* Закругленные углы */
+    padding: 5px; /* Внутренние отступы */
+    font-size: 14px; /* Размер шрифта */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.personal-data-form .form-label {
+    color:  #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+.button{
+    width: 182px;
+    height: 52px;
+    border-radius: 3px;
+    background:  #A0AECD;
+    border: none;
+    margin: 10px;
+    
+}
+.button2{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-underline-position: from-font;
+}

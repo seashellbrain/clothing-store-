@@ -87,7 +87,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="nav-item">ГЛАВНАЯ</div>
+				<div class="nav-item"><a href="./../../code/home_page/home_page.html" class="dynamic-link">ГЛАВНАЯ</a></div>
 				<div class="nav-item" id="text1">ЛИЧНЫЙ КАБИНЕТ</div>
 				<div class="nav-item">ДОСТАВКА И ОПЛАТА</div>		
 			</div>			
@@ -273,42 +273,57 @@
 			<div class="text-2">
                 <h3 class="title-3">Новости</h3>
             </div>
-			<ul class="news__cards">
-				<li class="mix PC fade-in" id="news-1">
-					<article class="news__card">
-						<img class="news__card-img" src="./../../img/home_page/news 1.png"
-							alt="photo of furniture" />
-						<h4  class="news__card-title">Открытие</h4>
-						<span class="news__card-price">Мы рады пригласить вас на открытие нового магазина</span>
-					</article>
-				</li>
-
-				<li class="mix PC fade-in" id="news-2">
-					<article class="news__card">
-						<img class="news__card-img" src="./../../img/home_page/news 2.png"
-							alt="photo of furniture" />
-						<h4  class="news__card-title">Аксессуары</h4>
-						<span class="news__card-price">Лучшие аксессуары чтобы подчеркнуть ваш образ</span>
-					</article>
-				</li>
-
-				<li class="mix PC fade-in" id="news-3">
-					<article class="news__card">
-						<img class="news__card-img" src="./../../img/home_page/news 3.png"
-							alt="photo of furniture" />
-						<h4  class="news__card-title">Магазин</h4>
-						<span class="news__card-price">Открытие магазина уже сегодня</span>
-					</article>
-				</li>
-				<li class="mix PC fade-in" id="news-4">
-					<article class="news__card">
-						<img class="news__card-img" src="./../../img/home_page/news 4.png"
-							alt="photo of furniture" />
-						<h4  class="news__card-title">Социальные сети</h4>
-						<span class="news__card-price">Присоединяйтесь к нам, чтобы следить за всеми новинками</span>
-					</article>
-				</li>
-			</ul>
+			<div class="news-wrapper">
+				<div class="container my-5">
+					<div class="row">
+						<div class="col-md-3 mb-4">
+							<div class="card h-100">
+								<a href="./../../code/news/news.html" class="news__card-link">
+								<img src="./../../img/news/news_1-1.png" class="card-img-top" alt="Открытие">
+								<div class="card-body">
+									<h5 class="card-title">Открытие</h5>
+									<p class="card-text">Мы рады приветствовать вас на открытии нашего магазина...</p>
+								</div>
+							</a>
+							</div>
+						</div>
+						<div class="col-md-3 mb-4">
+							<div class="card h-100">
+								<a href="./../../code/news/news.html" class="news__card-link">
+								<img src="./../../img/news/news_1-2.png" class="card-img-top" alt="Аксессуары">
+								<div class="card-body">
+									<h5 class="card-title">Аксессуары</h5>
+									<p class="card-text">Ручная изысканная работа для каждого вашего образа...</p>
+								</div>
+							</a>
+							</div>
+						</div>
+						<div class="col-md-3 mb-4">
+							<div class="card h-100">
+								<a href="./../../code/news/news.html" class="news__card-link">
+								<img src="./../../img/news/news_1-3.png" class="card-img-top" alt="Магазин">
+								<div class="card-body">
+									<h5 class="card-title">Магазин</h5>
+									<p class="card-text">Открытие магазина уже сегодня...</p>
+								</div>
+							</a>
+							</div>
+						</div>
+						<div class="col-md-3 mb-4">
+							<div class="card h-100">
+								<a href="./../../code/news/news.html" class="news__card-link">
+								<img src="./../../img/news/news_1-4.png" class="card-img-top" alt="Социальные сети">
+								<div class="card-body">
+									<h5 class="card-title">Социальные сети</h5>
+									<p class="card-text">Присоединяйтесь к нам, чтобы быть в курсе новостей...</p>
+								</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 </main>
 <div class="footer-background">
@@ -325,14 +340,14 @@
                 <div class="footer-links-section">
                     <div class="footer-section-title">О КОМПАНИИ</div>
                     <div class="footer-link">О нас</div>
-                    <div class="footer-link"><a data-target="./../../code/personal_data/personal_data.html" id="privacyPolicyLink">Персональные данные</a></div>
+                    <div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Политика персональных данных</a></div>
                 </div>
                 <div class="footer-links-section">
                     <div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
                     <div class="footer-link">Возврат/Обмен</div>
-                    <div class="footer-link">Доставка и оплата</div>
+                    <div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
                     <div class="footer-link">Бонусная программа</div>
-                    <div class="footer-link"><a data-target="./../../code/ques_answ/ques_answ.html" id="ques_answ">Вопросы и ответы</a></div>
+                    <div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
                 </div>
                 <div class="footer-contacts">
                     <div class="footer-section-title">КОНТАКТЫ</div>
