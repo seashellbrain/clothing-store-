@@ -1,0 +1,61 @@
+.faq-title {
+    font-size: 36px; /* Размер текста */
+    color: #333; /* Цвет текста */
+    text-transform: uppercase; /* Заглавные буквы */
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 3.6px;
+}
+.faq-section {
+    max-width: 1088px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    margin-bottom: 100px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #000000; /* Линия разделяющая блоки вопросов */
+    padding: 5px 0;
+    width: 1088px;
+    margin-bottom: 20px; /* Отступ внизу каждого вопроса */
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 15px;
+    margin-right: 120px; /* Отступ слева для выравнивания под логотипом */
+    text-transform: uppercase; /* Заглавные буквы */
+    margin-bottom: 20px; /* Отступ внизу каждого вопроса */
+  }
+  
+  .faq-question h3 {
+    color: #333;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .li{
+    color: #333;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  
+  .faq-answer {
+    padding-top: 10px;
+    display: none; /* Ответ скрыт по умолчанию */
+  }
+
+  .toggle-button {
+    background: none;
+    border: none;
+    font-size: 30px; /* Увеличиваем размер крестика */
+    cursor: pointer;
+    color: #333; /* Можно изменить цвет при необходимости */
+}

@@ -454,6 +454,15 @@ hr {
     font-weight: 300px;
     font-family: Montserrat;
 }
+.footer-link a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    max-width: 170px;
+    font-weight: 300px;
+    font-family: Montserrat;
+}
 
 .footer-contacts p {
     margin: 5px 0;

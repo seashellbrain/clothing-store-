@@ -17,13 +17,3 @@ function toggleCategories() {
         button.textContent = "ВСЕ КАТЕГОРИИ";
     }
 }
-
-document.getElementById('privacyPolicyLink').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    window.location.href = './../../code/personal_data/personal_data.html'; 
-});
-
-document.getElementById('ques_answ').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    window.location.href = './../../code/ques_answ/ques_answ.html'; 
-});
