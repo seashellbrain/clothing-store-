@@ -107,8 +107,16 @@ h2 {
     box-shadow: none; /* Убираем подсветку */
 }
 
-/* Кнопка Главная */
-.btn-secondary {
+.dynamic-link a{
+    color: #A0AECD; /* Цвет текста */
+    font-size: 11px;
+    font-weight: 400; /* Regular */
+    text-align: center;
+    border-radius: 3px;
+}
+
+
+.dynamic-link {
     width: 90px;
     height: 28px;
     background-color: #ffffff; /* Белый фон */
@@ -120,12 +128,13 @@ h2 {
     border-radius: 3px;
 }
 
-.btn-secondary:hover,
-.btn-secondary:focus {
+/* Стиль при наведении */
+.dynamic-link:hover {
     background-color: #ffffff; /* Оставляем тот же цвет */
     color: #A0AECD; /* Оставляем тот же цвет текста */
     box-shadow: none; /* Убираем подсветку */
 }
+
 /* Полоска между элементами */
 .divider {
     width: 210px;
