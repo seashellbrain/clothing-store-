@@ -1,0 +1,18 @@
+.error-description{
+    color:#000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+}
+.error-message{
+    margin-top: 60px;
+    color:#000;
+    font-family: Montserrat;
+    font-size: 26px;
+    font-weight: 600;
+}
+.error-image {
+    width: 439px; /* Настройте размер изображения под нужный */
+    margin-bottom: 20px;
+    opacity: 0.8; /* Легкая прозрачность, если нужно */
+}

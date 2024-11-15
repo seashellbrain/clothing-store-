@@ -214,7 +214,8 @@
     align-items: flex-start; /* Align items to the top */
     margin: 0; /* Remove margins to prevent spacing issues */
     padding: 0; /* Remove padding to keep it tight */
-    margin-left: 130px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 /* Контейнер для кнопки и меню */
