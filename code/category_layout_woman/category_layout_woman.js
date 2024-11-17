@@ -110,4 +110,23 @@ function filterItems() {
     });
   }
   
+  function updatePriceRange() {
+    const priceRangeMin = document.getElementById('priceRangeMin');
+    const priceMin = document.getElementById('priceMin');
+    const priceMax = document.getElementById('priceMax');
   
+    // Обновляем отображение минимальной цены
+    const minValue = parseInt(priceRangeMin.value);
+    priceMin.textContent = `${minValue} руб.`;
+  
+    // Предполагаем, что максимальная цена остается фиксированной
+    priceMax.textContent = `10 000 руб.`;
+  }
+  
+  function applyPriceFilter() {
+    const priceRangeMin = document.getElementById('priceRangeMin');
+    const minValue = parseInt(priceRangeMin.value);
+  
+    // Логика фильтрации товаров
+    console.log(`Фильтрация товаров с минимальной ценой: ${minValue} руб.`);
+  }

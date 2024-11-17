@@ -13,6 +13,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
 	<heder class="div ">
 		<div class="sale">
@@ -97,11 +98,8 @@
 	</heder>
 
 	<main class="container">
-		<ul class="products__cards">
-	<li class="mix PC fade-in" id="filter-container">
 		<div class="filter-container">
 			<h3 class="filter-title">Фильтры</h3>
-			<hr class="line">
 			<form class="filter-form">
 				<div class="filter-group">
 					<h4 class="text_cloth">Одежда</h4>
@@ -159,14 +157,21 @@
 						  Трикотаж
 						</label>
 					  </div>
-					  
-					<p>Выбрано: <span id="selectedPrice">5000 BYN</span></p>
+					  <div class="price-filter">
+						<h4 class="filter-title">Цена</h4>
+						<div class="slider-container">
+						  <input type="range" id="priceRangeMin" min="0" max="10000" step="100" value="0" oninput="updatePriceRange()">
+						</div>
+						<div class="price-values">
+						  <span id="priceMin">0 руб.</span>
+						  <span id="priceMax">10 000 руб.</span>
+						</div>
+					  </div>
 				</div>
-				<button type="submit" class="filter-submit">Применить</button>
 			</form>
 		</div>
-	</li>
-	
+		<div class="products-container">
+		<ul class="products__cards">
 				<li class="mix PC fade-in skirts-shorts" id="product-1">
 					<article class="products__card">
 						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
@@ -198,7 +203,7 @@
 				</li>
 			</ul>
 			
-			<ul class="products__cards2">
+			<ul class="products__cards">
 				<li class="mix PC fade-in skirts-shorts" id="product-4">
 					<article class="products__card">
 						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
@@ -229,7 +234,7 @@
 				</li>
 			</ul>
 
-			<ul class="products__cards2">
+			<ul class="products__cards">
 				<li class="mix PC fade-in skirts-shorts" id="product-4">
 					<article class="products__card">
 						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
@@ -263,8 +268,8 @@
 
 
 			<!-- Пальто и тренчи -->
-			<ul class="products__cards2">
-			<li class="mix PC fade-in coatFilter" id="product-1">
+			<ul class="products__cards">
+			<li class="mix PC fade-in coat-trench" id="product-1">
 				<article class="products__card">
 					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
 						alt="photo of furniture" />
@@ -294,7 +299,7 @@
 				</article>
 			</li>
 		</ul>
-		<ul class="products__cards2">
+		<ul class="products__cards">
 			<li class="mix PC fade-in coat-trench" id="product-4">
 				<article class="products__card">
 					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
@@ -325,7 +330,7 @@
 			</li>
 		</ul>
 
-		<ul class="products__cards2">
+		<ul class="products__cards">
 			<li class="mix PC fade-in coat-trench" id="product-4">
 				<article class="products__card">
 					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
@@ -357,6 +362,670 @@
 			</li>
 		</ul>
 
+		<!-- Джинсы -->
+		<ul class="products__cards">
+			<li class="mix PC fade-in jeans" id="product-1">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Мини-юбка с принтом 
+						<br>Leopard</h4>
+					<span class="products__card-price">2 000 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in jeans" id="product-2">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Мини-юбка с принтом 
+						<br>Zebra </h4>
+					<span class="products__card-price">2500 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in jeans" id="product-3">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Шорты с узором Monogram 
+						<br>в технике филькупе</h4>
+					<span class="products__card-price">450 <span>byn</span></span>
+				</article>
+			</li>
+		</ul>
+		<ul class="products__cards">
+			<li class="mix PC fade-in jeans" id="product-4">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Юбка с чеканными 
+						<br>пуговицами</h4>
+					<span class="products__card-price">3 000 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in jeans" id="product-5">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Твидовая юбка с 
+						<br>карманами</h4>
+					<span class="products__card-price">2 500 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in jeans" id="product-6">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Юбка из техноджерси</h4>
+					<span class="products__card-price">1 700 <span>byn</span></span>
+				</article>
+			</li>
+		</ul>
+
+		<ul class="products__cards">
+			<li class="mix PC fade-in jeans" id="product-4">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Louis Vuitton 
+						<br>dress</h4>
+					<span class="products__card-price">3 000 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in jeans" id="product-5">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Louis Vuitton 
+						<br>sumka</h4>
+					<span class="products__card-price">2 500 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in jeans" id="product-6">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Куртка 
+						<br>Trucker</h4>
+					<span class="products__card-price">1 700 <span>byn</span></span>
+				</article>
+			</li>
+		</ul>
+
+				<!-- Брюки -->
+				<ul class="products__cards">
+					<li class="mix PC fade-in pants" id="product-1">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Мини-юбка с принтом 
+								<br>Leopard</h4>
+							<span class="products__card-price">2 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in pants" id="product-2">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Мини-юбка с принтом 
+								<br>Zebra </h4>
+							<span class="products__card-price">2500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in pants" id="product-3">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Шорты с узором Monogram 
+								<br>в технике филькупе</h4>
+							<span class="products__card-price">450 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+				<ul class="products__cards">
+					<li class="mix PC fade-in pants" id="product-4">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Юбка с чеканными 
+								<br>пуговицами</h4>
+							<span class="products__card-price">3 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in pants" id="product-5">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Твидовая юбка с 
+								<br>карманами</h4>
+							<span class="products__card-price">2 500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in pants" id="product-6">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Юбка из техноджерси</h4>
+							<span class="products__card-price">1 700 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+		
+				<ul class="products__cards">
+					<li class="mix PC fade-in pants" id="product-4">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Louis Vuitton 
+								<br>dress</h4>
+							<span class="products__card-price">3 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in pants" id="product-5">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Louis Vuitton 
+								<br>sumka</h4>
+							<span class="products__card-price">2 500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in pants" id="product-6">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Куртка 
+								<br>Trucker</h4>
+							<span class="products__card-price">1 700 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+
+				<!-- Толстовки -->
+				<ul class="products__cards">
+					<li class="mix PC fade-in sweatshirts" id="product-1">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Мини-юбка с принтом 
+								<br>Leopard</h4>
+							<span class="products__card-price">2 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in sweatshirts" id="product-2">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Мини-юбка с принтом 
+								<br>Zebra </h4>
+							<span class="products__card-price">2500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in sweatshirts" id="product-3">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Шорты с узором Monogram 
+								<br>в технике филькупе</h4>
+							<span class="products__card-price">450 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+				<ul class="products__cards">
+					<li class="mix PC fade-in sweatshirts" id="product-4">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Юбка с чеканными 
+								<br>пуговицами</h4>
+							<span class="products__card-price">3 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in sweatshirts" id="product-5">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Твидовая юбка с 
+								<br>карманами</h4>
+							<span class="products__card-price">2 500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in sweatshirts" id="product-6">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Юбка из техноджерси</h4>
+							<span class="products__card-price">1 700 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+		
+				<ul class="products__cards">
+					<li class="mix PC fade-in sweatshirts" id="product-4">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Louis Vuitton 
+								<br>dress</h4>
+							<span class="products__card-price">3 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in sweatshirts" id="product-5">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Louis Vuitton 
+								<br>sumka</h4>
+							<span class="products__card-price">2 500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in sweatshirts" id="product-6">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Куртка 
+								<br>Trucker</h4>
+							<span class="products__card-price">1 700 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+			
+				<!-- Футболки -->
+				<ul class="products__cards">
+					<li class="mix PC fade-in tshirts" id="product-1">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Мини-юбка с принтом 
+								<br>Leopard</h4>
+							<span class="products__card-price">2 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in tshirts" id="product-2">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Мини-юбка с принтом 
+								<br>Zebra </h4>
+							<span class="products__card-price">2500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in tshirts" id="product-3">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Шорты с узором Monogram 
+								<br>в технике филькупе</h4>
+							<span class="products__card-price">450 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+				<ul class="products__cards">
+					<li class="mix PC fade-in tshirts" id="product-4">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Юбка с чеканными 
+								<br>пуговицами</h4>
+							<span class="products__card-price">3 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in tshirts" id="product-5">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Твидовая юбка с 
+								<br>карманами</h4>
+							<span class="products__card-price">2 500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in tshirts" id="product-6">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Юбка из техноджерси</h4>
+							<span class="products__card-price">1 700 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+		
+				<ul class="products__cards">
+					<li class="mix PC fade-in tshirts" id="product-4">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Louis Vuitton 
+								<br>dress</h4>
+							<span class="products__card-price">3 000 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in tshirts" id="product-5">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Louis Vuitton 
+								<br>sumka</h4>
+							<span class="products__card-price">2 500 <span>byn</span></span>
+						</article>
+					</li>
+		
+					<li class="mix PC fade-in tshirts" id="product-6">
+						<article class="products__card">
+							<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+								alt="photo of furniture" />
+							<h4  class="products__card-title">Куртка 
+								<br>Trucker</h4>
+							<span class="products__card-price">1 700 <span>byn</span></span>
+						</article>
+					</li>
+				</ul>
+
+			<!-- Топы и боди -->
+			<ul class="products__cards">
+				<li class="mix PC fade-in tops-bodysuits" id="product-1">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Мини-юбка с принтом 
+							<br>Leopard</h4>
+						<span class="products__card-price">2 000 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in tops-bodysuits" id="product-2">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Мини-юбка с принтом 
+							<br>Zebra </h4>
+						<span class="products__card-price">2500 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in tops-bodysuits" id="product-3">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Шорты с узором Monogram 
+							<br>в технике филькупе</h4>
+						<span class="products__card-price">450 <span>byn</span></span>
+					</article>
+				</li>
+			</ul>
+			<ul class="products__cards">
+				<li class="mix PC fade-in tops-bodysuits" id="product-4">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Юбка с чеканными 
+							<br>пуговицами</h4>
+						<span class="products__card-price">3 000 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in tops-bodysuits" id="product-5">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Твидовая юбка с 
+							<br>карманами</h4>
+						<span class="products__card-price">2 500 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in tops-bodysuits" id="product-6">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Юбка из техноджерси</h4>
+						<span class="products__card-price">1 700 <span>byn</span></span>
+					</article>
+				</li>
+			</ul>
+	
+			<ul class="products__cards">
+				<li class="mix PC fade-in tops-bodysuits" id="product-4">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Louis Vuitton 
+							<br>dress</h4>
+						<span class="products__card-price">3 000 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in tops-bodysuits" id="product-5">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Louis Vuitton 
+							<br>sumka</h4>
+						<span class="products__card-price">2 500 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in tops-bodysuits" id="product-6">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Куртка 
+							<br>Trucker</h4>
+						<span class="products__card-price">1 700 <span>byn</span></span>
+					</article>
+				</li>
+			</ul>
+
+			<!-- Рубашки и блузы -->
+			<ul class="products__cards">
+				<li class="mix PC fade-in shirts-blouses" id="product-1">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Мини-юбка с принтом 
+							<br>Leopard</h4>
+						<span class="products__card-price">2 000 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in shirts-blouses" id="product-2">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Мини-юбка с принтом 
+							<br>Zebra </h4>
+						<span class="products__card-price">2500 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in shirts-blouses" id="product-3">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Шорты с узором Monogram 
+							<br>в технике филькупе</h4>
+						<span class="products__card-price">450 <span>byn</span></span>
+					</article>
+				</li>
+			</ul>
+			<ul class="products__cards">
+				<li class="mix PC fade-in shirts-blouses" id="product-4">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Юбка с чеканными 
+							<br>пуговицами</h4>
+						<span class="products__card-price">3 000 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in shirts-blouses" id="product-5">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Твидовая юбка с 
+							<br>карманами</h4>
+						<span class="products__card-price">2 500 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in shirts-blouses" id="product-6">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Юбка из техноджерси</h4>
+						<span class="products__card-price">1 700 <span>byn</span></span>
+					</article>
+				</li>
+			</ul>
+	
+			<ul class="products__cards">
+				<li class="mix PC fade-in shirts-blouses" id="product-4">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Louis Vuitton 
+							<br>dress</h4>
+						<span class="products__card-price">3 000 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in shirts-blouses" id="product-5">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Louis Vuitton 
+							<br>sumka</h4>
+						<span class="products__card-price">2 500 <span>byn</span></span>
+					</article>
+				</li>
+	
+				<li class="mix PC fade-in shirts-blouses" id="product-6">
+					<article class="products__card">
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+							alt="photo of furniture" />
+						<h4  class="products__card-title">Куртка 
+							<br>Trucker</h4>
+						<span class="products__card-price">1 700 <span>byn</span></span>
+					</article>
+				</li>
+			</ul>
+		<!-- Трикотаж -->
+		<ul class="products__cards">
+			<li class="mix PC fade-in knitwear" id="product-1">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/tiger.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Мини-юбка с принтом 
+						<br>Leopard</h4>
+					<span class="products__card-price">2 000 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in knitwear" id="product-2">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/zebra.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Мини-юбка с принтом 
+						<br>Zebra </h4>
+					<span class="products__card-price">2500 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in knitwear" id="product-3">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Shorts_monogram_orange.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Шорты с узором Monogram 
+						<br>в технике филькупе</h4>
+					<span class="products__card-price">450 <span>byn</span></span>
+				</article>
+			</li>
+		</ul>
+		<ul class="products__cards">
+			<li class="mix PC fade-in knitwear" id="product-4">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/skirt_balck_button.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Юбка с чеканными 
+						<br>пуговицами</h4>
+					<span class="products__card-price">3 000 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in knitwear" id="product-5">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Tweed_skirt_with_pockets.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Твидовая юбка с 
+						<br>карманами</h4>
+					<span class="products__card-price">2 500 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in knitwear" id="product-6">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/Skirt_technojersey.png"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Юбка из техноджерси</h4>
+					<span class="products__card-price">1 700 <span>byn</span></span>
+				</article>
+			</li>
+		</ul>
+
+		<ul class="products__cards">
+			<li class="mix PC fade-in knitwear" id="product-4">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Louis Vuitton 
+						<br>dress</h4>
+					<span class="products__card-price">3 000 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in knitwear" id="product-5">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Louis Vuitton 
+						<br>sumka</h4>
+					<span class="products__card-price">2 500 <span>byn</span></span>
+				</article>
+			</li>
+
+			<li class="mix PC fade-in knitwear" id="product-6">
+				<article class="products__card">
+					<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/"
+						alt="photo of furniture" />
+					<h4  class="products__card-title">Куртка 
+						<br>Trucker</h4>
+					<span class="products__card-price">1 700 <span>byn</span></span>
+				</article>
+			</li>
+		</ul>
+	</div>
 			
 	</main>
 
@@ -378,9 +1047,9 @@
 					</div>
 					<div class="footer-links-section">
 						<div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
-						<div class="footer-link"><a href="./../../code/return_obmen/return_obmen.html" class="dynamic-link">Возврат/Обмен</a></div>
+						<div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Возврат/Обмен</a></div>
 						<div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
-						<div class="footer-link"> <a href="./../../code/bonus_program/bonus_program.html" class="dynamic-link">Бонусная программа</a></div>
+						<div class="footer-link"> <a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Бонусная программа</a></div>
 						<div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
 					</div>
 					<div class="footer-contacts">
