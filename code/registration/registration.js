@@ -1,62 +1,57 @@
-const mysql = require('mysql2');
-const bcrypt = require('bcrypt');
+document.querySelector('#registration-form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
-// Подключение к базе данных
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'ваш_пароль',
-    database: 'user_auth'
+    const username = document.querySelector('#username').value.trim();
+    const email = document.querySelector('#email').value.trim();
+    const phone = document.querySelector('#phone').value.trim();
+    const gender = document.querySelector('#gender').value;
+    const password = document.querySelector('#password').value;
+    const passwordConfirm = document.querySelector('#password-confirm').value;
+    const errorMessage = document.querySelector('#error-message');
+
+    // Очистка предыдущего сообщения об ошибке
+    errorMessage.textContent = '';
+
+    // Проверка на совпадение паролей
+    if (password !== passwordConfirm) {
+        errorMessage.textContent = 'Пароли не совпадают!';
+        return;
+    }
+
+    // Проверка на длину пароля
+    if (password.length < 8) {
+        errorMessage.textContent = 'Пароль должен содержать не менее 8 символов!';
+        return;
+    }
+
+    // Проверка формата email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        errorMessage.textContent = 'Введите корректный email!';
+        return;
+    }
+
+    // Пример проверки телефона (можно адаптировать)
+    const phonePattern = /^[0-9]{10,15}$/;
+    if (!phonePattern.test(phone)) {
+        errorMessage.textContent = 'Введите корректный номер телефона!';
+        return;
+    }
+
+    alert('Регистрация прошла успешно!');
 });
 
-// Проверка подключения
-db.connect(err => {
-    if (err) throw err;
-    console.log('Connected to MySQL database.');
+// Обработчик для переключения видимости пароля
+document.querySelectorAll('.toggle-password').forEach((button) => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const passwordField = document.getElementById(targetId);
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            button.textContent = '🙈'; // Меняем иконку на "закрытый глаз"
+        } else {
+            passwordField.type = 'password';
+            button.textContent = '👁️'; // Меняем иконку на "открытый глаз"
+        }
+    });
 });
-
-// Функция регистрации пользователя
-async function registerUser(username, email, password) {
-    const passwordHash = await bcrypt.hash(password, 10); // Хэширование пароля
-    const query = `INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)`;
-
-    db.query(query, [username, email, passwordHash], (err, results) => {
-        if (err) {
-            console.error('Error while registering:', err);
-        } else {
-            console.log('User registered successfully:', results);
-        }
-    });
-}
-
-// Функция входа пользователя
-async function loginUser(email, password) {
-    const query = `SELECT * FROM users WHERE email = ?`;
-
-    db.query(query, [email], async (err, results) => {
-        if (err) {
-            console.error('Error while logging in:', err);
-            return;
-        }
-
-        if (results.length === 0) {
-            console.log('User not found.');
-            return;
-        }
-
-        const user = results[0];
-        const isPasswordValid = await bcrypt.compare(password, user.password_hash);
-
-        if (isPasswordValid) {
-            console.log('Login successful.');
-        } else {
-            console.log('Invalid password.');
-        }
-    });
-}
-
-// Тест регистрации и входа
-(async () => {
-    await registerUser('Danya', 'danya@example.com', 'my_secure_password');
-    await loginUser('danya@example.com', 'my_secure_password');
-})();

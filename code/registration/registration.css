@@ -8,8 +8,8 @@ body {
 }
 
 .login-container {
-    width: 790px;
-    height: 473px;
+    width: 900px;
+    height: 600px;
     margin: auto;
     padding: 20px;
     border-radius: 15px;
@@ -142,6 +142,28 @@ h2 {
     background-color: #DCDCDC;
     margin: 15px auto;
 }
+
+.text-danger {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #a0aecd;
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
 
 /* Адаптация для ноутбуков */
 @media (max-width: 1200px) {
