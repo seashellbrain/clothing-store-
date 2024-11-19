@@ -94,29 +94,36 @@
 			</div>
 		</div>
 	</heder>
+
+
+
+
+
 <main>
     <div class="container my-5">
         <div class="row">
             <!-- Левый блок с фильтрами -->
             <div class="col-md-3">
                 <div class="filter-box p-3">
-                    <h5>Фильтры</h5>
+                    <h5 class="filter_name">ФИЛЬТР</h5>
                     <hr class="line">
                     <ul>
                         <li>
-                            <a href="#" class="filter-link">
+                            <a href="#" class="filter-link active"> <!-- Класс active будет у первой ссылки -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                    <!-- Вставьте здесь код SVG вашей иконки -->
+                                    <!-- Ваш SVG -->
                                 </svg>
                                 Мои данные
                             </a>
+                            
                         </li>
-                        <a href="#" class="filter-link">
+                         <li><a href="#" class="filter-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
                                 <!-- Вставьте здесь код SVG вашей иконки -->
                             </svg>
                             Мои заказы
                         </a>
+                    </li>
                         <li>
                             <a href="#" class="filter-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
@@ -141,42 +148,43 @@
             <div class="text-center mb-4">
                 <img src="" alt="User Icon" class="user-icon">
             </div>
-            <h2 class="text-center text">МОИ ДАННЫЕ</h2>
+            <h2 class="text">МОИ ДАННЫЕ</h2>
             <div class="form-container">
                 <form class="personal-data-form">
                     <div class="row mb-3">
+                        
                         <div class="col-md-6">
-                            <label for="fullName" class="form-label">ФИО *</label>
+                            <label for="fullName" class="form-label">ФИО <label class="form_red">*</label></label>
                             <input type="text" class="form-control custom-input" id="fullName" placeholder="Ваше ФИО">
                         </div>
+
                         <div class="col-md-6">
-                            <label for="phoneNumber" class="form-label">Контактный номер *</label>
+                            <label for="phoneNumber" class="form-label">Контактный номер <label class="form_red">*</label></label>
                             <input type="tel" class="form-control custom-input" id="phoneNumber" placeholder="Ваш номер телефона">
                         </div>
                     </div>
+
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="birthDate" class="form-label">Дата рождения *</label>
+                            <label for="birthDate" class="form-label">Дата рождения <label class="form_red">*</label></label>
                             <input type="date" class="form-control custom-input" id="birthDate">
                         </div>
+
                         <div class="col-md-6">
-                            <label for="email" class="form-label">E-mail</label>
+                            <label for="email" class="form-label">E-mail <label class="form_red">*</label></label>
                             <input type="email" class="form-control custom-input" id="email" placeholder="Ваш email">
                         </div>
                     </div>
+
                     <div class="text-center">
-                        <button type="submit" class="button">Сохранить данные</button>
+                        <button type="submit" class="button">Сохранить</button>
                     </div>
+
                     <div class="text-center">
                         <p type="submit" class="button2">Изменить</p>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-            
-    </div>
-    
+
 </main>
 
     <div class="footer-background">

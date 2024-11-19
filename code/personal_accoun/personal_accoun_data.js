@@ -18,4 +18,13 @@ function toggleCategories() {
     }
 }
 
+document.querySelectorAll('.filter-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Отключаем стандартное поведение
+        document.querySelectorAll('.filter-link').forEach(el => el.classList.remove('active'));
+        this.classList.add('active');
+        // Логика для перехода на другую страницу
+        // window.location.href = this.href; // если переход нужен
+    });
+});
 

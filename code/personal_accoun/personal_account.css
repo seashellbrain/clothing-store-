@@ -1,0 +1,301 @@
+.user-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.personal-data-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.filter_name {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.filter-box ul li a {
+    white-space: nowrap; /* Запрет переноса текста */
+    display: inline-flex; /* Чтобы текст и иконка были на одной строке */
+    align-items: center; /* Центрирование текста и иконки */
+}
+
+.filter-box ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.filter-box ul li .filter-link.active {
+    color: #A0AECD; /* Выбранный цвет */
+    /* Можно добавить, чтобы выделить активный элемент */
+}
+
+.filter-box {
+    width: 350px;
+    height: 210px;
+    border-radius: 3px;
+    border: 1px solid #A0AECD;
+}
+
+.text {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 350px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Отступ для разделения с полями формы */
+    text-align: left;
+}
+
+.personal-data-form {
+    border-radius: 3px;
+    border: 3px solid #A0AECD;
+    max-width: 640px;
+}
+
+.filter-link {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.filter-box ul li:hover .filter-link {
+    text-decoration: none;
+    color: #A0AECD;
+}
+
+.form-label {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.input {
+    width: 265px;
+    height: 25px;
+}
+
+.filter-icon {
+    width: 16px; /* ширина иконки */
+    height: 16px; /* высота иконки */
+    margin-right: 8px; /* отступ между иконкой и текстом */
+    vertical-align: middle; /* выравнивание иконки по центру текста */
+}
+
+.line {
+    margin-top: 5px;
+    width: 305px;
+    border: 2px solid #000000;
+}
+
+.form-control-custom-input {
+    width: 265px;
+    height: 25px;
+    flex-shrink: 0;
+}
+
+.form-container {
+    width: 730px;
+    margin: 0 auto; /* Центрирование формы */
+    padding: 20px;
+}
+
+.personal-data-form .custom-input {
+    width: 265px;
+    height: 25px;
+    border-radius: 3px; /* Закругленные углы */
+    padding: 5px; /* Внутренние отступы */
+    font-size: 14px; /* Размер шрифта */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.personal-data-form .form-label {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.form_red {
+    color: #ff0000;
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+.button {
+    font-family: Montserrat;
+    font-size: 14px;
+    width: 160px;
+    height: 40px;
+    border-radius: 3px;
+    background: #A0AECD;
+    border: none;
+    margin: 10px;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+.button2 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-position: from-font;
+    margin-top: 10px;
+}
+
+.button:hover {
+    color: #ffffff; /* Основной цвет текста */
+}
+
+.text_1 {
+    width: 293px;
+    height: 31px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.text_2 {
+    width: 359px;
+    height: 23px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+/*Payment_delivary*/
+.payment-container {
+    display: flex; /* Включаем флексбокс */
+    justify-content: space-between; /* Равномерное распределение прямоугольников */
+    gap: 20px; /* Отступ между прямоугольниками */
+    margin-bottom: 40px; /* Отступ между прямоугольниками и нижним контентом, если есть */
+    flex-wrap: wrap; /* Перенос прямоугольников на маленьких экранах */
+}
+
+.payment-box_1, .payment-box_2 {
+    background: var(--Light_Grey, #DCDCDC);
+    border-radius: 15px;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.payment-box_1 {
+    flex: 1;
+    max-width: 540px;
+    height: auto;
+}
+
+.payment-box_2 {
+    flex: 1;
+    max-width: 410px;
+    height: auto;
+}
+
+@media (max-width: 960px) {
+    .payment-container {
+        flex-direction: column;
+    }
+
+    .payment-box_1, .payment-box_2 {
+        max-width: 100%;
+    }
+}
+
+.address-item {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.selected-address {
+    width: 100%;
+    padding-right: 30px; /* Для размещения иконки справа */
+}
+
+.select-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 16px; /* Размер иконки */
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.add-address {
+    display: flex;
+    gap: 10px; /* Отступ между полем ввода и кнопкой */
+}
+
+.add-button {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #A0AECD;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+}
+
+.add-button:hover {
+    background-color: #889ABB; /* Более темный оттенок для наведения */
+}
+
+
+.button_pay_1 {
+    font-family: Montserrat;
+    font-size: 10px;
+    width: 80px;
+    height: 20px;
+    border-radius: 3px;
+    background: #A0AECD;
+    border: none;
+    margin: 10px;
+    transition: color 0.3s;
+}
+
+.button_pay_1:hover{
+    border: 2px solid black 
+}
+
+.button_pay_2 {
+    font-family: Montserrat;
+    font-size: 10px;
+    width: 120px;
+    height: 20px;
+    border-radius: 3px;
+    background: #A0AECD;
+    border: none;
+    margin: 10px;
+    transition: color 0.3s;
+}
+.button_pay_2:hover{
+    border: 2px solid black 
+}
