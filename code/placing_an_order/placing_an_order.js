@@ -47,26 +47,12 @@ function getUserStatus() {
 // Назначаем функцию на клик по кнопке "Личный кабинет"
 document.getElementById("text1").addEventListener("click", checkUserStatus);
 
-document.querySelector('.header-search-btn').addEventListener('click', function() {
-    const searchInput = document.querySelector('.header-search input').value; // Получаем текст из поля
-    if (searchInput) {
-        window.location.href = `./../../code/search_result/search_result.html?query=${encodeURIComponent(searchInput)}`; // Перенаправляем с текстом поиска
-    }
+// Добавление активного состояния для кнопок выбора оплаты
+document.querySelectorAll('.payment-method').forEach(button => {
+    button.addEventListener('click', () => {
+        // Удаляем активное состояние у всех кнопок
+        document.querySelectorAll('.payment-method').forEach(btn => btn.classList.remove('active'));
+        // Добавляем активное состояние к нажатой кнопке
+        button.classList.add('active');
+    });
 });
-// Функция для извлечения параметров из URL
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-// Функция для запуска поиска по тексту из URL
-function performSearchFromURL() {
-    const searchQuery = getQueryParam('query'); // Получаем текст из параметра query
-    if (searchQuery) {
-        document.querySelector('.header-search input').value = searchQuery; // Устанавливаем текст в поле поиска
-        searchProducts(); // Выполняем поиск
-    }
-}
-
-// Выполняем поиск при загрузке страницы
-document.addEventListener('DOMContentLoaded', performSearchFromURL);

@@ -47,26 +47,30 @@ function getUserStatus() {
 // Назначаем функцию на клик по кнопке "Личный кабинет"
 document.getElementById("text1").addEventListener("click", checkUserStatus);
 
-document.querySelector('.header-search-btn').addEventListener('click', function() {
-    const searchInput = document.querySelector('.header-search input').value; // Получаем текст из поля
-    if (searchInput) {
-        window.location.href = `./../../code/search_result/search_result.html?query=${encodeURIComponent(searchInput)}`; // Перенаправляем с текстом поиска
-    }
-});
-// Функция для извлечения параметров из URL
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
+
+
+
+
+// Функция для анимации подсчета
+function animateCounter(id, start, end, duration) {
+    let range = end - start;
+    let current = start;
+    let increment = end > start ? 1 : -1;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    let obj = document.getElementById(id);
+    let timer = setInterval(function() {
+        current += increment;
+        obj.textContent = current;
+        if (current == end) {
+            clearInterval(timer);
+        }
+    }, stepTime);
 }
 
-// Функция для запуска поиска по тексту из URL
-function performSearchFromURL() {
-    const searchQuery = getQueryParam('query'); // Получаем текст из параметра query
-    if (searchQuery) {
-        document.querySelector('.header-search input').value = searchQuery; // Устанавливаем текст в поле поиска
-        searchProducts(); // Выполняем поиск
-    }
-}
-
-// Выполняем поиск при загрузке страницы
-document.addEventListener('DOMContentLoaded', performSearchFromURL);
+// Вызов функции для каждого счетчика
+window.onload = function() {
+    animateCounter("counter1", 0, 100, 2000); // 100 тысяч доставок в год
+    animateCounter("counter2", 0, 20, 2000);  // 20 великих компаний
+    animateCounter("counter3", 0, 2, 2000);   // 2 тысячи сотрудников
+    animateCounter("counter4", 0, 10, 2000);  // 10 миллионов продукции
+};
