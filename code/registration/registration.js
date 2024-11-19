@@ -1,57 +1,56 @@
-document.querySelector('#registration-form').addEventListener('submit', (e) => {
-    e.preventDefault();
+document.getElementById('registrationform').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-    const username = document.querySelector('#username').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const phone = document.querySelector('#phone').value.trim();
-    const gender = document.querySelector('#gender').value;
-    const password = document.querySelector('#password').value;
-    const passwordConfirm = document.querySelector('#password-confirm').value;
-    const errorMessage = document.querySelector('#error-message');
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const gender = document.getElementById('gender').value.trim();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Очистка предыдущего сообщения об ошибке
-    errorMessage.textContent = '';
-
-    // Проверка на совпадение паролей
-    if (password !== passwordConfirm) {
-        errorMessage.textContent = 'Пароли не совпадают!';
+    // Проверка на пустые поля
+    if (!username || !email || !phone || !gender || !password || !confirmPassword) {
+        alert("Все поля обязательны для заполнения");
         return;
     }
 
-    // Проверка на длину пароля
+    // Проверка на пробелы в email, телефоне и пароле
+    if (/\s/.test(email) || /\s/.test(phone) || /\s/.test(password)) {
+        alert("Email, телефон и пароль не могут содержать пробелы");
+        return;
+    }
+
+    // Проверка длины пароля
     if (password.length < 8) {
-        errorMessage.textContent = 'Пароль должен содержать не менее 8 символов!';
+        alert("Пароль должен быть не менее 8 символов");
         return;
     }
 
-    // Проверка формата email
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        errorMessage.textContent = 'Введите корректный email!';
+    // Проверка совпадения паролей
+    if (password !== confirmPassword) {
+        alert("Пароли не совпадают");
         return;
     }
 
-    // Пример проверки телефона (можно адаптировать)
-    const phonePattern = /^[0-9]{10,15}$/;
-    if (!phonePattern.test(phone)) {
-        errorMessage.textContent = 'Введите корректный номер телефона!';
-        return;
-    }
+    // Отправка данных на сервер
+    try {
+        const response = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, phone, gender, password }),
+        });
 
-    alert('Регистрация прошла успешно!');
-});
+        const data = await response.json();
 
-// Обработчик для переключения видимости пароля
-document.querySelectorAll('.toggle-password').forEach((button) => {
-    button.addEventListener('click', () => {
-        const targetId = button.getAttribute('data-target');
-        const passwordField = document.getElementById(targetId);
-        if (passwordField.type === 'password') {
-            passwordField.type = 'text';
-            button.textContent = '🙈'; // Меняем иконку на "закрытый глаз"
+        if (response.ok) {
+            alert("Регистрация успешна!");
+            window.location.href = './../login_account/login_account.html';
         } else {
-            passwordField.type = 'password';
-            button.textContent = '👁️'; // Меняем иконку на "открытый глаз"
+            alert(data.message || "Ошибка при регистрации");
         }
-    });
+    } catch (error) {
+        alert("Ошибка соединения с сервером");
+    }
 });
