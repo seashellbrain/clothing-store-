@@ -97,99 +97,95 @@
 
 
 
-    <main>
-        <div class="container my-5">
-            <div class="row">
-                <!-- Левый блок с фильтрами -->
-                <div class="col-md-3">
-                    <div class="filter-box p-3">
-                        <h5 class="filter_name">ФИЛЬТР</h5>
-                        <hr class="line">
-                        <ul>
-                            <li>
-                                <a href="#" class="filter-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Мои данные
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="filter-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Мои заказы
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="filter-link active">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Способы оплаты и доставки
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="filter-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Бонусная программа
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+
+
+<main>
+    <div class="container my-5">
+        <div class="row">
+            <!-- Левый блок с фильтрами -->
+            <div class="col-md-3">
+                <div class="filter-box p-3">
+                    <h5 class="filter_name">ФИЛЬТР</h5>
+                    <hr class="line">
+                    <ul>
+                        <li>
+                            <a href="#" class="filter-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
+                                    <!-- Ваш SVG -->
+                                </svg>
+                                Мои данные
+                            </a>
+                            
+                        </li>
+                         <li><a href="#" class="filter-link active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
+                                <!-- Вставьте здесь код SVG вашей иконки -->
+                            </svg>
+                            Мои заказы
+                        </a>
+                    </li>
+                        <li>
+                            <a href="#" class="filter-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
+                                    <!-- Вставьте здесь код SVG вашей иконки -->
+                                </svg>
+                                Способы оплаты и доставки
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="filter-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
+                                    <!-- Вставьте здесь код SVG вашей иконки -->
+                                </svg>
+                                Бонусная программа
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-    
-<div class="text-center mb-4">
-    <img src="" alt="User Icon" class="user-icon">
-</div>
-<h2 class="text">Способы оплаты и доставки</h2>
-<!-- Добавленные прямоугольники для способов оплаты и доставки -->
-<div class="payment-container">
-    <div class="payment-box_1">
-        <div class="faq-question">Ваши адреса:</div>
+            </div>
+    <div class="text_1"> История заказов </div>
+ 
+<div class="table_list">
+    <table>
+        <thead>
+            <tr>
+                <th>Номер</th>
+                <th>Дата и время</th>
+                <th>Ссылка на заказ</th>
+                <th>Сумма заказа</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>350-198</td>
+                <td>09.10.2024</td>
+                <td><a href="/order-350-198">/order-350-198</a></td>
+                <td>2 500 BYN</td>
+            </tr>
+            <tr>
+                <td>350-197</td>
+                <td>08.10.2024</td>
+                <td><a href="/order-350-197">/order-350-197</a></td>
+                <td>1 500 BYN</td>
+            </tr>
+            <tr>
+                <td>350-196</td>
+                <td>07.10.2024</td>
+                <td><a href="/order-350-196">/order-350-196</a></td>
+                <td>2 700 BYN</td>
+            </tr>
+            <tr>
+                <td>350-195</td>
+                <td>06.10.2024</td>
+                <td><a href="/order-350-195">/order-350-195</a></td>
+                <td>1 000 BYN</td>
+            </tr>
+        </tbody>
+    </table>
 
-        <!-- Поле с предзаполненным адресом и иконкой выделения -->
-        <div class="address-item">
-            <input type="text" class="form-control custom-input selected-address" value="Минск, улица Колесникова, 3" readonly>
-            <span class="select-icon">🔘</span>
         </div>
 
-        <!-- Поле для ввода нового адреса и кнопка добавления -->
-        <div class="add-address">
-            <input type="text" class="form-control custom-input" id="newAddress" placeholder="Введите адрес">
-            <button class="add-button">+</button>
-        </div>
-    </div>
-
-    <div class="payment-box_2">
-        <div class="faq-question">Ваша оплата:</div>
-
-        <!-- Контейнер для кнопок с горизонтальным расположением -->
-        <div class="button-container">
-            <button type="submit" class="button_pay_1">Сразу</button>
-            <button type="submit" class="button_pay_2">При получении</button>
-        </div>
-
-        <div class="faq-question">Способ оплаты:</div>
-
-        <!-- Поле с предзаполненным адресом и иконкой выделения -->
-        <div class="address-item">
-            <input type="text" class="form-control custom-input selected-address" value="1111 1111 1111 1111" readonly>
-            <span class="select-icon">🔘</span>
-        </div>
-
-        <!-- Поле для ввода нового адреса и кнопка добавления -->
-        <div class="add-address">
-            <input type="text" class="form-control custom-input" id="newPayment" placeholder="Привязать новую">
-            <button class="add-button">+</button>
-        </div>
-    </div>
-</div>
-
-    
+</main>
 
     <div class="footer-background">
         <div class="footer">

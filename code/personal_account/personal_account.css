@@ -194,7 +194,7 @@
 .payment-container {
     display: flex; /* Включаем флексбокс */
     justify-content: space-between; /* Равномерное распределение прямоугольников */
-    gap: 20px; /* Отступ между прямоугольниками */
+    gap: 10px; /* Отступ между прямоугольниками */
     margin-bottom: 40px; /* Отступ между прямоугольниками и нижним контентом, если есть */
     flex-wrap: wrap; /* Перенос прямоугольников на маленьких экранах */
 }
@@ -267,7 +267,12 @@
 .add-button:hover {
     background-color: #889ABB; /* Более темный оттенок для наведения */
 }
-
+.button-container {
+    display: flex; /* Включаем флексбокс для горизонтального выравнивания */
+    gap: 10px; /* Расстояние между кнопками */
+    justify-content: start; /* Можно изменить на center, если хотите центрировать кнопки */
+    align-items: center; /* Вертикальное выравнивание кнопок */
+}
 
 .button_pay_1 {
     font-family: Montserrat;
@@ -277,12 +282,12 @@
     border-radius: 3px;
     background: #A0AECD;
     border: none;
-    margin: 10px;
+    margin: 0; /* Обнуляем отступы, управляем через gap */
     transition: color 0.3s;
 }
 
-.button_pay_1:hover{
-    border: 2px solid black 
+.button_pay_1:hover {
+    border: 2px solid black;
 }
 
 .button_pay_2 {
@@ -293,9 +298,44 @@
     border-radius: 3px;
     background: #A0AECD;
     border: none;
-    margin: 10px;
+    margin: 0; /* Обнуляем отступы, управляем через gap */
     transition: color 0.3s;
 }
-.button_pay_2:hover{
-    border: 2px solid black 
+
+.button_pay_2:hover {
+    border: 2px solid black;
+}
+
+
+
+
+
+/* order_full */
+table {
+    font-family: Montserrat;
+    font-size: 14px;
+    border: 2px solid #DCDCDC; /* Общая рамка для всей таблицы */
+    border-collapse: collapse; /* Убирает двойные линии между ячейками */
+    border-radius: 8px; /* Закругление углов таблицы */
+}
+th, td {
+    border: 1px solid #DCDCDC;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #DCDCDC;
+    font-weight: 600;
+}
+a {
+    text-decoration: underline;
+    color: black;
+}
+.table_list{
+    max-width: 300px; /* Автоматическая ширина в зависимости от содержимого */
+    min-width: 300px; /* Минимальная ширина таблицы */
+    table-layout: auto; /* Отключить фиксированную ширину ячеек */
+    margin: 0px;
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
 }

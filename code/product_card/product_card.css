@@ -1,1052 +1,254 @@
-.sale-background {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    background-color: #a0aecd;
-}
-.sale-heading {
-    position: absolute;
-    top: calc(50% - 7px);
-    left: calc(50% - 302px);
+/* Сбрасываем базовые стили для всего */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
     display: flex;
-    align-items: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 604px;
-    height: 15px;
-}
-.sale-close-icon {
-    position: absolute;
-    height: 25%;
-    width: 0.52%;
-    top: 40%;
-    right: 36.2%;
-    bottom: 35%;
-    left: 63.28%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-}
-.sale {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1920px;
-    height: 40px;
-    font-size: 11px;
-}
-.img-0839-icon {
-    position: absolute;
-    height: 106.67%;
-    width: 16.67%;
-    top: -6.67%;
-    right: 83.33%;
-    bottom: 0%;
-    left: 0%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-.div1 {
-    position: absolute;
-    top: 9px;
-    left: 40.3px;
-    display: inline-block;
-    width: 149px;
-    height: 10px;
-}
-.icons8-100 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-}
-.header-info-2 {
-    position: absolute;
-    top: 0px;
-    left: 243.7px;
-    width: 189.3px;
-    height: 30px;
-}
-.div2 {
-    position: absolute;
-    top: 9px;
-    left: 40px;
-    white-space: pre-wrap;
-    display: inline-block;
-    width: 185px;
-    height: 10px;
-}
-.header-info-1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 225px;
-    height: 30px;
-}
-.div3 {
-    position: absolute;
-    top: calc(50% - 6px);
-    left: 39.68px;
-    display: inline-block;
-    width: 217px;
-    height: 10px;
-}
-.header-info-3 {
-    position: absolute;
-    top: 0px;
-    left: 453.32px;
-    width: 256.7px;
-    height: 30px;
-}
-.header-info-2-parent {
-    position: absolute;
-    top: 0px;
-    left: 18px;
-    width: 710px;
-    height: 30px;
-}
-.header-search-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 3px;
-    border: 1px solid #dcdcdc;
-    box-sizing: border-box;
-    width: 444px;
-    height: 32px;
-}
-.header-search-btn-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 3px;
-    background-color: #dcdcdc;
-    width: 45px;
-    height: 32px;
-}
-.header-search-btn {
-    position: absolute;
-    top: 0px;
-    left: 474px;
-    width: 45px;
-    height: 32px;
-}
-.header-search {
-    position: absolute;
-    top: 58px;
-    left: 101px;
-    width: 519px;
-    height: 32px;
-}
-.icons8-512 {
-    position: absolute;
-    top: 62px;
-    left: 585px;
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
-    cursor: pointer;
-}
-.div4 {
-    position: absolute;
-    top: 67px;
-    left: 106px;
-    font-size: 12px;
-    color: #dcdcdc;
-    display: inline-block;
-    width: 74px;
-    height: 12px;
-}
-.header-center {
-    position: absolute;
-    height: 60%;
-    top: 20%;
-    bottom: 20%;
-    left: calc(50% - 370px);
-    width: 740px;
-}
-.basket2-icon {
-    position: absolute;
-    height: 100%;
-    width: 28.55%;
-    top: 0%;
-    right: 71.45%;
-    bottom: 0%;
-    left: 0%;
-    max-width: 100%;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-    cursor: pointer;
-}
-.div5 {
-    position: absolute;
-    height: 34.41%;
-    width: 100%;
-    top: 0%;
-    left: 0%;
-    display: inline-block;
-}
-.div6 {
-    position: absolute;
-    height: 35.29%;
-    width: 100%;
-    top: 64.71%;
-    left: 0%;
-    display: inline-block;
-}
-.parent {
-    position: absolute;
-    height: 68%;
-    width: 42.43%;
-    top: 16%;
-    right: 22.77%;
-    bottom: 16%;
-    left: 34.8%;
-}
-.div7 {
-    position: absolute;
-    height: 38.71%;
-    width: 53.95%;
-    top: 0%;
-    left: 46%;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.div8 {
-    position: absolute;
-    height: 38.71%;
-    width: 100%;
-    top: 61.29%;
-    left: 0%;
-    display: inline-block;
-}
-.group {
-    position: absolute;
-    height: 62%;
-    width: 45.32%;
-    top: 22%;
-    right: 0%;
-    bottom: 16%;
-    left: 54.68%;
-    text-align: right;
-}
-.header-cart {
-    position: absolute;
-    height: 33.33%;
-    width: 15.59%;
-    top: 33.33%;
-    right: 0.05%;
-    bottom: 33.33%;
-    left: 84.36%;
-    font-size: 14px;
-}
-.header {
-    position: absolute;
-    top: 50px;
-    left: calc(50% - 555px);
-    width: 1110px;
-    height: 150px;
-    font-size: 11px;
-}
-.sub-menu-heading-child {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    background-color: #6d7b99;
-}
-.div9 {
-    position: absolute;
-    height: 25.45%;
-    width: 56.47%;
-    top: 36.36%;
-    left: 33.73%;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    display: inline-block;
-}
-.group-child {
-    position: absolute;
-    height: 13.04%;
-    width: 87.5%;
-    top: 43.48%;
-    right: 12.5%;
-    bottom: 43.48%;
-    left: 0%;
-    background-color: #dcdcdc;
-}
-.group-item {
-    position: absolute;
-    height: 13.04%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 86.96%;
-    left: 0%;
-    background-color: #dcdcdc;
-}
-.group-inner {
-    position: absolute;
-    height: 13.04%;
-    width: 75%;
-    top: 86.96%;
-    right: 25%;
-    bottom: 0%;
-    left: 0%;
-    background-color: #dcdcdc;
-}
-.rectangle-parent {
-    position: absolute;
-    height: 41.82%;
-    width: 15.69%;
-    top: 29.09%;
-    right: 74.12%;
-    bottom: 29.09%;
-    left: 10.2%;
-}
-.sub-menu-heading {
-    position: absolute;
-    height: 100%;
-    width: 13.28%;
-    top: 0%;
-    right: 65.63%;
-    bottom: 0%;
-    left: 21.09%;
-}
-.div10 {
-    position: absolute;
-    height: 100%;
-    width: 15.19%;
-    top: 0%;
-    left: 0%;
-    letter-spacing: 0.05em;
-    display: inline-block;
-    cursor: pointer;
-}
-.div11 {
-    position: absolute;
-    height: 100%;
-    width: 31.07%;
-    top: 0%;
-    left: 22.2%;
-    letter-spacing: 0.05em;
-    display: inline-block;
-    cursor: pointer;
-}
-.div12 {
-    position: absolute;
-    height: 100%;
-    width: 39.72%;
-    top: 0%;
-    left: 60.28%;
-    letter-spacing: 0.05em;
-    display: inline-block;
-}
-.sub-menu-nav {
-    position: absolute;
-    height: 21.82%;
-    width: 22.29%;
-    top: 38.18%;
-    right: 41.77%;
-    bottom: 40%;
-    left: 35.94%;
-    font-size: 12px;
-    color: #000;
-}
-.sub-menu {
-    position: absolute;
-    top: 210px;
-    left: 0px;
-    width: 1920px;
-    height: 55px;
-    color: #fff;
-}
-.monogram {
-    position: absolute;
-    top: 359px;
-    left: 975px;
-    font-size: 18px;
-    display: inline-block;
-    width: 520px;
-    height: 17px;
-}
-.byn {
-    position: absolute;
-    top: 406px;
-    left: 975px;
-    font-size: 20px;
-    display: inline-block;
-    width: 102px;
-    height: 19px;
-}
-.div13 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 16px;
-    font-weight: 600;
-    display: inline-block;
-    width: 68px;
-    height: 16px;
-}
-.size-clothes-child {
-    position: absolute;
-    top: 33px;
-    left: 0px;
-    border-radius: 50%;
-    background-color: #dcdcdc;
-    width: 40px;
-    height: 40px;
-}
-.xxs {
-    position: absolute;
-    top: 45px;
-    left: 6px;
-    font-weight: 600;
-    display: inline-block;
-    width: 28px;
-    height: 14px;
-}
-.size-clothes-item {
-    position: absolute;
-    top: 33px;
-    left: 100px;
-    border-radius: 50%;
-    background-color: #a0aecd;
-    width: 40px;
-    height: 40px;
-}
-.m {
-    position: absolute;
-    height: 19.18%;
-    width: 4.14%;
-    top: 61.64%;
-    left: 39.31%;
-    font-weight: 600;
-    display: inline-block;
-}
-.size-clothes-inner {
-    position: absolute;
-    top: 33px;
-    left: 150px;
-    border-radius: 50%;
-    background-color: #dcdcdc;
-    width: 40px;
-    height: 40px;
-}
-.l {
-    position: absolute;
-    top: 45px;
-    left: 165px;
-    font-weight: 600;
-    display: inline-block;
-    width: 9px;
-    height: 14px;
-}
-.ellipse-div {
-    position: absolute;
-    top: 33px;
-    left: 200px;
-    border-radius: 50%;
-    background-color: #dcdcdc;
-    width: 40px;
-    height: 40px;
-}
-.xl {
-    position: absolute;
-    top: 45px;
-    left: 211px;
-    font-weight: 600;
-    display: inline-block;
-    width: 18px;
-    height: 14px;
-}
-.size-clothes-child1 {
-    position: absolute;
-    top: 33px;
-    left: 250px;
-    border-radius: 50%;
-    background-color: #dcdcdc;
-    width: 40px;
-    height: 40px;
-}
-.xxl {
-    position: absolute;
-    top: 45px;
-    left: 256px;
-    font-weight: 600;
-    display: inline-block;
-    width: 28px;
-    height: 14px;
-}
-.size-clothes-child2 {
-    position: absolute;
-    top: 33px;
-    left: 50px;
-    border-radius: 50%;
-    background-color: #dcdcdc;
-    width: 40px;
-    height: 40px;
-}
-.xs {
-    position: absolute;
-    top: 45px;
-    left: 61px;
-    font-weight: 600;
-    display: inline-block;
-    width: 19px;
-    height: 14px;
-}
-.size-clothes {
-    position: absolute;
-    top: 470px;
-    left: 975px;
-    width: 290px;
-    height: 73px;
-}
-.product-button-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 3px;
-    background-color: #a0aecd;
-    width: 232px;
-    height: 46px;
-}
-.div14 {
-    position: absolute;
-    top: 15px;
-    left: 29px;
-    font-weight: 600;
-    display: inline-block;
-    width: 174px;
-    height: 16px;
-}
-.product-button {
-    position: absolute;
-    top: 593px;
-    left: 1004px;
-    width: 232px;
-    height: 46px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.div15 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-weight: 600;
-    display: inline-block;
-    width: 91px;
-    height: 16px;
-}
-.product-mini-desc {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 91px;
-    height: 16px;
-}
-.li {
-    margin-bottom: 0px;
-}
-.lv-monogram- {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    padding-left: 19px;
-}
-.lv-monogram-container {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    line-height: 20px;
-    display: inline-block;
-    width: 190px;
-    height: 95px;
-}
-.div16 {
-    position: absolute;
-    top: 0px;
-    left: 255px;
-    line-height: 20px;
-    display: inline-block;
-    width: 190px;
-    height: 95px;
-}
-.p {
-    margin: 0;
-}
-.monogram-container {
-    position: absolute;
-    top: 125px;
-    left: 0px;
-    line-height: 20px;
-    display: inline-block;
-    width: 445px;
-    height: 115px;
-}
-.product-mini-desc1 {
-    position: absolute;
-    top: 36px;
-    left: 0px;
-    width: 445px;
-    height: 240px;
-    font-size: 14px;
-}
-.description {
-    position: absolute;
-    top: 684px;
-    left: 975px;
-    width: 445px;
-    height: 276px;
-    font-size: 16px;
-}
-.div17 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-weight: 600;
-    display: inline-block;
-    width: 215px;
-    height: 16px;
-}
-.wrapper {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 215px;
-    height: 16px;
-}
-.c-container {
-    position: absolute;
-    top: 36px;
-    left: 0px;
-    font-size: 12px;
-    line-height: 20px;
-    display: inline-block;
-    width: 445px;
-    height: 174px;
-}
-.recommendations {
-    position: absolute;
-    top: 1010px;
-    left: 975px;
-    width: 445px;
-    height: 210px;
-    font-size: 16px;
-}
-.product-card1-icon {
-    position: absolute;
-    top: 335px;
-    left: 470px;
-    width: 410px;
-    height: 400px;
-    object-fit: cover;
-}
-.product-card2-icon {
-    position: absolute;
-    top: 735px;
-    left: 470px;
-    width: 410px;
-    height: 400px;
-    object-fit: cover;
-}
-.product-card3-icon {
-    position: absolute;
-    top: 1135px;
-    left: 470px;
-    width: 410px;
-    height: 400px;
-    object-fit: cover;
-}
-.b {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 32px;
-    display: inline-block;
-    text-align: left;
-    width: 555px;
-    height: 31px;
-}
-.icons-11-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 3px;
-    border: 1px solid #aeaeae;
-    box-sizing: border-box;
-    width: 160px;
-    height: 200px;
-}
-.monogram2 {
-    position: absolute;
-    top: 144px;
-    left: 30px;
-    display: inline-block;
-    width: 100px;
-    height: 31px;
-}
-.image-1-icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
-.icons-11 {
-    position: absolute;
-    top: 61px;
-    left: 0px;
-    width: 160px;
-    height: 200px;
-}
-.icons-12 {
-    position: absolute;
-    top: 61px;
-    left: 190px;
-    width: 160px;
-    height: 200px;
-}
-.icons-13 {
-    position: absolute;
-    top: 61px;
-    left: 380px;
-    width: 160px;
-    height: 200px;
-}
-.icons-14 {
-    position: absolute;
-    top: 61px;
-    left: 570px;
-    width: 160px;
-    height: 200px;
-}
-.div21 {
-    position: absolute;
-    top: 153px;
-    left: 30px;
-    display: inline-block;
-    width: 100px;
-    height: 14px;
-}
-.icons-15 {
-    position: absolute;
-    top: 61px;
-    left: 760px;
-    width: 160px;
-    height: 200px;
-}
-.icons-16 {
-    position: absolute;
-    top: 61px;
-    left: 950px;
-    width: 160px;
-    height: 200px;
-}
-.similar-products {
-    position: absolute;
-    top: 1637px;
-    left: 405px;
-    width: 1110px;
-    height: 261px;
-    text-align: center;
-}
-.louis-vuitton {
-    position: absolute;
-    top: 160px;
-    left: 30px;
-    display: inline-block;
-    width: 100px;
-    height: 15px;
-}
-.image-9-icon {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-}
-.watched {
-    position: absolute;
-    top: 1940px;
-    left: 405px;
-    width: 1110px;
-    height: 261px;
-    text-align: center;
-}
-.footer-background1 {
-    position: absolute;
-    height: 99.68%;
-    width: 100%;
-    top: 0.32%;
-    right: -0.05%;
-    bottom: 0%;
-    left: 0.05%;
-    background-color: #a0aecd;
-}
-.img-0839-icon1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 190px;
-    height: 100px;
-    object-fit: cover;
-}
-.royal-attue {
-    margin: 0;
-    font-weight: 300;
-}
-.i {
-    font-weight: 300;
-}
-.span {
-    font-weight: 300;
-    font-family: Montserrat;
-}
-.footer-text {
-    position: absolute;
-    top: 121px;
-    left: 0px;
-    line-height: 20px;
-    display: inline-block;
-    width: 300px;
-    height: 120px;
-}
-.footer-info {
-    position: absolute;
-    top: 0px;
-    left: 15px;
-    width: 300px;
-    height: 241px;
-}
-.div23 {
-    position: absolute;
-    top: 0px;
-    left: 20px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    display: inline-block;
-    width: 130px;
-    height: 15px;
-}
-.div24 {
-    position: absolute;
-    top: 35px;
-    left: 40px;
-    display: inline-block;
-    width: 170px;
-    height: 12px;
-    cursor: pointer;
-}
-.div25 {
-    position: absolute;
-    top: 67px;
-    left: 40px;
-    display: inline-block;
-    width: 185px;
-    height: 51px;
-    cursor: pointer;
-}
-.footer-links1-child {
-    position: absolute;
-    top: 8px;
-    left: 0px;
-    border-right: 1px solid #000;
-    box-sizing: border-box;
-    width: 1px;
-    height: 135px;
-}
-.footer-links1 {
-    position: absolute;
-    top: 53px;
-    left: 394px;
-    width: 225px;
-    height: 142px;
-}
-.div26 {
-    position: absolute;
-    top: 0px;
-    left: 20px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    display: inline-block;
-    width: 134px;
-    height: 15px;
-}
-.div27 {
-    position: absolute;
-    top: 35px;
-    left: 40px;
-    display: inline-block;
-    width: 120px;
-    height: 12px;
-    cursor: pointer;
-}
-.div28 {
-    position: absolute;
-    top: 62px;
-    left: 40px;
-    display: inline-block;
-    width: 151px;
-    height: 12px;
-    cursor: pointer;
-}
-.div29 {
-    position: absolute;
-    top: 89px;
-    left: 40px;
-    display: inline-block;
-    width: 177px;
-    height: 12px;
-    cursor: pointer;
-}
-.div30 {
-    position: absolute;
-    top: 116px;
-    left: 40px;
-    display: inline-block;
-    width: 120px;
-    height: 12px;
-    cursor: pointer;
-}
-.footer-links2 {
-    position: absolute;
-    top: 53px;
-    left: 649px;
-    width: 217px;
-    height: 142px;
-}
-.div31 {
-    position: absolute;
-    top: 0px;
-    left: 19px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    display: inline-block;
-    width: 108px;
-    height: 15px;
-}
-.div32 {
-    position: absolute;
-    top: 35px;
-    left: 39px;
-    display: inline-block;
-    width: 153px;
-    height: 27px;
-}
-.div33 {
-    position: absolute;
-    top: 77px;
-    left: 39px;
-    display: inline-block;
-    width: 153px;
-    height: 12px;
-}
-.royalattuegmailcom {
-    position: absolute;
-    top: 104px;
-    left: 39px;
-    display: inline-block;
-    width: 177px;
-    height: 12px;
-}
-.footer-contacts {
-    position: absolute;
-    top: 53px;
-    left: 869px;
-    width: 216px;
-    height: 142px;
-}
-.mir-logo-icon {
-    position: absolute;
-    top: 0px;
-    left: 130px;
-    width: 55px;
-    height: 35px;
-    object-fit: cover;
-}
-.master-card-icon {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 55px;
-    height: 35px;
-    object-fit: cover;
-}
-.old-visa-logosvg-icon {
-    position: absolute;
-    top: 0px;
-    left: 65px;
-    width: 55px;
-    height: 35px;
-    object-fit: cover;
-}
-.mir-logo-parent {
-    position: absolute;
-    top: 213px;
-    left: 904px;
-    width: 185px;
-    height: 35px;
-}
-.footer-copyring {
-    position: absolute;
-    top: 287px;
-    left: calc(50% - 95px);
-    font-size: 12px;
-}
-.footer-line {
-    position: absolute;
-    top: 266.5px;
-    left: -0.5px;
-    border-top: 1px solid #000;
-    box-sizing: border-box;
-    width: 1141px;
-    height: 1px;
-}
-.footer {
-    position: absolute;
-    top: 8px;
-    left: 391px;
-    width: 1140px;
-    height: 287px;
-}
-.footer-background {
-    position: absolute;
-    top: 2351px;
-    left: 0px;
-    width: 1920px;
-    height: 316px;
-}
-.div {
-    width: 100%;
-    position: relative;
-    background-color: #fff;
-    height: 2667px;
-    overflow: hidden;
-    text-align: left;
-    font-size: 14px;
-    color: #000;
-    font-family: Montserrat;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* Шапка */
+header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Шапка всегда видна сверху */
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    max-height: 50px;
+}
+
+header .cart-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Начинка */
+.description {
+    margin-top: 100px;
+}
+
+.product-layout {
+    display: flex;
+    /* Расстояние между изображениями и текстом */
+}
+
+.product-images {
+    display: flex;
+    flex-direction: column; /* Ставим изображения в столбик */
+}
+
+.product-images img {
+    width: 400px;
+    height: 400px; /* Фиксированный размер изображения */
+    margin-left: 150px;
+    object-fit: cover; /* Обеспечивает корректное обрезание изображения */
+}
+
+.product-details {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+/* Стили для кнопок размеров */
+.size-options, .size {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Ширина кружка */
+    height: 40px; /* Высота кружка */
+    background-color: #DCDCDC; /* Светло-серый цвет фона */
+    border-radius: 50%; /* Делает кнопки круглыми */
+    font-size: 14px; /* Размер текста внутри кнопки */
+    font-weight: bold; /* Жирный текст */
+    margin: 10px; /* Отступ между кнопками */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход при наведении */
+}
+
+.size-options:hover, .size:hover {
+    background-color: #A0AECD; /* Изменение цвета при наведении */
+}
+
+/* Стили для кнопки "Добавить в корзину" */
+.product-button {
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.product-button-child {
+    width: 230px; /* Ширина кнопки */
+    height: 45px; /* Высота кнопки */
+    background-color: #A0AECD; /* Цвет фона кнопки */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    color: black; /* Цвет текста */
+    text-align: center; /* Центровка текста */
+    line-height: 45px; /* Выравнивание текста по центру */
+    border-radius: 5px; /* Сглаживание углов кнопки */
+    border: none; /* Убираем стандартную границу */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход при наведении */
+    margin-left: 150px;
+}
+
+.product-button-child:hover {
+    background-color: #8A9ECD; /* Изменение цвета кнопки при наведении */
+}
+
+.monogram {
+    display: block;
+    margin-left: 200px; /* Отступ от левого края */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Настройка для текста цены "2 500 byn" */
+.byn {
+    font-size: 20px;
+    margin-left: 200px; /* Отступ от левого края */
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* Настройка для списков внутри описания */
+.lv-monogram-container {
+    display: inline-block; /* Выстраиваем списки в строку */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+    width: 190px; /* Фиксированная ширина каждого столбца */
+    height: 95px; /* Фиксированная высота каждого столбца */
+    font-size: 14px; /* Размер шрифта для элементов списка */
+    line-height: 1.5; /* Межстрочный интервал */
+    margin-right: 65px; /* Отступ между столбцами */
+}
+
+/* Настройка для блока с рекомендациями по уходу */
+.c-container {
+    width: 445px; /* Фиксированная ширина блока */
+    margin-top: 20px;
+    margin-left: 200px;
+    font-size: 12px; /* Размер текста */
+    line-height: 1.5; /* Увеличиваем межстрочный интервал для читаемости */
+}
+
+
+/* товары */
+
+.text { 
+    width: 100%;
+    max-width: 1530px; 
+    height: auto;
+    padding: 20px;
+    margin: 30px auto 0 auto; 
+    display: flex; 
+    justify-content: flex-start; /* Устанавливаем начало выравнивания */
+}
+
+.title-2 {
+    font-size: 36px;
+    line-height: 1;
+    color: #000000; 
+    padding-left: 120px; /* Добавляем отступ слева для сдвига вправо */
+	font-weight: 700;
+}
+
+
+.products {
+	padding: 70px 0 0;
+	display: flex;
+	justify-content: center;
+}
+
+.products__cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 60px;
+	list-style-type: none;
+}
+
+.products__card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 30px 30px;
+	padding: 35px 20px 40px;
+	width: 160px;
+	min-height: 200px;
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+}
+
+.products__card:hover .products__card-nav {
+	opacity: 1;
+}
+
+.products__card-title {
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: 0.2px;
+}
+
+.products__card-price {
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.products__card-img {
+	margin: auto;
+    font-weight: 100px;
+    height: 100px;
+}
+
+.products__card-nav {
+	position: absolute;
+	left: 50%;
+	top: 53%;
+	display: flex;
+	opacity: 0;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.3s;
+}
+
+.products__card-item:not(:last-child) {
+	margin-right: 15px; /* Этот отступ можно оставить без изменений, так как он применяется только к элементам навигации внутри карточки */
+}
+
+
+/* Подвал */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer .payment-logos img {
+    max-height: 30px;
+    margin: 0 10px;
+}
