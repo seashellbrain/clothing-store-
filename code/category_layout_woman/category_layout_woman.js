@@ -130,3 +130,23 @@ function filterItems() {
     // Логика фильтрации товаров
     console.log(`Фильтрация товаров с минимальной ценой: ${minValue} руб.`);
   }
+
+
+  document.querySelectorAll('.products__card').forEach(card => {
+    card.addEventListener('click', () => {
+        const productId = card.closest('li').id; // Получаем ID товара
+        window.location.href = `./../product_card/product_card.html?id=${productId}`;
+    });
+});
+
+// Пример добавления товаров на страницу
+products.forEach(product => {
+  const productHtml = `
+      <div class="product-card">
+          <h3>${product.name}</h3>
+          <p>${product.price} $</p>
+          <a href="product_card.html?id=${product.id}">Подробнее</a>
+      </div>
+  `;
+  document.querySelector('.product-container').innerHTML += productHtml;
+});

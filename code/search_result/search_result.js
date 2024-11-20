@@ -19,30 +19,23 @@ function toggleCategories() {
 }
 
 
-// Проверка статуса пользователя
-function checkUserStatus() {
-    // Допустим, у нас есть функция, которая возвращает статус пользователя
-    // Пример: getUserStatus() возвращает "guest", "registered" или "loggedIn"
-    const userStatus = getUserStatus();
+document.querySelector('#search-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const query = document.querySelector('#search-input').value;
 
-    if (userStatus === "guest") {
-        // Если пользователь гость (незарегистрирован), перенаправляем на страницу регистрации
-        window.location.href = "./../../code/registration/registration.html";
-    } else if (userStatus === "registered") {
-        // Если пользователь зарегистрирован, но не вошел, перенаправляем на страницу входа
-        window.location.href = "./login_account.html";
-    } else if (userStatus === "loggedIn") {
-        // Если пользователь уже вошел, перенаправляем в личный кабинет
-        window.location.href = "./personal_cabinet.html";
-    }
-}
-
-// Имитируем функцию получения статуса пользователя
-function getUserStatus() {
-    // Здесь логика определения статуса пользователя, например, через cookies, sessionStorage или запрос к серверу.
-    // Вернем статус для примера. Замените на реальную проверку статуса.
-    return "guest"; // возможные значения: "guest", "registered", "loggedIn"
-}
-
-// Назначаем функцию на клик по кнопке "Личный кабинет"
-document.getElementById("text1").addEventListener("click", checkUserStatus);
+    fetch(`http://localhost:3000/search?query=${query}`)
+        .then(response => response.json())
+        .then(products => {
+            const resultsContainer = document.querySelector('.results-container');
+            resultsContainer.innerHTML = '';
+            products.forEach(product => {
+                resultsContainer.innerHTML += `
+                    <div class="product-card">
+                        <h3>${product.name}</h3>
+                        <p>${product.price} $</p>
+                        <a href="product_card.html?id=${product.id}">Подробнее</a>
+                    </div>
+                `;
+            });
+        });
+});
