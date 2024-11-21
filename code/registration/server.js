@@ -88,7 +88,7 @@ app.post('/login', (req, res) => {
 
         const user = results[0];
 
-        // Простое сравнение паролей
+
         if (password !== user.password) {
             return res.status(401).send('Неправильный email или пароль');
         }
