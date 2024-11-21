@@ -1,55 +1,20 @@
-var icons8512 = document.getElementById("icons8512");
-if(icons8512) {
-      icons8512.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
+// Получаем ID из параметров URL
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
 
-var basket2Icon = document.getElementById("basket2Icon");
-if(basket2Icon) {
-      basket2Icon.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text = document.getElementById("text");
-if(text) {
-      text.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text1 = document.getElementById("text1");
-if(text1) {
-      text1.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var productButtonContainer = document.getElementById("productButtonContainer");
-if(productButtonContainer) {
-      productButtonContainer.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text2 = document.getElementById("text2");
-if(text2) {
-      text2.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text3 = document.getElementById("text3");
-if(text3) {
-      text3.addEventListener("click", function (e) {
-            // Add your code here
-      });
-}
-
-var text4 = document.getElementById("text4");
-if(text4) {
-      text4.addEventListener("click", function (e) {
-            // Add your code here
-      });
+// Проверяем, передан ли ID
+if (productId) {
+    fetch(`/api/products/${productId}`)
+        .then(response => response.json())
+        .then(product => {
+            // Заполняем страницу данными товара
+            document.querySelector('.product-title').textContent = product.name;
+            document.querySelector('.product-price').textContent = `${product.price} BYN`;
+            document.querySelector('.product-description').textContent = product.description;
+            document.querySelector('.product-image').src = product.image1;
+            // Добавьте дополнительные поля по необходимости
+        })
+        .catch(error => console.error('Ошибка загрузки продукта:', error));
+} else {
+    console.error('ID продукта не указан');
 }

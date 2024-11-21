@@ -1,3 +1,5 @@
+
+
 /* Сбрасываем базовые стили для всего */
 body, html {
     margin: 0;
@@ -56,9 +58,26 @@ header .cart-container {
     flex: 1; /* Занимает оставшееся пространство */
 }
 
+
+.size-clothes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px; /* Отступ между текстом "Размер:" и кнопками */
+}
+
+.size-buttons {
+    display: flex;
+    flex-direction: row; /* Кнопки остаются горизонтальными */
+    gap: 10px; /* Расстояние между кнопками */
+    margin-left: 185px;
+}
+
+
+
 /* Стили для кнопок размеров */
 .size-options, .size {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 40px; /* Ширина кружка */
@@ -70,6 +89,7 @@ header .cart-container {
     margin: 10px; /* Отступ между кнопками */
     cursor: pointer; /* Курсор при наведении */
     transition: background-color 0.3s ease; /* Плавный переход при наведении */
+    
 }
 
 .size-options:hover, .size:hover {
@@ -98,6 +118,7 @@ header .cart-container {
     cursor: pointer; /* Курсор при наведении */
     transition: background-color 0.3s ease; /* Плавный переход при наведении */
     margin-left: 150px;
+    margin-bottom: 40px;
 }
 
 .product-button-child:hover {
@@ -111,6 +132,55 @@ header .cart-container {
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+/* Стили для состава */
+.composition {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    margin-left: 185px;
+
+}
+
+.composition ul {
+    list-style-type: disc;
+    padding-left: 40px; /* Отступ для списка */
+}
+
+/* Стили для ухода */
+.care-instructions {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding-left: 20px;
+        margin-left: 185px;
+
+}
+
+.care-instructions ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.care-instructions li::before {
+    content: "•"; /* Добавление маркера */
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    width: 20px;
+    margin-left: -20px;
+}
+
+
+/* Стили для происхождения */
+.origin {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    margin-left: 185px;
+
 }
 
 /* Настройка для текста цены "2 500 byn" */

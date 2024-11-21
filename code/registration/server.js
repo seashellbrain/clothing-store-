@@ -97,8 +97,51 @@ app.post('/login', (req, res) => {
     });
 });
 
+
+
+
+app.get('/search', (req, res) => {
+    const query = req.query.query;
+    connection.query('SELECT * FROM products WHERE LOWER(name) LIKE ?', [`%${query.toLowerCase()}%`], (error, results) => {
+        if (error) {
+            res.status(500).send('Ошибка на сервере');
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+
+app.get('/api/products/:id', async (req, res) => {
+    const productId = req.params.id;
+    try {
+        const [rows] = await connection.query('SELECT * FROM products WHERE id = ?', [productId]);
+        if (rows.length > 0) {
+            res.json(rows[0]);
+        } else {
+            res.status(404).send('Продукт не найден');
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Ошибка сервера');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 // Запуск сервера
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
+
+
+

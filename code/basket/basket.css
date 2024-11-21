@@ -60,7 +60,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding-left: 10px;
+    padding-left: 100px;
+
 }
 
 .product-size {
