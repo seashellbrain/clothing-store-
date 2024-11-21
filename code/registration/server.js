@@ -2,9 +2,11 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Импорт CORS
-const cors = require('cors');
-app.use(cors());
-const app = express();
+
+const app = express(); // Сначала объявляем app
+app.use(cors()); // Затем вызываем app.use(cors())
+app.use(bodyParser.json());
+
 
 // Подключение к базе данных
 const db = mysql.createConnection({
@@ -23,9 +25,6 @@ db.connect((err) => {
     }
 });
 
-// Middleware
-app.use(bodyParser.json());
-app.use(cors()); // Разрешить CORS
 
 // Роут для регистрации
 app.post('/register', (req, res) => {
@@ -101,10 +100,15 @@ app.post('/login', (req, res) => {
 
 
 
+// Маршрут для поиска
 app.get('/search', (req, res) => {
-    const query = req.query.query;
-    connection.query('SELECT * FROM products WHERE LOWER(name) LIKE ?', [`%${query.toLowerCase()}%`], (error, results) => {
+    const query = req.query.query.toLowerCase();
+
+    // Запрос в базу данных
+    const sql = 'SELECT * FROM products WHERE LOWER(name) LIKE ?';
+    db.query(sql, [`%${query}%`], (error, results) => {
         if (error) {
+            console.error('Ошибка выполнения запроса:', error);
             res.status(500).send('Ошибка на сервере');
         } else {
             res.json(results);

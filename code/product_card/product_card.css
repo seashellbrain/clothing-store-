@@ -266,6 +266,7 @@ header .cart-container {
 }
 
 .products__card-title {
+     text-decoration: none; /* Убираем подчеркивание */
 	overflow: hidden;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;

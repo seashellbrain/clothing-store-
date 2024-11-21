@@ -1,0 +1,72 @@
+.products {
+    padding: 70px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.products__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px; /* Отступы между карточками */
+    list-style-type: none; /* Убираем маркеры списка */
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+}
+
+.products__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px 30px;
+    padding: 35px 20px 40px;
+    width: 351px;
+    min-height: 485px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    
+}
+
+.products__card:hover {
+    border-color: #000;
+}
+
+.products__card-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
+
+.products__card-price {
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.products__card-img {
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .products__cards {
+        grid-template-columns: repeat(2, 1fr) !important; /* Две карточки на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .products__cards {
+        grid-template-columns: repeat(1, 1fr) !important; /* Одна карточка на маленьких экранах */
+    }
+}

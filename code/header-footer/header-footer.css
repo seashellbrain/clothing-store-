@@ -31,7 +31,7 @@
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
-    font-size: 12px; /* Decrease text size */
+    font-size: 14px; /* Decrease text size */
     color: #000;
     text-align: center; /* Center text inside the heading */
     font-weight: 100; /* Light font weight */
@@ -43,8 +43,8 @@
 
 /* Close Icon */
 .sale-close-icon {
-    width: 10px;
-    height: 1px;
+    width: 8px;
+    height: 8px;
     margin-left: 20px; /* Minimum space between text and icon */
     cursor: pointer; /* Pointer cursor */
 }
