@@ -32,7 +32,7 @@ function checkUserStatus() {
         // Если пользователь зарегистрирован, но не вошел, перенаправляем на страницу входа
         window.location.href = "./login_account.html";
     } else if (userStatus === "loggedIn") {
-        // Если пользователь уже вошел, перенаправляем в личный кабинет
+        
         window.location.href = "./personal_cabinet.html";
     }
 }
