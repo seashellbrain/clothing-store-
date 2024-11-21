@@ -28,3 +28,14 @@ document.querySelectorAll('.filter-link').forEach(link => {
     });
 });
 
+
+document.getElementById('fullName').addEventListener('input', function (e) {
+    // Разрешаем только буквы, пробелы и дефисы
+    const regex = /^[а-яА-ЯёЁa-zA-Z\s-]+$/;
+    const value = e.target.value;
+
+    // Если введенный текст не соответствует разрешенным символам, удаляем его
+    if (!regex.test(value)) {
+        e.target.value = value.replace(/[^а-яА-ЯёЁa-zA-Z\s-]/g, '');
+    }
+});
