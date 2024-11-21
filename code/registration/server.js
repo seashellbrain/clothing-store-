@@ -2,7 +2,8 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Импорт CORS
-
+const cors = require('cors');
+app.use(cors());
 const app = express();
 
 // Подключение к базе данных
@@ -115,21 +116,18 @@ app.get('/search', (req, res) => {
 app.get('/api/products/:id', async (req, res) => {
     const productId = req.params.id;
     try {
-        const [rows] = await connection.query('SELECT * FROM products WHERE id = ?', [productId]);
+        const query = 'SELECT * FROM products WHERE id = ?';
+        const [rows] = await db.promise().query(query, [productId]); // Используем promise
         if (rows.length > 0) {
             res.json(rows[0]);
         } else {
-            res.status(404).send('Продукт не найден');
+            res.status(404).send('Товар не найден');
         }
     } catch (error) {
         console.error(error);
         res.status(500).send('Ошибка сервера');
     }
 });
-
-
-
-
 
 
 
