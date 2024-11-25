@@ -18,7 +18,15 @@
     border-radius: 5px; /* Закругление углов */
     max-width: 200px; /* Ширина блока */
 }
+a {
+    text-decoration: none !important; /* Убираем подчеркивание */
+    color: inherit; /* Цвет наследуется от родительского */
+}
 
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Подчеркивание не появляется при наведении */
+    color: inherit; /* Цвет не меняется */
+}
 
 
 /* Стили для заголовка блока "СОЦИАЛЬНЫЕ СЕТИ" */
@@ -130,6 +138,7 @@
 }
 
 .products__card-title {
+    color: #000;
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;

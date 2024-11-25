@@ -27,13 +27,13 @@ function checkUserStatus() {
 
     if (userStatus === "guest") {
         // Если пользователь гость (незарегистрирован), перенаправляем на страницу регистрации
-        window.location.href = "./../../code/registration/registration.html";
+        window.location.href = "./../../code/login_account/login_account.html";
     } else if (userStatus === "registered") {
         // Если пользователь зарегистрирован, но не вошел, перенаправляем на страницу входа
-        window.location.href = "./login_account.html";
+        window.location.href = "./../../code/login_account/login_account.html";
     } else if (userStatus === "loggedIn") {
         // Если пользователь уже вошел, перенаправляем в личный кабинет
-        window.location.href = "./personal_cabinet.html";
+        window.location.href = "./../personal_account/data.html";
     }
 }
 
