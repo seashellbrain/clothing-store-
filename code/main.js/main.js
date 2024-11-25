@@ -62,3 +62,24 @@ document.querySelector('.header-search-btn').addEventListener('click', function 
         alert('Введите текст для поиска.');
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Получаем данные о корзине с сервера
+    fetch('http://localhost:3000/api/cart/1') // Замените `1` на текущий userId
+        .then(response => response.json())
+        .then(cart => {
+            let itemCount = 0;
+            let totalPrice = 0;
+
+            // Если корзина не пуста, пересчитываем данные
+            if (cart.length > 0) {
+                itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                totalPrice = cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
+            }
+
+            // Обновляем значения в HTML
+            document.getElementById('item-count').textContent = itemCount;
+            document.getElementById('total-price').textContent = totalPrice;
+        })
+        .catch(error => console.error('Ошибка загрузки корзины:', error));
+});

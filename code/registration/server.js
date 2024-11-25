@@ -103,9 +103,54 @@ app.post('/register', (req, res) => {
         });
     });
 });
+app.post('/api/cart', (req, res) => {
+    const { userId, productId, quantity, size } = req.body;
+    if (!userId || !productId || !size) {
+        return res.status(400).json({ message: 'Все поля обязательны.' });
+    }
 
+    const query = `
+        INSERT INTO cart (user_id, product_id, quantity, size)
+        VALUES (?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE quantity = quantity + VALUES(quantity)
+    `;
+    db.query(query, [userId, productId, quantity, size], (err) => {
+        if (err) {
+            console.error('Ошибка добавления товара в корзину:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json({ message: 'Товар добавлен в корзину.' });
+    });
+});
 
+app.get('/api/cart/:userId', (req, res) => {
+    const { userId } = req.params;
+    const query = `
+        SELECT c.id, c.quantity, c.size, p.name, p.price, p.image1
+        FROM cart c
+        JOIN products p ON c.product_id = p.id
+        WHERE c.user_id = ?
+    `;
+    db.query(query, [userId], (err, results) => {
+        if (err) {
+            console.error('Ошибка получения корзины:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json(results);
+    });
+});
 
+app.delete('/api/cart/:userId', (req, res) => {
+    const { userId } = req.params;
+    const query = 'DELETE FROM cart WHERE user_id = ?';
+    db.query(query, [userId], (err) => {
+        if (err) {
+            console.error('Ошибка очистки корзины:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json({ message: 'Корзина очищена.' });
+    });
+});
 app.get('/api/products/:id/similar', (req, res) => {
     const productId = req.params.id;
 

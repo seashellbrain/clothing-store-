@@ -86,37 +86,43 @@ if (productId) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    const sizeOptions = document.querySelectorAll('.size-options');
+
+    sizeOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            // Снимаем выделение со всех кнопок
+            sizeOptions.forEach(opt => opt.classList.remove('selected'));
+
+            // Добавляем класс "selected" на выбранную кнопку
+            option.classList.add('selected');
+        });
+    });
+
     const addToCartButton = document.querySelector('.product-button-child');
-
     addToCartButton.addEventListener('click', () => {
-        // Получаем данные о товаре
-        const productId = urlParams.get('id'); // ID товара из URL
-        const quantity = 1; // По умолчанию добавляем 1 товар
-        const userId = 1; // ID пользователя, замените на реальный ID из системы авторизации
-
-        if (!productId) {
-            alert('Товар не найден.');
+        const selectedSize = document.querySelector('.size-options.selected');
+        if (!selectedSize) {
+            alert('Пожалуйста, выберите размер.');
             return;
         }
 
-        // Отправляем запрос на сервер для добавления товара в корзину
+        // ID товара из URL
+        const productId = new URLSearchParams(window.location.search).get('id');
+
         fetch('http://localhost:3000/api/cart', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ userId, productId, quantity }),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                userId: 1, // Замените на текущего пользователя
+                productId: productId,
+                size: selectedSize.textContent, // Передаем выбранный размер
+                quantity: 1
+            })
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Ошибка добавления товара в корзину');
-                }
-                return response.json();
-            })
-            .then(data => {
-                alert(data.message);
-                updateCartDisplay(); // Обновляем корзину в интерфейсе
-            })
-            .catch(error => console.error('Ошибка:', error));
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+        })
+        .catch(error => console.error('Ошибка добавления в корзину:', error));
     });
 });

@@ -223,7 +223,11 @@ header .cart-container {
     display: flex; 
     justify-content: flex-start; /* Устанавливаем начало выравнивания */
 }
-
+.size-options.selected {
+    background-color: #8A9ECD; /* Цвет выделения */
+    color: white; /* Цвет текста */
+    border: 2px solid black; /* Обозначение выбора */
+}
 .title-2 {
     font-size: 36px;
     line-height: 1;
