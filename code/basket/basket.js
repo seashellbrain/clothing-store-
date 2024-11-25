@@ -1,75 +1,101 @@
-function createCartItem(item) {
-    return `
-        <div class="row border-bottom pb-3 mb-3 align-items-center">
-            <div class="col-1 d-flex align-items-start">
-                <label class="custom-checkbox">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
-            <div class="col-2">
-                <img src="${item.image1}" alt="${item.name}" class="img-fluid">
-            </div>
-            <div class="col-5 d-flex flex-column product-info">
-                <h5>${item.name}</h5>
-                <p>Модель: ${item.model || 'Не указана'}</p>
-                <p>Размер: <span class="product-size">${item.size}</span></p>
-                <button class="button_tabl">Таблица размеров</button>
-            </div>
-            <div class="col-4 text-end order-summary">
-                <h4 class="total-price">Итого: <strong>${item.price * item.quantity} BYN</strong></h4>
-                <button class="btn btn-danger remove-item" data-id="${item.id}">Удалить</button>
-                <p class="order-terms mt-3 consent-text">
-                    Оформляя заказ, вы соглашаетесь с обработкой персональных данных в соответствии с политикой обработки персональных данных, а также принимаете условия пользовательского соглашения.
-                </p>
-                <div class="delivery-options">
-                    <div class="delivery-option">
-                        <img src="./../../img/basket/icons_car.svg" alt="Courier Icon" class="delivery-icon">
-                        <span>Курьер сегодня</span>
-                    </div>
-                    <div class="delivery-option">
-                        <img src="./../../img/basket/icons_letter.svg" alt="Mail Icon" class="delivery-icon">
-                        <span>Почта с 12 октября</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-}
 document.addEventListener('DOMContentLoaded', () => {
+    const selectAllCheckbox = document.getElementById('select-all-checkbox');
+
+    // Загружаем корзину
     function loadCart() {
-        fetch('http://localhost:3000/api/cart/1') // Замените `1` на текущего пользователя (userId)
+        fetch('http://localhost:3000/api/cart/1') // Замените 1 на текущего пользователя
             .then(response => response.json())
             .then(cartItems => {
                 const cartItemsContainer = document.getElementById('cart-items');
-                cartItemsContainer.innerHTML = '';
+                const totalAmountElement = document.getElementById('total-amount');
 
-                if (cartItems.length === 0) {
-                    cartItemsContainer.innerHTML = '<p>Ваша корзина пуста.</p>';
+                cartItemsContainer.innerHTML = ''; // Очищаем контейнер
+                let totalPrice = 0;
+
+                if (!cartItems || cartItems.length === 0) {
+                    // Если корзина пуста, перенаправляем на страницу "пустой корзины"
+                    window.location.href = './../clean_basket/clean_basket.html'; // Убедитесь, что путь правильный
                     return;
                 }
 
+                // Добавляем товары
                 cartItems.forEach(item => {
-                    cartItemsContainer.innerHTML += createCartItem(item);
+                    totalPrice += item.price * item.quantity;
+
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'row border-bottom pb-3 mb-3 align-items-center';
+
+                    itemElement.innerHTML = `
+                        <div class="col-1 d-flex align-items-start">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" class="select-item" data-id="${item.id}">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="col-2">
+                            <img src="${item.image1}" alt="${item.name}" class="img-fluid">
+                        </div>
+                        <div class="col-5 d-flex flex-column product-info">
+                            <h5>${item.name}</h5>
+                            <p>Модель: ${item.model || 'Не указана'}</p>
+                            <p>Размер: <span class="product-size">${item.size}</span></p>
+                            <p>Цена: <strong>${item.price} BYN</strong></p>
+                        </div>
+                    `;
+
+                    cartItemsContainer.appendChild(itemElement);
                 });
 
-                // Добавляем обработчики удаления
-                document.querySelectorAll('.remove-item').forEach(button => {
-                    button.addEventListener('click', () => {
-                        const itemId = button.getAttribute('data-id');
-                        removeFromCart(itemId);
-                    });
-                });
+                // Обновляем итоговую сумму
+                totalAmountElement.textContent = `${totalPrice} BYN`;
+
+                // Обновляем обработчики чекбоксов
+                attachCheckboxHandlers(cartItems);
             })
             .catch(error => console.error('Ошибка загрузки корзины:', error));
     }
 
-    function removeFromCart(itemId) {
-        fetch(`http://localhost:3000/api/cart/item/${itemId}`, { method: 'DELETE' })
-            .then(() => loadCart())
-            .catch(error => console.error('Ошибка удаления товара:', error));
+    // Функция для обновления итоговой суммы
+    function updateTotalPrice(cartItems) {
+        const selectedItems = document.querySelectorAll('.select-item:checked');
+        const totalAmountElement = document.getElementById('total-amount');
+        let totalPrice = 0;
+
+        selectedItems.forEach(selected => {
+            const itemId = selected.getAttribute('data-id');
+            const item = cartItems.find(i => i.id == itemId); // Находим товар по ID
+            if (item) {
+                totalPrice += item.price * item.quantity;
+            }
+        });
+
+        totalAmountElement.textContent = `${totalPrice} BYN`;
     }
 
-    // Загрузка корзины при загрузке страницы
+    // Обработчики чекбоксов
+    function attachCheckboxHandlers(cartItems) {
+        const itemCheckboxes = document.querySelectorAll('.select-item');
+
+        // Обработчик для выбора всех товаров
+        selectAllCheckbox.addEventListener('change', (event) => {
+            const isChecked = event.target.checked;
+
+            itemCheckboxes.forEach((checkbox) => {
+                checkbox.checked = isChecked; // Отмечаем/снимаем все
+            });
+
+            // Обновляем итоговую сумму
+            updateTotalPrice(cartItems);
+        });
+
+        // Обработчик для каждого чекбокса
+        itemCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                updateTotalPrice(cartItems); // Обновляем итоговую сумму
+            });
+        });
+    }
+
+    // Загружаем корзину при загрузке страницы
     loadCart();
 });

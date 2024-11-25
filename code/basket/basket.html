@@ -98,14 +98,39 @@
 		</heder>
 		<main class="container mt-5">
 			<h1 class="cart-page">Корзина</h1>
-			<div id="cart-items">
-				<!-- Здесь динамически появятся товары -->
-			</div>
-			<div id="cart-summary" class="order-summary text-end">
-				<!-- Итоговая сумма -->
+			<label class="custom-checkbox select-all">
+				<input type="checkbox" id="select-all-checkbox">
+				<span class="checkmark"></span>
+				<span>Выбрать все</span>
+			</label>
+			<hr class="hr_1">
+		
+			<div class="cart-container">
+				<!-- Список товаров -->
+				<div id="cart-items" class="row">
+					<!-- Товары динамически добавляются сюда -->
+				</div>
+			
+				<!-- Итоговый блок -->
+				<div id="cart-summary" class="order-summary">
+					<h4 class="total-price">Итого: <strong id="total-amount">0 BYN</strong></h4>
+					<button class="button">Перейти к оформлению</button>
+					<p class="text_1">
+						Оформляя заказ, вы соглашаетесь с обработкой персональных данных в соответствии с политикой обработки персональных данных, а также принимаете условия пользовательского соглашения.
+					</p>
+					<div class="delivery-options">
+						<div class="delivery-option">
+							<img src="./../../img/basket/icons_car.svg" alt="Courier Icon" class="delivery-icon">
+							<span>Курьер сегодня</span>
+						</div>
+						<div class="delivery-option">
+							<img src="./../../img/basket/icons_letter.svg" alt="Mail Icon" class="delivery-icon">
+							<span>Почта с 12 октября</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
-			
 	</div>
 		
     		
