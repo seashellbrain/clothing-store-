@@ -16,7 +16,19 @@
     background-color: rgba(255, 255, 255, 0.97);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/* Основной стиль ссылки */
+.dynamic-link {
+    color: #A0AECD; /* Основной цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Указываем, что это кликабельный элемент */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
 
+/* Стиль при наведении */
+.dynamic-link:hover {
+    color: #ffffff; /* Белый цвет при наведении */
+    cursor: pointer;
+}
 .divider {
     width: 210px;
     border-top: 1px solid #AEAEAE;
@@ -46,7 +58,9 @@ h2 {
     font-weight: 400; /* Обычная жирность */
     color: #000000; /* Черный цвет текста */
 }
-
+.aa{
+    text-decoration: underline !important; 
+}
 .form-link a {
     font-size: 12px; /* Размер текста */
     font-weight: 400; /* Обычная жирность */

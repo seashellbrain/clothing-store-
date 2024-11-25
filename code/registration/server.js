@@ -2,7 +2,9 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Импорт CORS
+const crypto = require('crypto');
 
+const codes = {};
 const app = express(); // Сначала объявляем app
 app.use(cors()); // Затем вызываем app.use(cors())
 app.use(bodyParser.json());
@@ -25,7 +27,39 @@ db.connect((err) => {
     }
 });
 
+app.post('/forgot-password', (req, res) => {
+    const { email } = req.body;
 
+    if (!email) {
+        return res.status(400).json({ message: 'Email обязателен' });
+    }
+
+    // Генерация случайного кода
+    const code = crypto.randomInt(100000, 999999);
+    codes[email] = code;
+
+    console.log(`Код для ${email}: ${code}`); // Для тестирования
+
+    // Здесь будет реальная отправка email через SMTP, например с nodemailer
+    res.status(200).json({ message: 'Код отправлен' });
+    
+});
+
+// Маршрут для проверки кода
+app.post('/verify-code', (req, res) => {
+    const { email, code } = req.body;
+
+    if (!email || !code) {
+        return res.status(400).json({ message: 'Все поля обязательны' });
+    }
+
+    if (codes[email] && codes[email] === parseInt(code, 10)) {
+        delete codes[email]; // Удаляем использованный код
+        return res.status(200).json({ message: 'Код подтвержден' });
+    }
+
+    res.status(400).json({ message: 'Неправильный код' });
+});
 // Роут для регистрации
 app.post('/register', (req, res) => {
     const { username, email, phone, gender, password } = req.body;
@@ -69,6 +103,85 @@ app.post('/register', (req, res) => {
         });
     });
 });
+app.post('/api/cart', (req, res) => {
+    const { userId, productId, quantity, size } = req.body;
+    if (!userId || !productId || !size) {
+        return res.status(400).json({ message: 'Все поля обязательны.' });
+    }
+
+    const query = `
+        INSERT INTO cart (user_id, product_id, quantity, size)
+        VALUES (?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE quantity = quantity + VALUES(quantity)
+    `;
+    db.query(query, [userId, productId, quantity, size], (err) => {
+        if (err) {
+            console.error('Ошибка добавления товара в корзину:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json({ message: 'Товар добавлен в корзину.' });
+    });
+});
+
+app.get('/api/cart/:userId', (req, res) => {
+    const { userId } = req.params;
+    const query = `
+        SELECT c.id, c.quantity, c.size, p.name, p.price, p.image1
+        FROM cart c
+        JOIN products p ON c.product_id = p.id
+        WHERE c.user_id = ?
+    `;
+    db.query(query, [userId], (err, results) => {
+        if (err) {
+            console.error('Ошибка получения корзины:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json(results);
+    });
+});
+
+app.delete('/api/cart/:userId', (req, res) => {
+    const { userId } = req.params;
+    const query = 'DELETE FROM cart WHERE user_id = ?';
+    db.query(query, [userId], (err) => {
+        if (err) {
+            console.error('Ошибка очистки корзины:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json({ message: 'Корзина очищена.' });
+    });
+});
+app.get('/api/products/:id/similar', (req, res) => {
+    const productId = req.params.id;
+
+    // Проверяем, есть ли товар с таким ID
+    const queryProduct = 'SELECT * FROM products WHERE id = ?';
+    db.query(queryProduct, [productId], (err, results) => {
+        if (err || results.length === 0) {
+            console.error('Товар не найден или ошибка запроса:', err);
+            return res.status(404).json({ message: 'Товар не найден' });
+        }
+
+        const product = results[0];
+        const categoryPrefix = productId.split('-')[0]; // Определяем категорию по префиксу ID
+
+        // Получаем похожие товары из той же категории
+        const querySimilar = `
+            SELECT * FROM products
+            WHERE id LIKE ? AND id != ?
+            LIMIT 4
+        `;
+        db.query(querySimilar, [`${categoryPrefix}-%`, productId], (err, similarProducts) => {
+            if (err) {
+                console.error('Ошибка получения похожих товаров:', err);
+                return res.status(500).json({ message: 'Ошибка сервера' });
+            }
+            res.json(similarProducts);
+        });
+    });
+});
+
+
 
 
 
@@ -137,6 +250,11 @@ app.get('/api/products/:id', async (req, res) => {
 
 
 
+
+
+app.use((req, res, next) => {
+    res.status(404).sendFile(__dirname + './../404/eror.html'); // Укажите путь к вашей странице eror.html
+});
 
 
 // Запуск сервера

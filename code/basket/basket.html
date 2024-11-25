@@ -57,8 +57,8 @@
 					<div class="cart-container">
 						<img src="./../../img/header/basket.png" alt="Корзина" class="cart-icon">
 						<div class="cart-text">
-							<span>Товаров: 1 шт.</span>
-							<span>Сумма: 100 руб.</span>
+							<span>Товаров: <span id="cart-item-count">0</span> шт.</span>
+							<span>Сумма: <span id="cart-total-price">0</span> руб.</span>
 						</div>
 					</div>
 			</div>
@@ -96,60 +96,41 @@
 			</div>
 			
 		</heder>
-		<div class="container mt-5">
-			<div class="row mb-3">
-				<div class="col-12">
-					<h1 class="cart-page">КОРЗИНА <span class="text-muted">1 товар</span></h1>
+		<main class="container mt-5">
+			<h1 class="cart-page">Корзина</h1>
+			<label class="custom-checkbox select-all">
+				<input type="checkbox" id="select-all-checkbox">
+				<span class="checkmark"></span>
+				<span>Выбрать все</span>
+			</label>
+			<hr class="hr_1">
+		
+			<div class="cart-container">
+				<!-- Список товаров -->
+				<div id="cart-items" class="row">
+					<!-- Товары динамически добавляются сюда -->
 				</div>
-			</div>
-			<div class="row mb-4 align-items-center">
-				<div class="col-auto">
-					<label class="custom-checkbox">
-						<input type="checkbox">
-						<span class="checkmark"></span>
-						<span class="select-all-text">Выбрать все</span>
-					</label>
-				</div>
-			</div>
-			<hr class="divider"> 
-			   <!-- Товар и итоговая информация -->
-				<div class="row border-bottom pb-3 mb-3 align-items-center">
-					<div class="col-1 d-flex align-items-start">
-						<label class="custom-checkbox">
-							<input type="checkbox">
-							<span class="checkmark"></span>
-						</label>
-					</div>
-					<div class="col-2">
-						<img src="./../../img/basket/product_photo.png" alt="Product Image" class="img-fluid">
-					</div>
-					<div class="col-5 d-flex flex-column product-info">
-						<h5>Куртка из шерсти</h5>
-						<p>Модель: 122992</p>
-						<p>Размер: <span class="product-size">M</span></p>
-						<button class="button_tabl">Таблица размеров</button>
-					</div>
-					<div class="col-4 text-end order-summary">
-						<h4 class="total-price">Итого: <strong>2500 BYN</strong></h4>
-						<button class="button">Перейти к оформлению</button>
-						<p class="order-terms mt-3 consent-text">
-							Оформляя заказ, вы соглашаетесь с обработкой персональных данных в соответствии с политикой обработки персональных данных, а также принимаете условия пользовательского соглашения.
-						</p>
-						<div class="delivery-options">
-							<div class="delivery-option">
-								<img src="./../../img/basket/icons_car.svg" alt="Courier Icon" class="delivery-icon">
-								<span>Курьер сегодня</span>
-							</div>
-							<div class="delivery-option">
-								<img src="./../../img/basket/icons_letter.svg" alt="Mail Icon" class="delivery-icon">
-								<span>Почта с 12 октября</span>
-							</div>
+			
+				<!-- Итоговый блок -->
+				<div id="cart-summary" class="order-summary">
+					<h4 class="total-price">Итого: <strong id="total-amount">0 BYN</strong></h4>
+					<button class="button">Перейти к оформлению</button>
+					<p class="text_1">
+						Оформляя заказ, вы соглашаетесь с обработкой персональных данных в соответствии с политикой обработки персональных данных, а также принимаете условия пользовательского соглашения.
+					</p>
+					<div class="delivery-options">
+						<div class="delivery-option">
+							<img src="./../../img/basket/icons_car.svg" alt="Courier Icon" class="delivery-icon">
+							<span>Курьер сегодня</span>
+						</div>
+						<div class="delivery-option">
+							<img src="./../../img/basket/icons_letter.svg" alt="Mail Icon" class="delivery-icon">
+							<span>Почта с 12 октября</span>
 						</div>
 					</div>
-					
 				</div>
 			</div>
-			
+		</main>
 	</div>
 		
     		

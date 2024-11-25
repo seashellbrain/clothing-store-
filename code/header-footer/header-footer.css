@@ -286,7 +286,7 @@ hr {
 
 .category-dropdown p {
     margin: 0;
-    padding: 8px 0; /* Отступы между пунктами */
+    padding: 5px 0; /* Отступы между пунктами */
 }
 
 /* Стили для кнопки при открытом меню */
@@ -329,7 +329,7 @@ hr {
 }
 
 .category-button:hover {
-    background-color: #4a657e; /* Darker background on hover */
+    background-color: #5c6a8b; /* Darker background on hover */
 }
 
 .sub-menu-nav {

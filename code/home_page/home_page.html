@@ -52,13 +52,13 @@
 				</div>
 
 			</div>
-				<div class="cart-container">
-					<img src="./../../img/header/basket.png" alt="Корзина" class="cart-icon">
-					<div class="cart-text">
-						<span>Товаров: 1 шт.</span>
-						<span>Сумма: 100 руб.</span>
-					</div>
+			<div class="cart-container">
+				<img src="./../../img/header/basket.png" alt="Корзина" class="cart-icon">
+				<div class="cart-text">
+					<span>Товаров: <span id="item-count">0</span> шт.</span>
+					<span>Сумма: <span id="total-price">0</span> руб.</span>
 				</div>
+			</div>
 		</div>
 		<div class="sub-menu">
 			<div class="sale-background"></div>
@@ -67,6 +67,7 @@
 					<button class="category-button" onclick="toggleCategories()">ВСЕ КАТЕГОРИИ</button>
 					<div id="category-dropdown" class="category-dropdown">
 						<div class="menu-item">
+							
 							<img src="./../../img/header/man_cloth.png" alt="Мужская одежда" class="icon1">
 							<p>Мужская одежда</p>
 						</div>
@@ -123,26 +124,29 @@
                 <h3 class="title-2">Популярные товары</h3>
             </div>
 			<ul class="products__cards">
-				<li class="mix PC fade-in" id="product-1">
+				<li class="mix PC fade-in skirts-shorts" id="product-1">
+					<a href="./../../code/product_card/product_card.html?id=skirts-shorts-1-1">
 					<article class="products__card">
-						<img class="products__card-img" src="./../../img/home_page/pop_product_1.png"
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/product_1_1.png"
 							alt="photo of furniture" />
-						<h4  class="products__card-title">Louis Vuitton 
-							<br>paris</h4>
-						<span class="products__card-price">2 000 <span>byn</span></span>
+						<h4  class="products__card-title">Мини-юбка с 
+							<br>плиссировкой и бантом</h4>
+						<span class="products__card-price">129.00 <span>byn</span></span>
 					</article>
+				</a>
 				</li>
 
-				<li class="mix PC fade-in" id="product-2">
+				<li class="mix PC fade-in skirts-shorts" id="product-4">
+					<a href="./../../code/product_card/product_card.html?id=skirts-shorts-2-1">
 					<article class="products__card">
-						<img class="products__card-img" src="./../../img/home_page/pop_product_2.png"
+						<img class="products__card-img" src="./../../img/category_woman/skirtsShortsFilter/product_2_1.png"
 							alt="photo of furniture" />
-						<h4  class="products__card-title">Louis Vuitton 
-							<br>bote </h4>
-						<span class="products__card-price">800 <span>byn</span></span>
+						<h4  class="products__card-title">Кожаные шорты с заклепками
+							<br>заклепками</h4>
+						<span class="products__card-price">299.00 <span>byn</span></span>
 					</article>
+					</a>
 				</li>
-
 				<li class="mix PC fade-in" id="product-3">
 					<article class="products__card">
 						<img class="products__card-img" src="./../../img/home_page/pop_product_3.png"
