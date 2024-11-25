@@ -61,16 +61,16 @@
 }
 
 .filter-link {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
+    text-decoration: none; /* Убираем подчеркивание, если нужно */
+    color: black; /* Цвет текста ссылки */
+    cursor: pointer; /* Добавляем указатель курсора для интерактивности */
 }
 
-.filter-box ul li:hover .filter-link {
-    text-decoration: none;
-    color: #A0AECD;
+.filter-link:hover {
+    color: #A0AECD; /* Цвет ссылки при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении */
 }
+
 
 .form-label {
     color: #000;
@@ -166,8 +166,8 @@
 }
 
 .text_1 {
-    width: 293px;
-    height: 31px;
+    width: 300px;
+    height: 30px;
     color: #000;
     font-family: Montserrat;
     font-size: 32px;
@@ -175,11 +175,12 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
+    margin-left: 500px;
 }
 
 .text_2 {
-    width: 359px;
-    height: 23px;
+    width: 400px;
+    height: 30px;
     color: #000;
     font-family: Montserrat;
     font-size: 24px;
@@ -188,7 +189,162 @@
     line-height: normal;
     text-align: center;
     margin-bottom: 150px;
+    margin-left: 450px;
 }
+
+/* data */
+
+select#gender {
+    width: 100%; /* Автоматически подстраивать ширину под доступное пространство */
+    min-width: 180px; /* Минимальная ширина для корректного отображения текста */
+    max-width: 300px; /* Максимальная ширина, если необходимо */
+    font-size: 14px; /* Убедитесь, что шрифт достаточно маленький, чтобы уместить текст */
+    padding: 5px;
+    border-radius: 3px;
+}
+
+
+/* bonuses*/ 
+
+.program-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Контейнер программы */
+.bonus-program-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+/* Карточка */
+.bonus-card-container {
+    position: relative; /* Для родительского контейнера, чтобы текст был позиционирован внутри него */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bonus-card {
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+    background-image: url('./../../img/personal_account/card.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* Устанавливаем для текста возможность позиционирования */
+}
+
+.card-text {
+    position: absolute;
+    top: 15px; /* Расстояние от верхнего края карточки */
+    left: 15px; /* Расстояние от левого края карточки */
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff; /* Цвет текста */
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 0px 4px rgba(0, 0, 0, 0.6); /* Тень для читаемости на фоне */
+}
+/* Форма */
+.bonus-form {
+    flex: 1;
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea.form-control {
+    height: 80px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background: #A0AECD;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #889abb;
+}
+
+.backlight {
+    width: 200px;
+height: 200px;
+flex-shrink: 0;
+border-radius: 550px;
+background: radial-gradient(50% 50% at 50% 50%, #A0AECD 54%, rgba(247, 247, 251, 0.00) 100%);
+text-align: left;
+}
+
+.block {
+height: 300px;
+flex-shrink: 0;
+border-radius: 3px;
+border: 3px solid #A0AECD;
+min-width: 300px;
+margin-left: 400px;
+}
+
+.personal-bonuses-form .form-label-bonuses {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.personal-bonuses-form .custom-input-bonuses {
+    width: 50%;
+    height: 10px;
+    border-radius: 3px; /* Закругленные углы */
+    padding: 5px; /* Внутренние отступы */
+    font-size: 14px; /* Размер шрифта */
+    margin-left: 5px;
+    margin-right: 5px;
+}    
+
+.card {
+    width: 493px; /* фиксированная ширина */
+    padding: 274px; /* фиксированная высота */
+    background-image: url('./../../img/personal_account/card.png'); /* путь к изображению */
+    background-repeat: no-repeat; /* отключение повторения */
+    border: none; /* удаление границы */
+}
+
+
 
 /*Payment_delivary*/
 .payment-container {
@@ -226,6 +382,11 @@
     .payment-box_1, .payment-box_2 {
         max-width: 100%;
     }
+    
+.form-control{
+ width: 40px;   
+}
+
 }
 
 .address-item {
@@ -305,7 +466,6 @@
 .button_pay_2:hover {
     border: 2px solid black;
 }
-
 
 
 
