@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(cart => {
                 if (!cart || cart.length === 0) {
-                    // Если корзина пуста, перенаправляем на clean_basket.html
+
                     window.location.href = './../clean_basket/clean_basket.html';
                 } else {
-                    // Если есть товары, перенаправляем на страницу корзины
+
                     window.location.href = './../basket/basket.html';
                 }
             })
