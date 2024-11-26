@@ -277,10 +277,9 @@ header .cart-container {
 }
 
 .products__card-title {
+    margin-top: 20px; /* Отступ от изображения */
      text-decoration: none; /* Убираем подчеркивание */
 	overflow: hidden;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
 	text-align: center;
 	font-family: Montserrat;
 	font-size: 14px;
@@ -290,10 +289,11 @@ header .cart-container {
 }
 
 .products__card-price {
-	font-size: 12px;
-	color: #000000;
-	font-weight: bold;
-	font-size: 24px;
+    font-size: 24px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center; /* Центровка текста */
+    margin: 10px 0; /* Добавляем отступы сверху и снизу */
 }
 
 .products__card-img {
@@ -336,3 +336,13 @@ footer .payment-logos img {
 }
 
 
+.products__card-link {
+    text-decoration: none !important; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет текста */
+    display: block; /* Делаем весь элемент кликабельным */
+}
+
+.products__card-link:hover {
+    color: #000000; /* Изменение цвета при наведении */
+    text-decoration: none !important; /* Убираем подчеркивание */
+}

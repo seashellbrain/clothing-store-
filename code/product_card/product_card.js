@@ -65,13 +65,15 @@ if (productId) {
                     productsToShow.forEach(similarProduct => {
                         const card = document.createElement('li');
                         card.classList.add('products__card');
-        
+                    
                         card.innerHTML = `
-                            <img class="products__card-img" src="${similarProduct.image1}" alt="${similarProduct.name}" />
-                            <h4 class="products__card-title">${similarProduct.name}</h4>
-                            <p class="products__card-price">${similarProduct.price} BYN</p>
+                            <a href="./product_card.html?id=${similarProduct.id}" class="products__card-link">
+                                <img class="products__card-img" src="${similarProduct.image1}" alt="${similarProduct.name}" />
+                                <h4 class="products__card-title">${similarProduct.name}</h4>
+                                <p class="products__card-price">${similarProduct.price} BYN</p>
+                            </a>
                         `;
-        
+                    
                         similarContainer.appendChild(card);
                     });
                 })
