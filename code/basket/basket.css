@@ -205,3 +205,15 @@ body {
     stroke-width: 1px;
     stroke: var(--Accent_2, #000);
 }
+
+.delete-item-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.delete-item-btn .trash-icon {
+    width: 20px;
+    height: 20px;
+}

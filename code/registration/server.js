@@ -1,22 +1,22 @@
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Импорт CORS
+const cors = require('cors'); 
 const crypto = require('crypto');
 
 const codes = {};
-const app = express(); // Сначала объявляем app
-app.use(cors()); // Затем вызываем app.use(cors())
+const app = express(); 
+app.use(cors());
 app.use(bodyParser.json());
 
 
-// Подключение к базе данных
+
 const db = mysql.createConnection({
-    host: '127.0.0.1', // Или 'localhost'
-    user: 'root', // Укажите пользователя
-    password: '1perestroykA1', // Укажите ваш пароль, если он есть
+    host: '127.0.0.1', 
+    user: 'root', 
+    password: '1perestroykA1', 
     database: 'clothing_site',
-    port: 3306, // Проверьте порт (по умолчанию 3306)
+    port: 3306, 
 });
 
 db.connect((err) => {
@@ -34,18 +34,18 @@ app.post('/forgot-password', (req, res) => {
         return res.status(400).json({ message: 'Email обязателен' });
     }
 
-    // Генерация случайного кода
+
     const code = crypto.randomInt(100000, 999999);
     codes[email] = code;
 
-    console.log(`Код для ${email}: ${code}`); // Для тестирования
+    console.log(`Код для ${email}: ${code}`); 
 
-    // Здесь будет реальная отправка email через SMTP, например с nodemailer
+
     res.status(200).json({ message: 'Код отправлен' });
     
 });
 
-// Маршрут для проверки кода
+
 app.post('/verify-code', (req, res) => {
     const { email, code } = req.body;
 
@@ -54,7 +54,7 @@ app.post('/verify-code', (req, res) => {
     }
 
     if (codes[email] && codes[email] === parseInt(code, 10)) {
-        delete codes[email]; // Удаляем использованный код
+        delete codes[email]; 
         return res.status(200).json({ message: 'Код подтвержден' });
     }
 
@@ -103,6 +103,19 @@ app.post('/register', (req, res) => {
         });
     });
 });
+
+app.delete('/api/cart/:id', (req, res) => {
+    const { id } = req.params;
+    const query = 'DELETE FROM cart WHERE id = ?';
+    db.query(query, [id], (err) => {
+        if (err) {
+            console.error('Ошибка удаления товара из корзины:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+        res.json({ message: 'Товар успешно удалён из корзины.' });
+    });
+});
+
 app.post('/api/cart', (req, res) => {
     const { userId, productId, quantity, size } = req.body;
     if (!userId || !productId || !size) {
@@ -140,21 +153,12 @@ app.get('/api/cart/:userId', (req, res) => {
     });
 });
 
-app.delete('/api/cart/:userId', (req, res) => {
-    const { userId } = req.params;
-    const query = 'DELETE FROM cart WHERE user_id = ?';
-    db.query(query, [userId], (err) => {
-        if (err) {
-            console.error('Ошибка очистки корзины:', err);
-            return res.status(500).json({ message: 'Ошибка сервера' });
-        }
-        res.json({ message: 'Корзина очищена.' });
-    });
-});
+
+
 app.get('/api/products/:id/similar', (req, res) => {
     const productId = req.params.id;
 
-    // Проверяем, есть ли товар с таким ID
+    
     const queryProduct = 'SELECT * FROM products WHERE id = ?';
     db.query(queryProduct, [productId], (err, results) => {
         if (err || results.length === 0) {
@@ -163,9 +167,9 @@ app.get('/api/products/:id/similar', (req, res) => {
         }
 
         const product = results[0];
-        const categoryPrefix = productId.split('-')[0]; // Определяем категорию по префиксу ID
+        const categoryPrefix = productId.split('-')[0]; 
 
-        // Получаем похожие товары из той же категории
+
         const querySimilar = `
             SELECT * FROM products
             WHERE id LIKE ? AND id != ?
@@ -213,11 +217,11 @@ app.post('/login', (req, res) => {
 
 
 
-// Маршрут для поиска
+
 app.get('/search', (req, res) => {
     const query = req.query.query.toLowerCase();
 
-    // Запрос в базу данных
+
     const sql = 'SELECT * FROM products WHERE LOWER(name) LIKE ?';
     db.query(sql, [`%${query}%`], (error, results) => {
         if (error) {
@@ -234,7 +238,7 @@ app.get('/api/products/:id', async (req, res) => {
     const productId = req.params.id;
     try {
         const query = 'SELECT * FROM products WHERE id = ?';
-        const [rows] = await db.promise().query(query, [productId]); // Используем promise
+        const [rows] = await db.promise().query(query, [productId]); 
         if (rows.length > 0) {
             res.json(rows[0]);
         } else {
@@ -253,7 +257,7 @@ app.get('/api/products/:id', async (req, res) => {
 
 
 app.use((req, res, next) => {
-    res.status(404).sendFile(__dirname + './../404/eror.html'); // Укажите путь к вашей странице eror.html
+    res.status(404).sendFile(__dirname + './../404/eror.html'); 
 });
 
 
