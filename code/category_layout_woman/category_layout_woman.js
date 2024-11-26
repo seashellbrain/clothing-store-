@@ -71,7 +71,7 @@ function filterItems() {
     priceMin.textContent = `${minValue} руб.`;
   
     // Предполагаем, что максимальная цена остается фиксированной
-    priceMax.textContent = `10 000 руб.`;
+    priceMax.textContent = `2 000 руб.`;
   }
   
   function applyPriceFilter() {
