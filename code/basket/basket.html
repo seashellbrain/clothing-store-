@@ -14,88 +14,89 @@
   </head>
 </head>
 <body>
-  	
-  	<div class="div">
-		<heder class="div ">
-			<div class="sale">
-				<div class="sale-heading">
-					Получите ежедневную скидку на покупки от 100 рублей. Обновление акций каждый день!
-					<img class="sale-close-icon" alt="Закрыть" src="./../../img/header/sale_close.png">
+	<heder class="div ">
+		<div class="sale">
+			<div class="sale-heading">
+				Добро пожаловать в магазин "Royal Attue". Мы рады приветствовать вас! 
+			</div>
+		</div>
+	</heder>
+
+
+		<div class="header">
+			<img class="img-0839-icon" alt="" src="./../../img/header/logotip.png">
+
+			<div class="header-center">
+				<div class="header-info-container"> <!-- Обертка для информационных блоков -->
+					<div class="header-info-1">
+						<img class="header-icon" alt="" src="./../../img/header/icons8-кошелек.png">
+						<div class="div2">ВОЗВРАТ В ТЕЧЕНИЕ 14 ДНЕЙ</div>
+					</div>
+					<div class="header-info-2">
+						<img class="header-icon" alt="" src="./../../img/header/icons8-доставка.png">
+						<div class="div1">БЕСПЛАТНАЯ ДОСТАВКА</div>
+					</div>
+					<div class="header-info-3">
+						<img class="header-icon" alt="" src="./../../img/header/icons8-купон.png">
+						<div class="div3">КУПОН НА 100 РУБЛЕЙ КАЖДОМУ</div>
+					</div>
+				</div>
+				<div class="header-search-container"> <!-- Контейнер для центрирования -->
+					<div class="header-search">
+						<input id="search-input" type="text" placeholder="Поиск...">
+					</div>
+					<button id="search-btn" class="header-search-btn">
+						<img src="./../../img/header/icons8-поиск.png" alt="Поиск">
+					</button>
+				</div>
+
+			</div>
+			<div class="cart-container">
+				<img src="./../../img/header/basket.png" alt="Корзина" class="cart-icon">
+				<div class="cart-text">
+					<span>Товаров: <span id="cart-item-count">0</span> шт.</span>
+					<span>Сумма: <span id="cart-total-price">0</span> руб.</span>
 				</div>
 			</div>
-		</heder>
-	
-	
-			<div class="header">
-				<img class="img-0839-icon" alt="" src="./../../img/header/logotip.png">
-	
-				<div class="header-center">
-					<div class="header-info-container"> <!-- Обертка для информационных блоков -->
-						<div class="header-info-1">
-							<img class="header-icon" alt="" src="./../../img/header/icons8-кошелек.png">
-							<div class="div2">ВОЗВРАТ В ТЕЧЕНИЕ 14 ДНЕЙ</div>
+		</div>
+		<div class="sub-menu">
+			<div class="sale-background"></div>
+			<div class="sub-menu-heading">
+				<div class="category-container">
+					<button class="category-button" onclick="toggleCategories()">ВСЕ КАТЕГОРИИ</button>
+					<div id="category-dropdown" class="category-dropdown">
+						<div class="menu-item">
+							<a href="./../category_layout_men/category_layout_men.html">
+								<img src="./../../img/header/men.png" alt="Мужская одежда" class="icon1">
+							<p>Мужская одежда</p></a>
 						</div>
-						<div class="header-info-2">
-							<img class="header-icon" alt="" src="./../../img/header/icons8-доставка.png">
-							<div class="div1">БЕСПЛАТНАЯ ДОСТАВКА</div>
+						<hr>
+						<div class="menu-item">
+							<a href="./../category_layout_woman/category_layout_woman.html">
+							<img src="./../../img/header/women.png" alt="Женская одежда" class="icon1">
+							<p>Женская одежда</p></a>
 						</div>
-						<div class="header-info-3">
-							<img class="header-icon" alt="" src="./../../img/header/icons8-купон.png">
-							<div class="div3">КУПОН НА 100 РУБЛЕЙ КАЖДОМУ</div>
+						<hr>
+						<div class="menu-item">
+							<a href="./../accessories/accessories.html">
+							<img src="./../../img/header/accessories.png" alt="Аксессуары" class="icon1">
+							<p>Аксессуары</p>
+						</div>
+						<hr>
+						<div class="menu-item">
+							<img src="./../../img/header/bonus.png" alt="Бонусы" class="icon1">
+							<p>Бонусы</p>
 						</div>
 					</div>
-					<div class="header-search-container"> <!-- Контейнер для центрирования -->
-						<div class="header-search">
-							<input type="text" placeholder="Поиск...">
-						</div>
-						<button class="header-search-btn">
-							<img src="./../../img/header/icons8-поиск.png" alt="Поиск">
-						</button>
-					</div>
-	
 				</div>
-					<div class="cart-container">
-						<img src="./../../img/header/basket.png" alt="Корзина" class="cart-icon">
-						<div class="cart-text">
-							<span>Товаров: <span id="cart-item-count">0</span> шт.</span>
-							<span>Сумма: <span id="cart-total-price">0</span> руб.</span>
-						</div>
-					</div>
+				<div class="nav-item"><a href="./../../code/home_page/home_page.html" class="dynamic-link">ГЛАВНАЯ</a></div>
+				<div class="nav-item" id="text1">ЛИЧНЫЙ КАБИНЕТ</div>
+				<div class="nav-item"><a href="./../../code/news/news.html" class="dynamic-link">НОВОСТИ</a></div>		
+			</div>			
 			</div>
-			<div class="sub-menu">
-				<div class="sale-background"></div>
-				<div class="sub-menu-heading">
-					<div class="category-container">
-						<button class="category-button" onclick="toggleCategories()">ВСЕ КАТЕГОРИИ</button>
-						<div id="category-dropdown" class="category-dropdown">
-							<div class="menu-item">
-								<img src="./../../img/header/man_cloth.png" alt="Мужская одежда" class="icon1">
-								<p>Мужская одежда</p>
-							</div>
-							<hr>
-							<div class="menu-item">
-								<img src="./../../img/header/women_cloth.png" alt="Женская одежда" class="icon1">
-								<p>Женская одежда</p>
-							</div>
-							<hr>
-							<div class="menu-item">
-								<img src="./../../img/header/accessories.png" alt="Аксессуары" class="icon1">
-								<p>Аксессуары</p>
-							</div>
-							<hr>
-							<div class="menu-item">
-								<img src="./../../img/header/bonuses.png" alt="Бонусы" class="icon1">
-								<p>Бонусы</p>
-							</div>
-						</div>
-					</div>
-					<div class="nav-item"><a href="./../../code/home_page/home_page.html" class="dynamic-link">ГЛАВНАЯ</a></div>
-					<div class="nav-item" id="text1">ЛИЧНЫЙ КАБИНЕТ</div>
-					<div class="nav-item">ДОСТАВКА И ОПЛАТА</div>					
-				</div>
-			</div>
-			
-		</heder>
+		</div>
+		
+	</heder>
 		<main class="container mt-5">
 			<h1 class="cart-page">Корзина</h1>
 			<label class="custom-checkbox select-all">

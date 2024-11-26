@@ -41,13 +41,7 @@
     width: 100%;
 }
 
-/* Close Icon */
-.sale-close-icon {
-    width: 8px;
-    height: 8px;
-    margin-left: 20px; /* Minimum space between text and icon */
-    cursor: pointer; /* Pointer cursor */
-}
+
 
 /* Header Section */
 .header {
@@ -249,7 +243,12 @@
     align-items: center;
     padding: 12px 0; /* Увеличенный отступ для визуальной лёгкости */
 }
-
+.menu-item a {
+    display: inline-flex;
+    align-items: center; /* Выравнивание текста и изображения по центру */
+    gap: 10px; /* Расстояние между изображением и текстом */
+    text-decoration: none; /* Убирает подчеркивание */
+}
 
 .icon1 {
     width: 30px; /* Размер иконки */
