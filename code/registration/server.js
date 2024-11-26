@@ -238,7 +238,7 @@ app.get('/api/products/:id', async (req, res) => {
     const productId = req.params.id;
     try {
         const query = 'SELECT * FROM products WHERE id = ?';
-        const [rows] = await db.promise().query(query, [productId]); 
+        const [rows] = await db.promise().query(query, [productId]);
         if (rows.length > 0) {
             res.json(rows[0]);
         } else {
@@ -249,7 +249,6 @@ app.get('/api/products/:id', async (req, res) => {
         res.status(500).send('Ошибка сервера');
     }
 });
-
 
 
 
