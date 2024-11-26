@@ -18,6 +18,15 @@
     margin-bottom: 20px;
 }
 
+a {
+    text-decoration: none !important; /* Убираем подчеркивание */
+    color: inherit; /* Цвет наследуется от родительского */
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Подчеркивание не появляется при наведении */
+    color: inherit; /* Цвет не меняется */
+}
 
 /* Заголовок фильтров */
 .filter-title {
@@ -76,7 +85,15 @@
     font-weight: 400;
     letter-spacing: 1.3px;
 }
+.products__card-title {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #000; /* Устанавливаем цвет текста */
+}
 
+.products__card-title:hover {
+    text-decoration: none; /* Убираем эффекты при наведении */
+    color: #000; /* Сохраняем цвет */
+}
 .price-filter input[type="range"] {
     width: 100%;
     margin-top: 5px;
@@ -153,6 +170,7 @@
 	font-size: 20px;
 	font-weight: 400;
 	letter-spacing: 0.2px;
+    text-decoration: none; /* Убираем подчеркивание */
 }
 
 .products__card-price {
@@ -160,6 +178,7 @@
 	color: #000000;
 	font-weight: bold;
 	font-size: 24px;
+    text-decoration: none; /* Убираем подчеркивание */
 }
 
 .products__card-img {
