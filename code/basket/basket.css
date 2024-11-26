@@ -180,6 +180,7 @@ body {
     flex-direction: column;
     align-items: flex-end;
 }
+
 #cart-summary .order-terms {
     width: 100%; /* Растянуть на всю ширину */
     text-align: center; /* Центрируем текст */
@@ -200,7 +201,7 @@ body {
 }
 
 .hr_1{
-    width: 978px;
+    width: 970px;
     stroke-width: 1px;
-stroke: var(--Accent_2, #000);
+    stroke: var(--Accent_2, #000);
 }
