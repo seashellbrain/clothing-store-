@@ -69,8 +69,8 @@ a:hover, a:focus, a:active {
     margin-top: 20px; /* Установите нужное значение отступа */
 }
 .large-image {
-    width: 825px;
-    height: 525px;
+    width: 1100px;
+    height: 600px;
     margin-left: 30px; /* Отступ слева, чтобы не прилипало к краю */
     border-radius: 3px;
 }
