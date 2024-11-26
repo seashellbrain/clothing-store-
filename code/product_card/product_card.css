@@ -43,6 +43,7 @@ header .cart-container {
 }
 
 .product-images {
+    margin-top: 25px;
     display: flex;
     flex-direction: column; /* Ставим изображения в столбик */
 }
