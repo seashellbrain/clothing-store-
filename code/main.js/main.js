@@ -64,22 +64,50 @@ document.querySelector('.header-search-btn').addEventListener('click', function 
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Получаем данные о корзине с сервера
-    fetch('http://localhost:3000/api/cart/1') // Замените `1` на текущий userId
-        .then(response => response.json())
-        .then(cart => {
-            let itemCount = 0;
-            let totalPrice = 0;
+    const cartContainer = document.querySelector('.cart-container'); // Находим блок корзины
 
-            // Если корзина не пуста, пересчитываем данные
-            if (cart.length > 0) {
-                itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-                totalPrice = cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
-            }
+    // Функция проверки состояния корзины и перенаправления
+    function checkCartAndRedirect() {
+        fetch('http://localhost:3000/api/cart/1') // Замените `1` на текущий userId
+            .then(response => response.json())
+            .then(cart => {
+                if (!cart || cart.length === 0) {
+                    // Если корзина пуста, перенаправляем на clean_basket.html
+                    window.location.href = './../clean_basket/clean_basket.html';
+                } else {
+                    // Если есть товары, перенаправляем на страницу корзины
+                    window.location.href = './../basket/basket.html';
+                }
+            })
+            .catch(error => console.error('Ошибка проверки корзины:', error));
+    }
 
-            // Обновляем значения в HTML
-            document.getElementById('item-count').textContent = itemCount;
-            document.getElementById('total-price').textContent = totalPrice;
-        })
-        .catch(error => console.error('Ошибка загрузки корзины:', error));
+    // Навешиваем обработчик клика на блок корзины
+    cartContainer.addEventListener('click', checkCartAndRedirect);
+
+    // Функция обновления данных в корзине
+    function updateCartInfo() {
+        fetch('http://localhost:3000/api/cart/1') // Замените `1` на текущий userId
+            .then(response => response.json())
+            .then(cart => {
+                let itemCount = 0;
+                let totalPrice = 0;
+
+                if (cart && cart.length > 0) {
+                    itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+                    totalPrice = cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
+                }
+
+                // Обновляем значения в HTML
+                document.getElementById('cart-item-count').textContent = itemCount;
+                document.getElementById('cart-total-price').textContent = totalPrice.toFixed(2);
+            })
+            .catch(error => console.error('Ошибка загрузки корзины:', error));
+    }
+
+    // Вызываем обновление корзины при загрузке страницы
+    updateCartInfo();
+
+    // Автоматически обновляем данные корзины каждые 5 секунд
+    setInterval(updateCartInfo, 5000);
 });

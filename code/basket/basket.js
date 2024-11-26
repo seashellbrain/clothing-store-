@@ -98,4 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Загружаем корзину при загрузке страницы
     loadCart();
+
+    // Автоматически обновляем корзину каждые 5 секунд
+    setInterval(loadCart, 5000); // Вызов функции loadCart каждые 5 секунд
 });
