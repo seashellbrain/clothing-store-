@@ -84,8 +84,9 @@
 						</div>
 						<hr>
 						<div class="menu-item">
+							<a href="./../bonus_program/bonus_program.html">
 							<img src="./../../img/header/bonus.png" alt="Бонусы" class="icon1">
-							<p>Бонусы</p>
+							<p>Бонусы</p></a>
 						</div>
 					</div>
 				</div>
@@ -108,49 +109,44 @@
                 <!-- Левый блок с фильтрами -->
                 <div class="col-md-3">
                     <div class="filter-box p-3">
-                        <h5 class="filter_name">ФИЛЬТР</h5>
+                        <h5 class="filter_name">ЛИЧНЫЙ КАБИНЕТ</h5>
                         <hr class="line">
                         <ul>
                             
-                           <!-- Ссылка на "Мои данные" -->
-                        <li>
-                           <a href="./../../code/personal_account/data.html" class="dynamic-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                    <!-- Ваш SVG -->
-                                </svg>
-                                Мои данные
-                            </a>
-                        </li>
-    
-                            <!-- Ссылка на страницу "Мои заказы" -->
-                            <li>
-                                <a href="./../../code/personal_account/order_empty.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Мои заказы
-                                </a>
-                            </li>
-    
-                            <!-- Ссылка на страницу "Способы оплаты и доставки" -->
-                            <li>
-                                <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Способы оплаты и доставки
-                                </a>
-                            </li>
-    
-                            <!-- Ссылка на страницу "Бонусная программа" -->
-                            <li>
-                                <a href="./../../code/personal_account/bonuses.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Бонусная программа
-                                </a>
-                            </li>
+                      <!-- Ссылка на "Мои данные" -->
+                      <li class="ul">
+                        <a href="./../../code/personal_account/data.html" class="dynamic-filter">
+                         <img src="./../../img/personal_account/data.svg" alt="Data" class="icon-svg" width="24" height="24">
+                         <path d="M12 2L2 12h3v8h6v-6h4v6h6v-8h3L12 2z"/>
+                             Мои данные
+                         </a>
+                     </li>
+ 
+                         <!-- Ссылка на страницу "Мои заказы" -->
+
+                         <li class="ul">
+                             <a href="./../../code/personal_account/order_empty.html" class="dynamic-filter">
+                              <img src="./../../img/personal_account/order.svg" alt="Order" class="icon-svg" width="24" height="24">
+                                  Мои заказы
+                              </a>
+                          </li>
+
+                         <!-- Ссылка на страницу "Способы оплаты и доставки" -->
+                         <li class="ul">
+                             <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-filter">
+                              <img src="./../../img/personal_account/card.svg" alt="Payment_delivary" class="icon-svg" width="24" height="24">
+                                  Способы оплаты и доставка
+                              </a>
+                          </li>
+ 
+                         <!-- Ссылка на страницу "Бонусная программа" -->
+                         <li class="ul">
+                             <a href="./../../code/personal_account/bonuses.html" class="dynamic-filter">
+                              <img src="./../../img/personal_account/bonus.svg" alt="Bonuses" class="icon-svg" width="24" height="24">
+                                  Бонусная программа
+                              </a>
+                          </li>
+
                         </ul>
                     </div>
                 </div>
@@ -170,15 +166,15 @@
             <form action="/submit_bonus" method="POST" class="bonus-form">
                 <label for="phoneNumber" class="form-label">Номер телефона:</label>
                 <input type="tel" id="phoneNumber" name="phone_number" class="form-control" placeholder="+375 (__) ___-__-__" required 
-                       oninput="this.value = this.value.replace(/[^0-9+]/g, '')">
+                       oninput="this.value = this.value.replace(/[^0-9+]/g, '').substring(0, 20)">
             
                 <label for="recipientName" class="form-label">Имя получателя:</label>
                 <input type="text" id="recipientName" name="recipient_name" class="form-control" placeholder="Имя получателя" required 
-                       oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '')">
+                       oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '').substring(0, 20)">
             
                 <label for="senderName" class="form-label">Имя отправителя:</label>
                 <input type="text" id="senderName" name="sender_name" class="form-control" placeholder="Имя отправителя" required 
-                       oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '')">
+                       oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '').substring(0, 20)">
             
                 <label for="greetingText" class="form-label">Текст поздравления:</label>
                 <textarea id="greetingText" name="greeting_text" class="form-control" placeholder="Введите текст поздравления" required></textarea>
@@ -202,14 +198,14 @@
                 <div class="footer-right">
                     <div class="footer-links-section">
                         <div class="footer-section-title">О КОМПАНИИ</div>
-                        <div class="footer-link">О нас</div>
+                        <div class="footer-link"><a href="./../../code/about_us/about_us.html" class="dynamic-link">О нас</a></div>
                         <div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Политика персональных данных</a></div>
                     </div>
                     <div class="footer-links-section">
                         <div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
-                        <div class="footer-link">Возврат/Обмен</div>
+                        <div class="footer-link"><a href="./../../code/return_obmen/return_obmen.html" class="dynamic-link">Возврат/Обмен</a></div>
                         <div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
-                        <div class="footer-link">Бонусная программа</div>
+                        <div class="footer-link"> <a href="./../../code/bonus_program/bonus_program.html" class="dynamic-link">Бонусная программа</a></div>
                         <div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
                     </div>
                     <div class="footer-contacts">
@@ -229,7 +225,7 @@
             <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
         </div>
     </div>
-    
+
     <script src="./../main.js/main.js" > </script>
         <script src="./personal_account.js"> </script>
     </body>

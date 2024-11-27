@@ -1,4 +1,5 @@
 .container {
+    background: #f4f4f4;
     display: flex;
     gap: 20px; /* Отступ между фильтром и продуктами */
     justify-content: flex-start; /* Выравнивание по левому краю */
