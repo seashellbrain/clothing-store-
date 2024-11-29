@@ -84,8 +84,9 @@
 						</div>
 						<hr>
 						<div class="menu-item">
+							<a href="./../bonus_program/bonus_program.html">
 							<img src="./../../img/header/bonus.png" alt="Бонусы" class="icon1">
-							<p>Бонусы</p>
+							<p>Бонусы</p></a>
 						</div>
 					</div>
 				</div>
@@ -102,62 +103,60 @@
     <main class="container">
         <div class="container my-5">
             <div class="row">
+                
                 <!-- Левый блок с фильтрами -->
                 <div class="col-md-3">
                     <div class="filter-box p-3">
-                        <h5 class="filter_name">ФИЛЬТР</h5>
+                        <h5 class="filter_name">ЛИЧНЫЙ КАБИНЕТ</h5>
                         <hr class="line">
                         <ul>
                             
                            <!-- Ссылка на "Мои данные" -->
-                        <li>
-                           <a href="./../../code/personal_account/data.html" class="dynamic-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                    <!-- Ваш SVG -->
-                                </svg>
+                           <li class="ul">
+                           <a href="./../../code/personal_account/data.html" class="dynamic-filter">
+                            <img src="./../../img/personal_account/data.svg" alt="Data" class="icon-svg" width="24" height="24">
+                            <path d="M12 2L2 12h3v8h6v-6h4v6h6v-8h3L12 2z"/>
                                 Мои данные
                             </a>
                         </li>
     
                             <!-- Ссылка на страницу "Мои заказы" -->
-                            <li>
-                                <a href="./../../code/personal_account/order_empty.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Мои заказы
-                                </a>
-                            </li>
-    
+
+                            <li class="ul">
+                                <a href="./../../code/personal_account/order_empty.html" class="dynamic-filter">
+                                 <img src="./../../img/personal_account/order.svg" alt="Order" class="icon-svg" width="24" height="24">
+                                     Мои заказы
+                                 </a>
+                             </li>
+
                             <!-- Ссылка на страницу "Способы оплаты и доставки" -->
-                            <li>
-                                <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Способы оплаты и доставки
-                                </a>
-                            </li>
+                            <li class="ul">
+                                <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-filter">
+                                 <img src="./../../img/personal_account/card.svg" alt="Payment_delivary" class="icon-svg" width="24" height="24">
+                                     Способы оплаты и доставка
+                                 </a>
+                             </li>
     
                             <!-- Ссылка на страницу "Бонусная программа" -->
-                            <li>
-                                <a href="./../../code/personal_account/bonuses.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Бонусная программа
-                                </a>
-                            </li>
+                            <li class="ul">
+                                <a href="./../../code/personal_account/bonuses.html" class="dynamic-filter">
+                                 <img src="./../../img/personal_account/bonus.svg" alt="Bonuses" class="icon-svg" width="24" height="24">
+                                     Бонусная программа
+                                 </a>
+                             </li>
+
                         </ul>
                     </div>
+                    
                 </div>
+                   <div class="text-center mb-4">
+                <img src="./../../img/personal_account/person-1824147_1280.png" alt="User_icon" class="user-icon">
+            </div>
             </div>
         </div>
     
             <!-- Правый блок с формой -->
-            <div class="text-center mb-4">
-                <img src="" alt="User Icon" class="user-icon">
-            </div>
+         
             <h2 class="text">МОИ ДАННЫЕ</h2>
             <div class="form-container">
                 <form class="personal-data-form">
@@ -166,12 +165,14 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="fullName" class="form-label">ФИО <label class="form_red">*</label></label>
-                                <input type="text" class="form-control custom-input" id="fullName" placeholder="Ваше ФИО">
+                                <input type="text" class="form-control custom-input" id="fullName" placeholder="Ваше ФИО" required 
+                                oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '')">
                             </div>
                         
                             <div class="col-md-6">
                                 <label for="phoneNumber" class="form-label">Контактный номер <label class="form_red">*</label></label>
-                                <input type="tel" class="form-control custom-input" id="phoneNumber" placeholder="+375(__)___-__-__">
+                                <input type="tel" class="form-control custom-input" id="phoneNumber" placeholder="+375(__)___-__-__"required 
+                                oninput="this.value = this.value.replace(/[^0-9+]/g, '')">
                             </div>
                         </div>
                         
@@ -183,23 +184,22 @@
                         
                             <div class="col-md-6">
                                 <label for="email" class="form-label">E-mail <label class="form_red">*</label></label>
-                                <input type="email" class="form-control custom-input" id="email" placeholder="Ваш email">
+                                <input type="email" class="form-control custom-input" id="email" placeholder="Ваш email"required 
+                                oninput="this.value = this.value.replace(/[^a-zA-Z\s@.]/g, '').substring(0, 40)">
                             </div>
                         </div>
                         
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="loginName" class="form-label">Логин <label class="form_red">*</label></label>
-                                <input type="text" class="form-control custom-input" id="loginName" placeholder="Никнейм">
+                                <input type="text" class="form-control custom-input" id="loginName" placeholder="Никнейм" required 
+                                oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').substring(0, 10)">
                             </div>
                         
                             <div class="col-md-6">
-                                <label for="gender" class="form-label">Пол <label class="form_red">*</label></label>
-                                <select id="gender" class="form-control custom-input" id="gender"required>
-                                    <option value="male">Мужской</option>
-                                    <option value="female">Женский</option>
-                                    <option value="other">Другой</option>
-                                </select>
+                                <label for="gender" class="form-label">Пол: <label class="form_red">*</label></label>
+                                <input type="gender" class="form-control custom-input" id="gender" placeholder="Мужской/Женский" required 
+                                oninput="this.value = this.value.replace(/[^А-Яа-я\s]/g, '').substring(0, 7)">
                             </div>
                         </div>
 
@@ -218,46 +218,46 @@
     
 </main>
 
-    <div class="footer-background">
-        <div class="footer">
-            <div class="footer-info">
-                <div class="footer-left">
-                    <img class="footer-logo" alt="Royal Attue Logo" src="./../../img/подвал/логотип.png">
-                    <div class="footer-text">
-                        <p class="royal-attue">Royal Attue предлагает эксклюзивные коллекции одежды и аксессуаров от мировых брендов.</p>
-                        <p class="quote">“Каждая деталь создана для тех, кто ценит стиль, качество и роскошь”</p>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <div class="footer-links-section">
-                        <div class="footer-section-title">О КОМПАНИИ</div>
-                        <div class="footer-link">О нас</div>
-                        <div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Политика персональных данных</a></div>
-                    </div>
-                    <div class="footer-links-section">
-                        <div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
-                        <div class="footer-link">Возврат/Обмен</div>
-                        <div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
-                        <div class="footer-link">Бонусная программа</div>
-                        <div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
-                    </div>
-                    <div class="footer-contacts">
-                        <div class="footer-section-title">КОНТАКТЫ</div>
-                        <div class="footer-link">г. Минск</br>
-                        ул. Колесникова 3</div>
-                        <div class="footer-link">+375 (44) 544-21-21</div>
-                        <div class="footer-link">RoyalAttue@gmail.com</div>
-                    </div>
+<div class="footer-background">
+    <div class="footer">
+        <div class="footer-info">
+            <div class="footer-left">
+                <img class="footer-logo" alt="Royal Attue Logo" src="./../../img/подвал/логотип.png">
+                <div class="footer-text">
+                    <p class="royal-attue">Royal Attue предлагает эксклюзивные коллекции одежды и аксессуаров от мировых брендов.</p>
+                    <p class="quote">“Каждая деталь создана для тех, кто ценит стиль, качество и роскошь”</p>
                 </div>
             </div>
-            <div class="footer-logos">
-                <img class="payment-logo" alt="Мир" src="./../../img/подвал/mir-logo.png">
-                <img class="payment-logo" alt="MasterCard" src="./../../img/подвал/master_card.png">
-                <img class="payment-logo" alt="Visa" src="./../../img/подвал/Visa.png">
+            <div class="footer-right">
+                <div class="footer-links-section">
+                    <div class="footer-section-title">О КОМПАНИИ</div>
+                    <div class="footer-link"><a href="./../../code/about_us/about_us.html" class="dynamic-link">О нас</a></div>
+                    <div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Политика персональных данных</a></div>
+                </div>
+                <div class="footer-links-section">
+                    <div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
+                    <div class="footer-link"><a href="./../../code/return_obmen/return_obmen.html" class="dynamic-link">Возврат/Обмен</a></div>
+                    <div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
+                    <div class="footer-link"> <a href="./../../code/bonus_program/bonus_program.html" class="dynamic-link">Бонусная программа</a></div>
+                    <div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
+                </div>
+                <div class="footer-contacts">
+                    <div class="footer-section-title">КОНТАКТЫ</div>
+                    <div class="footer-link">г. Минск</br>
+					ул. Колесникова 3</div>
+                    <div class="footer-link">+375 (44) 544-21-21</div>
+                    <div class="footer-link">RoyalAttue@gmail.com</div>
+                </div>
             </div>
-            <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
         </div>
+        <div class="footer-logos">
+            <img class="payment-logo" alt="Мир" src="./../../img/подвал/mir-logo.png">
+            <img class="payment-logo" alt="MasterCard" src="./../../img/подвал/master_card.png">
+            <img class="payment-logo" alt="Visa" src="./../../img/подвал/Visa.png">
+        </div>
+        <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
     </div>
+</div>
     
     <script src="./../main.js/main.js" > </script>
         <script src="./personal_account.js"> </script>

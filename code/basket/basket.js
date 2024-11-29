@@ -25,7 +25,7 @@ function loadCart() {
                 itemElement.innerHTML = `
                     <div class="col-1 d-flex align-items-start">
                         <label class="custom-checkbox">
-                            <input type="checkbox" class="select-item" data-id="${item.id}">
+                            <input type="checkbox" class="select-item" data-id="${item.id}" data-price="${item.price}" data-quantity="${item.quantity}">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -89,19 +89,33 @@ function attachDeleteHandlers() {
 function attachCheckboxHandlers(cartItems) {
     const selectAllCheckbox = document.getElementById('select-all-checkbox');
     const itemCheckboxes = document.querySelectorAll('.select-item');
+    const totalAmountElement = document.getElementById('total-amount');
 
 
     selectAllCheckbox.addEventListener('change', () => {
+        let updatedTotal = 0;
         itemCheckboxes.forEach(checkbox => {
             checkbox.checked = selectAllCheckbox.checked;
+            if (selectAllCheckbox.checked) {
+                updatedTotal += parseFloat(checkbox.dataset.price) * parseInt(checkbox.dataset.quantity, 10);
+            }
         });
+        totalAmountElement.textContent = `${updatedTotal} BYN`;
     });
 
-
+    // Обновление состояния "Выбрать все"
     itemCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', () => {
+            let updatedTotal = 0;
             const allChecked = Array.from(itemCheckboxes).every(cb => cb.checked);
             selectAllCheckbox.checked = allChecked;
+
+            itemCheckboxes.forEach(cb => {
+                if (cb.checked) {
+                    updatedTotal += parseFloat(cb.dataset.price) * parseInt(cb.dataset.quantity, 10);
+                }
+            });
+            totalAmountElement.textContent = `${updatedTotal} BYN`;
         });
     });
 }

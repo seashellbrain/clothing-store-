@@ -84,8 +84,9 @@
 						</div>
 						<hr>
 						<div class="menu-item">
+							<a href="./../bonus_program/bonus_program.html">
 							<img src="./../../img/header/bonus.png" alt="Бонусы" class="icon1">
-							<p>Бонусы</p>
+							<p>Бонусы</p></a>
 						</div>
 					</div>
 				</div>
@@ -104,145 +105,140 @@
                 <!-- Левый блок с фильтрами -->
                 <div class="col-md-3">
                     <div class="filter-box p-3">
-                        <h5 class="filter_name">ФИЛЬТР</h5>
+                        <h5 class="filter_name">ЛИЧНЫЙ КАБИНЕТ</h5>
                         <hr class="line">
                         <ul>
                             
                            <!-- Ссылка на "Мои данные" -->
-                        <li>
-                           <a href="./../../code/personal_account/data.html" class="dynamic-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                    <!-- Ваш SVG -->
-                                </svg>
-                                Мои данные
-                            </a>
-                        </li>
-    
-                            <!-- Ссылка на страницу "Мои заказы" -->
-                            <li>
-                                <a href="./../../code/personal_account/order_empty.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Мои заказы
-                                </a>
-                            </li>
-    
-                            <!-- Ссылка на страницу "Способы оплаты и доставки" -->
-                            <li>
-                                <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Способы оплаты и доставки
-                                </a>
-                            </li>
-    
-                            <!-- Ссылка на страницу "Бонусная программа" -->
-                            <li>
-                                <a href="./../../code/personal_account/bonuses.html" class="dynamic-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="icon-svg">
-                                        <!-- Ваш SVG -->
-                                    </svg>
-                                    Бонусная программа
-                                </a>
-                            </li>
+                           <li class="ul">
+                            <a href="./../../code/personal_account/data.html" class="dynamic-filter">
+                             <img src="./../../img/personal_account/data.svg" alt="Data" class="icon-svg" width="24" height="24">
+                             <path d="M12 2L2 12h3v8h6v-6h4v6h6v-8h3L12 2z"/>
+                                 Мои данные
+                             </a>
+                         </li>
+     
+                             <!-- Ссылка на страницу "Мои заказы" -->
+ 
+                             <li class="ul">
+                                 <a href="./../../code/personal_account/order_empty.html" class="dynamic-filter">
+                                  <img src="./../../img/personal_account/order.svg" alt="Order" class="icon-svg" width="24" height="24">
+                                      Мои заказы
+                                  </a>
+                              </li>
+ 
+                             <!-- Ссылка на страницу "Способы оплаты и доставки" -->
+                             <li class="ul">
+                                 <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-filter">
+                                  <img src="./../../img/personal_account/card.svg" alt="Payment_delivary" class="icon-svg" width="24" height="24">
+                                      Способы оплаты и доставка
+                                  </a>
+                              </li>
+     
+                             <!-- Ссылка на страницу "Бонусная программа" -->
+                             <li class="ul">
+                                 <a href="./../../code/personal_account/bonuses.html" class="dynamic-filter">
+                                  <img src="./../../img/personal_account/bonus.svg" alt="Bonuses" class="icon-svg" width="24" height="24">
+                                      Бонусная программа
+                                  </a>
+                              </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         
-<div class="text-center mb-4">
-    <img src="" alt="User Icon" class="user-icon">
-</div>
-<h2 class="text">Способы оплаты и доставки</h2>
-<!-- Добавленные прямоугольники для способов оплаты и доставки -->
-<div class="payment-container">
-    <div class="payment-box_1">
-        <div class="faq-question">Ваши адреса:</div>
-
-        <!-- Поле с предзаполненным адресом и иконкой выделения -->
-        <div class="address-item">
-            <input type="text" class="form-control custom-input selected-address" value="Минск, улица Колесникова, 3" readonly>
-            <span class="select-icon">🔘</span>
-        </div>
-
-        <!-- Поле для ввода нового адреса и кнопка добавления -->
-        <div class="add-address">
-            <input type="text" class="form-control custom-input" id="newAddress" placeholder="Введите адрес">
-            <button class="add-button">+</button>
-        </div>
-    </div>
-
-    <div class="payment-box_2">
-        <div class="faq-question">Ваша оплата:</div>
-
-        <!-- Контейнер для кнопок с горизонтальным расположением -->
-        <div class="button-container">
-            <button type="submit" class="button_pay_1">Сразу</button>
-            <button type="submit" class="button_pay_2">При получении</button>
-        </div>
-
-        <div class="faq-question">Способ оплаты:</div>
-
-        <!-- Поле с предзаполненным адресом и иконкой выделения -->
-        <div class="address-item">
-            <input type="text" class="form-control custom-input selected-address" value="1111 1111 1111 1111" readonly>
-            <span class="select-icon">🔘</span>
-        </div>
-
-        <!-- Поле для ввода нового адреса и кнопка добавления -->
-        <div class="add-address">
-            <input type="text" class="form-control custom-input" id="newPayment" placeholder="Привязать новую">
-            <button class="add-button">+</button>
-        </div>
-    </div>
-</div>
-
+        <main class="container my-5 text-center">
+            <h2 class="text">СПОСОБЫ ОПЛАТЫ И ДОСТАВКИ</h2>
+            <div class="row justify-content-center mb-5">
+                <!-- Блок доставки -->
+                <div class="col-md-5 bg shadow-sm">
+                    <h5>Куда привезти заказ?</h5>
+                    <input type="text5" class="form-control mt-3 mb-2" placeholder="Минск, улица Колесникова, 3" disabled>
+                    <input type="text5" class="form-control mb-3" placeholder="Введите адрес">
+                    <hr class="line1">
+                    <div class="d-flex justify-content-between">
+                        <span class="text-muted">Доставка</span>
+                        <span class="text-muted">1 товар</span>
+                    </div>
+                </div>
+            
+                <!-- Блок оплаты -->
+                <div class="col-md-5 bg shadow-sm ms-md-4">
+                    <h5>Как оплатить заказ?</h5>
+                    <div class="payment-methods mt-3">
+                        <!-- Кнопка "Сразу" -->
+                        <button class="payment-method" data-method="online" onclick="togglePaymentMethod(this)">
+                            Сразу
+                        </button>
+                        <!-- Кнопка "При получении" -->
+                        <button class="payment-method" data-method="on-delivery" onclick="togglePaymentMethod(this)">
+                            При получении
+                        </button>
+                    </div>
+                    
+                    <div class="mt-3">
+                      
+                        <input type="text" class="form-control mb-2 card-input" value="**** **** **** 6064" disabled>
+                        <input type="text" class="form-control mb-3" id="newCard" placeholder="Привязать новую карту" maxlength="19" oninput="formatCardNumber(this)">
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+        
+            <div class="order-summary text-center mb-4">
+                <h4>Итого: <span class="text-BYN">0 BYN</span></h4>
+                <p>Доставка: Бесплатно</p>
+               
+            </div>
+        
+            <button type="submit" class="submit-button">ЗАКАЗАТЬ</button>
+        </main>
     
         </main>
 
-    <div class="footer-background">
-        <div class="footer">
-            <div class="footer-info">
-                <div class="footer-left">
-                    <img class="footer-logo" alt="Royal Attue Logo" src="./../../img/подвал/логотип.png">
-                    <div class="footer-text">
-                        <p class="royal-attue">Royal Attue предлагает эксклюзивные коллекции одежды и аксессуаров от мировых брендов.</p>
-                        <p class="quote">“Каждая деталь создана для тех, кто ценит стиль, качество и роскошь”</p>
+        <div class="footer-background">
+            <div class="footer">
+                <div class="footer-info">
+                    <div class="footer-left">
+                        <img class="footer-logo" alt="Royal Attue Logo" src="./../../img/подвал/логотип.png">
+                        <div class="footer-text">
+                            <p class="royal-attue">Royal Attue предлагает эксклюзивные коллекции одежды и аксессуаров от мировых брендов.</p>
+                            <p class="quote">“Каждая деталь создана для тех, кто ценит стиль, качество и роскошь”</p>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-links-section">
+                            <div class="footer-section-title">О КОМПАНИИ</div>
+                            <div class="footer-link"><a href="./../../code/about_us/about_us.html" class="dynamic-link">О нас</a></div>
+                            <div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Политика персональных данных</a></div>
+                        </div>
+                        <div class="footer-links-section">
+                            <div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
+                            <div class="footer-link"><a href="./../../code/return_obmen/return_obmen.html" class="dynamic-link">Возврат/Обмен</a></div>
+                            <div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
+                            <div class="footer-link"> <a href="./../../code/bonus_program/bonus_program.html" class="dynamic-link">Бонусная программа</a></div>
+                            <div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
+                        </div>
+                        <div class="footer-contacts">
+                            <div class="footer-section-title">КОНТАКТЫ</div>
+                            <div class="footer-link">г. Минск</br>
+                            ул. Колесникова 3</div>
+                            <div class="footer-link">+375 (44) 544-21-21</div>
+                            <div class="footer-link">RoyalAttue@gmail.com</div>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-right">
-                    <div class="footer-links-section">
-                        <div class="footer-section-title">О КОМПАНИИ</div>
-                        <div class="footer-link">О нас</div>
-                        <div class="footer-link"><a href="./../../code/personal_data/personal_data.html" class="dynamic-link">Политика персональных данных</a></div>
-                    </div>
-                    <div class="footer-links-section">
-                        <div class="footer-section-title">ПОКУПАТЕЛЯМ</div>
-                        <div class="footer-link">Возврат/Обмен</div>
-                        <div class="footer-link"><a href="./../../code/delivery_pay_answ/delivery_pay_answ.html" class="dynamic-link">Доставка и оплата</a></div>
-                        <div class="footer-link">Бонусная программа</div>
-                        <div class="footer-link"><a href="./../../code/ques_answ/ques_answ.html" class="dynamic-link">Вопросы/ответы</a></div>
-                    </div>
-                    <div class="footer-contacts">
-                        <div class="footer-section-title">КОНТАКТЫ</div>
-                        <div class="footer-link">г. Минск</br>
-                        ул. Колесникова 3</div>
-                        <div class="footer-link">+375 (44) 544-21-21</div>
-                        <div class="footer-link">RoyalAttue@gmail.com</div>
-                    </div>
+                <div class="footer-logos">
+                    <img class="payment-logo" alt="Мир" src="./../../img/подвал/mir-logo.png">
+                    <img class="payment-logo" alt="MasterCard" src="./../../img/подвал/master_card.png">
+                    <img class="payment-logo" alt="Visa" src="./../../img/подвал/Visa.png">
                 </div>
+                <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
             </div>
-            <div class="footer-logos">
-                <img class="payment-logo" alt="Мир" src="./../../img/подвал/mir-logo.png">
-                <img class="payment-logo" alt="MasterCard" src="./../../img/подвал/master_card.png">
-                <img class="payment-logo" alt="Visa" src="./../../img/подвал/Visa.png">
-            </div>
-            <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
         </div>
-    </div>
     <script src="./../main.js/main.js" > </script>
         <script src="./personal_account.js"> </script>
     </body>

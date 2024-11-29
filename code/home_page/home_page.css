@@ -131,6 +131,7 @@ a:hover, a:focus, a:active {
 	min-height: 485px;
 	border-radius: 3px;
 	border: 1px solid #cccccc;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .products__card:hover .products__card-nav {
@@ -184,6 +185,8 @@ a:hover, a:focus, a:active {
 .i-icon{
 	width: 100%;
     height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
  
 .text-2 { 
