@@ -165,53 +165,49 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="fullName" class="form-label">ФИО <label class="form_red">*</label></label>
-                                <input type="text" class="form-control custom-input" id="fullName" placeholder="Ваше ФИО" required 
-                                oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '')">
+                                <input type="text" class="form-control custom-input editable" id="loginName" placeholder="Ваше ФИО" 
+                                       required oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '')" disabled>
                             </div>
                         
                             <div class="col-md-6">
                                 <label for="phoneNumber" class="form-label">Контактный номер <label class="form_red">*</label></label>
-                                <input type="tel" class="form-control custom-input" id="phoneNumber" placeholder="+375(__)___-__-__"required 
-                                oninput="this.value = this.value.replace(/[^0-9+]/g, '')">
+                                <input type="tel" class="form-control custom-input editable" id="phoneNumber" placeholder="+375(__)___-__-__" required 
+                                       oninput="this.value = this.value.replace(/[^0-9+]/g, '')" disabled>
                             </div>
                         </div>
                         
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="birthDate" class="form-label">Дата рождения <label class="form_red">*</label></label>
-                                <input type="date" class="form-control custom-input" id="birthDate">
+                                <input type="date" class="form-control custom-input editable" id="birthDate" disabled>
                             </div>
                         
                             <div class="col-md-6">
                                 <label for="email" class="form-label">E-mail <label class="form_red">*</label></label>
-                                <input type="email" class="form-control custom-input" id="email" placeholder="Ваш email"required 
-                                oninput="this.value = this.value.replace(/[^a-zA-Z\s@.]/g, '').substring(0, 40)">
+                                <input type="email" class="form-control custom-input editable" id="email" placeholder="Ваш email" required 
+                                       oninput="this.value = this.value.replace(/[^a-zA-Z\s@.]/g, '').substring(0, 40)" disabled>
                             </div>
                         </div>
                         
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="loginName" class="form-label">Логин <label class="form_red">*</label></label>
-                                <input type="text" class="form-control custom-input" id="loginName" placeholder="Никнейм" required 
-                                oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').substring(0, 10)">
+                                <input type="text" class="form-control custom-input editable" id="fullName" placeholder="Никнейм" required 
+                                       oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').substring(0, 10)" disabled>
                             </div>
                         
                             <div class="col-md-6">
                                 <label for="gender" class="form-label">Пол: <label class="form_red">*</label></label>
-                                <input type="gender" class="form-control custom-input" id="gender" placeholder="Мужской/Женский" required 
-                                oninput="this.value = this.value.replace(/[^А-Яа-я\s]/g, '').substring(0, 7)">
+                                <input type="text" class="form-control custom-input editable" id="gender" placeholder="Мужской/Женский" required 
+                                       oninput="this.value = this.value.replace(/[^А-Яа-я\s]/g, '').substring(0, 7)" disabled>
                             </div>
                         </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="button">Сохранить</button>
-                    </div>
-
-                    <div class="text-center">
-                        <p type="submit" class="button2">Изменить</p>
-                    </div>
-                </form>
-
+                        
+                        <div class="text-center">
+                            <button type="button" id="saveBtn" class="button" style="display:none;">Сохранить</button>
+                            <button type="button" id="editBtn" class="button">Изменить</button>
+                        </div>
+                        
             </div>
         </div>
     </div>

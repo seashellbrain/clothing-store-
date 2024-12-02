@@ -153,6 +153,47 @@ app.get('/api/cart/:userId', (req, res) => {
     });
 });
 
+app.use(bodyParser.json());
+app.use(express.static('public'));
+
+// Маршрут для получения данных пользователя по email
+app.get('/user', (req, res) => {
+    const userEmail = req.query.email.trim().toLowerCase();  // Приводим email к нижнему регистру
+
+    console.log('Запрос на получение данных пользователя с email:', userEmail);  // Логируем email
+
+    // Используем LOWER() в SQL запросе для сравнения email без учета регистра
+    const query = 'SELECT id, username, email, phone, gender, birthDate FROM users WHERE LOWER(email) = LOWER(?)'; // Убираем loginName
+    db.query(query, [userEmail], (err, results) => {
+        if (err) {
+            console.error('Ошибка запроса:', err);
+            return res.status(500).send('Ошибка на сервере');
+        }
+
+        if (results.length === 0) {
+            return res.status(404).send('Пользователь с таким email не найден');
+        }
+
+        console.log('Данные пользователя:', results[0]);  // Логируем данные пользователя
+        res.json(results[0]);  // Возвращаем данные пользователя
+    });
+});
+
+// Маршрут для обновления данных пользователя
+app.post('/user/update', (req, res) => {
+    const { email, username, phone, birthDate, gender } = req.body;
+    console.log('Запрос на обновление данных пользователя:', req.body);  // Логируем данные для обновления
+
+    const query = `UPDATE users SET username = ?, phone = ?, birthDate = ?, gender = ? WHERE email = ?`;
+    db.query(query, [username, phone, birthDate, gender, email], (err) => {
+        if (err) {
+            console.error('Ошибка запроса:', err);
+            return res.status(500).send('Ошибка на сервере');
+        }
+        res.status(200).send('Данные успешно обновлены');
+    });
+});
+
 
 
 app.get('/api/products/:id/similar', (req, res) => {

@@ -20,7 +20,9 @@ document.querySelector('#loginForm').addEventListener('submit', async (e) => {
 
         if (response.ok) {
             alert('Вы успешно вошли!');
-            window.location.href = './../../code/personal_account/data.html';
+            // Сохраняем email в localStorage
+            localStorage.setItem('userEmail', email);
+            window.location.href = './../../code/personal_account/data.html'; // Перенаправляем на страницу личного кабинета
         } else {
             const error = await response.text();
             alert(`Ошибка: ${error}`);

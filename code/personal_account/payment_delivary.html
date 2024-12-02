@@ -102,14 +102,11 @@
     <main class="container">
         <div class="container my-5">
             <div class="row">
-                <!-- Левый блок с фильтрами -->
                 <div class="col-md-3">
                     <div class="filter-box p-3">
                         <h5 class="filter_name">ЛИЧНЫЙ КАБИНЕТ</h5>
                         <hr class="line">
                         <ul>
-                            
-                           <!-- Ссылка на "Мои данные" -->
                            <li class="ul">
                             <a href="./../../code/personal_account/data.html" class="dynamic-filter">
                              <img src="./../../img/personal_account/data.svg" alt="Data" class="icon-svg" width="24" height="24">
@@ -117,17 +114,12 @@
                                  Мои данные
                              </a>
                          </li>
-     
-                             <!-- Ссылка на страницу "Мои заказы" -->
- 
                              <li class="ul">
                                  <a href="./../../code/personal_account/order_empty.html" class="dynamic-filter">
                                   <img src="./../../img/personal_account/order.svg" alt="Order" class="icon-svg" width="24" height="24">
                                       Мои заказы
                                   </a>
                               </li>
- 
-                             <!-- Ссылка на страницу "Способы оплаты и доставки" -->
                              <li class="ul">
                                  <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-filter">
                                   <img src="./../../img/personal_account/card.svg" alt="Payment_delivary" class="icon-svg" width="24" height="24">
@@ -135,7 +127,6 @@
                                   </a>
                               </li>
      
-                             <!-- Ссылка на страницу "Бонусная программа" -->
                              <li class="ul">
                                  <a href="./../../code/personal_account/bonuses.html" class="dynamic-filter">
                                   <img src="./../../img/personal_account/bonus.svg" alt="Bonuses" class="icon-svg" width="24" height="24">
@@ -154,19 +145,14 @@
             <div class="row justify-content-center mb-5">
                 <!-- Блок доставки -->
                 <div class="col-md-5 bg shadow-sm">
-                    <h5>Куда привезти заказ?</h5>
+                    <h5>Ваши адереса:</h5>
                     <input type="text5" class="form-control mt-3 mb-2" placeholder="Минск, улица Колесникова, 3" disabled>
                     <input type="text5" class="form-control mb-3" placeholder="Введите адрес">
-                    <hr class="line1">
-                    <div class="d-flex justify-content-between">
-                        <span class="text-muted">Доставка</span>
-                        <span class="text-muted">1 товар</span>
-                    </div>
                 </div>
             
                 <!-- Блок оплаты -->
                 <div class="col-md-5 bg shadow-sm ms-md-4">
-                    <h5>Как оплатить заказ?</h5>
+                    <h5>Ваша оплата:</h5>
                     <div class="payment-methods mt-3">
                         <!-- Кнопка "Сразу" -->
                         <button class="payment-method" data-method="online" onclick="togglePaymentMethod(this)">
