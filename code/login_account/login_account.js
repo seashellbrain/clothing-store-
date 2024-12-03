@@ -1,3 +1,11 @@
+// Функция для обработки успешного входа
+function loginSuccess() {
+    // Устанавливаем статус авторизации в localStorage
+    localStorage.setItem('isLoggedIn', 'true');
+    // Перенаправляем на страницу личного кабинета
+    window.location.href = './../../code/personal_account/data.html'; 
+}
+
 document.querySelector('#loginForm').addEventListener('submit', async (e) => {
     e.preventDefault(); // Остановка стандартного поведения формы
 
@@ -20,9 +28,8 @@ document.querySelector('#loginForm').addEventListener('submit', async (e) => {
 
         if (response.ok) {
             alert('Вы успешно вошли!');
-            // Сохраняем email в localStorage
-            localStorage.setItem('userEmail', email);
-            window.location.href = './../../code/personal_account/data.html'; // Перенаправляем на страницу личного кабинета
+            localStorage.setItem('userEmail', email); // Сохраняем email
+            loginSuccess(); // Вызываем функцию для успешного входа
         } else {
             const error = await response.text();
             alert(`Ошибка: ${error}`);
