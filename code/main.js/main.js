@@ -19,33 +19,29 @@ function toggleCategories() {
 }
 
 
-// Проверка статуса пользователя
-function checkUserStatus() {
-    // Допустим, у нас есть функция, которая возвращает статус пользователя
-    // Пример: getUserStatus() возвращает "guest", "registered" или "loggedIn"
-    const userStatus = getUserStatus();
+// Функция для обработки клика по кнопке "Личный кабинет"
+function handlePersonalAccountClick() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn'); // Проверка авторизации
 
-    if (userStatus === "guest") {
-        // Если пользователь гость (незарегистрирован), перенаправляем на страницу регистрации
-        window.location.href = "./../../code/login_account/login_account.html";
-    } else if (userStatus === "registered") {
-        // Если пользователь зарегистрирован, но не вошел, перенаправляем на страницу входа
-        window.location.href = "./../../code/login_account/login_account.html";
-    } else if (userStatus === "loggedIn") {
-        // Если пользователь уже вошел, перенаправляем в личный кабинет
-        window.location.href = "./../personal_account/data.html";
+    if (isLoggedIn === 'true') {
+        // Если пользователь уже авторизован, перенаправляем на страницу личного кабинета
+        window.location.href = './../../code/personal_account/data.html'; 
+    } else {
+        // Если пользователь не авторизован, перенаправляем на страницу входа
+        alert('Пожалуйста, войдите в свой аккаунт.');
+        window.location.href = './../../code/login_account/login_account.html';
     }
 }
 
-// Имитируем функцию получения статуса пользователя
-function getUserStatus() {
-    // Здесь логика определения статуса пользователя, например, через cookies, sessionStorage или запрос к серверу.
-    // Вернем статус для примера. Замените на реальную проверку статуса.
-    return "guest"; // возможные значения: "guest", "registered", "loggedIn"
+// Назначаем обработчик на кнопку "Личный кабинет"
+document.getElementById('text1').addEventListener('click', handlePersonalAccountClick);
+
+// Функция для обработки успешного входа
+function loginSuccess() {
+    localStorage.setItem('isLoggedIn', 'true'); // Устанавливаем статус авторизации
+    window.location.href = './../../code/personal_account/data.html'; // Перенаправляем в личный кабинет
 }
 
-// Назначаем функцию на клик по кнопке "Личный кабинет"
-document.getElementById("text1").addEventListener("click", checkUserStatus);
 
 
 
