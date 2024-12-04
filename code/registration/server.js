@@ -1,11 +1,12 @@
-const express = require('express');
+
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors'); 
 const crypto = require('crypto');
 
 const codes = {};
-const app = express(); 
+const express = require('express');
+const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -60,47 +61,23 @@ app.post('/verify-code', (req, res) => {
 
     res.status(400).json({ message: 'Неправильный код' });
 });
-// Роут для регистрации
 app.post('/register', (req, res) => {
-    const { username, email, phone, gender, password } = req.body;
+    const { loginName, email, phone, gender, password } = req.body;
 
-    // Проверка на пустые поля
-    if (!username || !email || !phone || !gender || !password) {
-        return res.status(400).json({ message: "Все поля обязательны для заполнения" });
+    // Проверка данных (например, на пустые поля)
+    if (!loginName || !email || !phone || !gender || !password) {
+        return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
     }
 
-    // Проверка на пробелы
-    if (/\s/.test(email) || /\s/.test(phone) || /\s/.test(password)) {
-        return res.status(400).json({ message: "Email, телефон и пароль не могут содержать пробелы" });
-    }
-
-    // Проверка длины пароля
-    if (password.length < 8) {
-        return res.status(400).json({ message: "Пароль должен быть не менее 8 символов" });
-    }
-
-    // Проверка на существующий email или телефон
-    const checkQuery = 'SELECT * FROM users WHERE email = ? OR phone = ?';
-    db.query(checkQuery, [email, phone], (err, results) => {
+    // Пример SQL-запроса для добавления нового пользователя
+    const query = 'INSERT INTO users (loginName, email, phone, gender, password) VALUES (?, ?, ?, ?, ?)';
+    db.query(query, [loginName, email, phone, gender, password], (err, result) => {
         if (err) {
-            console.error('Ошибка запроса:', err);
-            return res.status(500).json({ message: "Ошибка на сервере" });
+            console.error('Ошибка при регистрации:', err);
+            return res.status(500).json({ message: 'Ошибка при регистрации' });
         }
 
-        if (results.length > 0) {
-            return res.status(400).json({ message: "Пользователь с таким Email или Телефоном уже существует" });
-        }
-
-        // Добавление пользователя в базу
-        const insertQuery = 'INSERT INTO users (username, email, phone, gender, password) VALUES (?, ?, ?, ?, ?)';
-        db.query(insertQuery, [username, email, phone, gender, password], (err) => {
-            if (err) {
-                console.error('Ошибка вставки:', err);
-                return res.status(500).json({ message: "Ошибка на сервере" });
-            }
-
-            res.status(201).json({ message: "Пользователь успешно зарегистрирован" });
-        });
+        res.status(201).json({ message: 'Пользователь успешно зарегистрирован' });
     });
 });
 
@@ -156,41 +133,48 @@ app.get('/api/cart/:userId', (req, res) => {
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// Маршрут для получения данных пользователя по email
+// Обработчик для получения данных пользователя по email
 app.get('/user', (req, res) => {
-    const userEmail = req.query.email.trim().toLowerCase();  // Приводим email к нижнему регистру
+    const { email } = req.query;  // Получаем email из query-параметра
 
-    console.log('Запрос на получение данных пользователя с email:', userEmail);  // Логируем email
+    if (!email) {
+        return res.status(400).json({ message: 'Email не указан' });
+    }
 
-    // Используем LOWER() в SQL запросе для сравнения email без учета регистра
-    const query = 'SELECT id, username, email, phone, gender, birthDate FROM users WHERE LOWER(email) = LOWER(?)'; // Убираем loginName
-    db.query(query, [userEmail], (err, results) => {
+    // SQL-запрос для получения данных пользователя по email
+    const query = 'SELECT * FROM users WHERE email = ?';
+    db.query(query, [email], (err, result) => {
         if (err) {
-            console.error('Ошибка запроса:', err);
-            return res.status(500).send('Ошибка на сервере');
+            console.error('Ошибка при запросе данных пользователя:', err);
+            return res.status(500).json({ message: 'Ошибка при получении данных пользователя' });
         }
 
-        if (results.length === 0) {
-            return res.status(404).send('Пользователь с таким email не найден');
+        if (result.length === 0) {
+            return res.status(404).json({ message: 'Пользователь не найден' });
         }
 
-        console.log('Данные пользователя:', results[0]);  // Логируем данные пользователя
-        res.json(results[0]);  // Возвращаем данные пользователя
+        // Возвращаем данные пользователя
+        res.status(200).json(result[0]);
     });
 });
 
-// Маршрут для обновления данных пользователя
 app.post('/user/update', (req, res) => {
-    const { email, username, phone, birthDate, gender } = req.body;
-    console.log('Запрос на обновление данных пользователя:', req.body);  // Логируем данные для обновления
+    const { email, full_name, phone, birthDate, loginName, gender } = req.body;
 
-    const query = `UPDATE users SET username = ?, phone = ?, birthDate = ?, gender = ? WHERE email = ?`;
-    db.query(query, [username, phone, birthDate, gender, email], (err) => {
+    // Проверяем, что все необходимые поля присутствуют
+    if (!email || !full_name || !phone || !birthDate || !loginName || !gender) {
+        return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
+    }
+
+    // SQL-запрос для обновления данных пользователя
+    const query = `UPDATE users SET full_name = ?, phone = ?, birthDate = ?, loginName = ?, gender = ? WHERE email = ?`;
+    db.query(query, [full_name, phone, birthDate, loginName, gender, email], (err, result) => {
         if (err) {
-            console.error('Ошибка запроса:', err);
-            return res.status(500).send('Ошибка на сервере');
+            console.error('Ошибка при обновлении данных:', err);
+            return res.status(500).json({ message: 'Ошибка при обновлении данных' });
         }
-        res.status(200).send('Данные успешно обновлены');
+
+        res.status(200).json({ message: 'Данные успешно обновлены' });
     });
 });
 

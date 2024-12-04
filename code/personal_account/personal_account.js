@@ -59,14 +59,12 @@ function formatCardNumber(input) {
 document.addEventListener('DOMContentLoaded', async () => {
     // Получаем email из localStorage
     const userEmail = localStorage.getItem('userEmail');
-    
+
     if (!userEmail) {
         alert('Пожалуйста, войдите в систему');
-        window.location.href = './login_account.html'; // Перенаправляем на страницу входа, если email не найден
+        window.location.href = './../login_account/login_account.html'; // Перенаправляем на страницу входа, если email не найден
         return;
     }
-
-    console.log('Запрос с email:', userEmail);  // Логируем email перед отправкой запроса
 
     try {
         // Отправляем запрос на сервер для получения данных пользователя по email
@@ -75,15 +73,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (response.ok) {
             const user = await response.json();
 
-            console.log('Данные пользователя:', user);  // Логируем данные пользователя
+            console.log('Данные пользователя:', user); // Логируем данные пользователя
 
             // Заполняем поля данными пользователя
-            document.querySelector('#fullName').value = user.username || ''; // Если ФИО пустое - оставляем пустым
-            document.querySelector('#phoneNumber').value = user.phone;
-            document.querySelector('#birthDate').value = user.birthDate; // Формат YYYY-MM-DD
-            document.querySelector('#email').value = user.email;
-            document.querySelector('#loginName').value = user.loginName;
-            document.querySelector('#gender').value = user.gender === 'male' ? 'Мужской' : 'Женский';
+            document.querySelector('#fullName').value = user.full_name || ''; // Заполняем full_name
+            document.querySelector('#phoneNumber').value = user.phone || ''; // Заполняем номер телефона
+            document.querySelector('#birthDate').value = user.birthDate ? user.birthDate.split('T')[0] : ''; // Формат YYYY-MM-DD
+            document.querySelector('#email').value = user.email || ''; // Заполняем email
+            document.querySelector('#loginName').value = user.loginName || ''; // Заполняем loginName
+            document.querySelector('#gender').value = user.gender === 'male' ? 'Мужской' : 'Женский'; // Заполняем пол
         } else {
             alert('Пользователь с таким email не найден');
         }
@@ -101,7 +99,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('#saveBtn').addEventListener('click', async () => {
         const updatedUser = {
             email: userEmail, // Отправляем email, чтобы найти пользователя
-            username: document.querySelector('#fullName').value,
+            full_name: document.querySelector('#fullName').value,
             phone: document.querySelector('#phoneNumber').value,
             birthDate: document.querySelector('#birthDate').value,
             loginName: document.querySelector('#loginName').value,

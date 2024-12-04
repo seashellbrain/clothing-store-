@@ -1,7 +1,7 @@
 document.getElementById('registrationform').addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const username = document.getElementById('username').value.trim();
+    const loginName = document.getElementById('loginName').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const gender = document.getElementById('gender').value.trim();
@@ -9,7 +9,7 @@ document.getElementById('registrationform').addEventListener('submit', async (ev
     const confirmPassword = document.getElementById('confirmPassword').value;
 
     // Проверка на пустые поля
-    if (!username || !email || !phone || !gender || !password || !confirmPassword) {
+    if (!loginName || !email || !phone || !gender || !password || !confirmPassword) {
         alert("Все поля обязательны для заполнения");
         return;
     }
@@ -46,7 +46,7 @@ document.getElementById('registrationform').addEventListener('submit', async (ev
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, email, phone, gender, password }),
+            body: JSON.stringify({ loginName, email, phone, gender, password }),
         });
 
         const data = await response.json();
