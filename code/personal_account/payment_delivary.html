@@ -140,44 +140,31 @@
             </div>
         </div>
         
-        <main class="container my-5 text-center">
+        <main-1 class="container my-5 text-center">
             <h2 class="text">СПОСОБЫ ОПЛАТЫ И ДОСТАВКИ</h2>
             <div class="row justify-content-center mb-5">
-                <!-- Блок доставки -->
-                <div class="col-md-5 bg shadow-sm">
-                    <h5>Куда привезти заказ?</h5>
-                    <input type="text5" class="form-control mt-3 mb-2" placeholder="Минск, улица Колесникова, 3" disabled>
-                    <input type="text5" class="form-control mb-3" placeholder="Введите адрес">
+              <!-- Блок доставки -->
+              <div class="col-md-5 bg shadow-sm">
+                <h5>Куда привезти заказ?</h5>
+                <input type="text" class="form-control mb-3" id="addressInput" placeholder="Введите адрес">
+                <button type="button" id="saveAddressBtn" class="button" >Сохранить</button>
+                <button type="button" id="editBtn-1" class="button" style="display:none;">Изменить</button>
+              </div>
+              
+              <!-- Блок оплаты -->
+              <div class="col-md-5 bg shadow-sm ms-md-4">
+                <h5>Ваша оплата:</h5>
+                
+                <div class="mt-3">
+                  <input type="text" class="form-control mb-3" id="newCard" placeholder="0000 0000 0000 0000" maxlength="19" >
                 </div>
-            
-                <!-- Блок оплаты -->
-                <div class="col-md-5 bg shadow-sm ms-md-4">
-                    <h5>Ваша оплата:</h5>
-                    <div class="payment-methods mt-3">
-                        <!-- Кнопка "Сразу" -->
-                        <button class="payment-method" data-method="online" onclick="togglePaymentMethod(this)">
-                            Сразу
-                        </button>
-                        <!-- Кнопка "При получении" -->
-                        <button class="payment-method" data-method="on-delivery" onclick="togglePaymentMethod(this)">
-                            При получении
-                        </button>
-                    </div>
-                    
-                    <div class="mt-3">
-                      
-                        <input type="text" class="form-control mb-2 card-input" value="**** **** **** 6064" disabled>
-                        <input type="text" class="form-control mb-3" id="newCard" placeholder="Привязать новую карту" maxlength="19" oninput="formatCardNumber(this)">
-                    </div>
-                    
-                    </div>
-                </div>
+                <button class="payment-method-1" data-method="on-delivery" id="linkCardBtn">
+                  Привязать карту 
+                </button>
+              </div>
             </div>
-        
-            <button type="submit" class="submit-button">СОХРАНИТЬ</button>
-        </main>
-    
-        </main>
+        </main-1>
+          </main>
 
         <div class="footer-background">
             <div class="footer">
@@ -220,7 +207,7 @@
             </div>
         </div>
     <script src="./../main.js/main.js" > </script>
-        <script src="./personal_account.js"> </script>
+        <script src="./payment.js"> </script>
     </body>
     
     </html>

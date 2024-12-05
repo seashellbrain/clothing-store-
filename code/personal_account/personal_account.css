@@ -323,6 +323,8 @@ select#gender {
     font-size: 14px;
 }
 
+
+
 textarea.form-control {
     height: 80px;
 }
@@ -421,21 +423,37 @@ margin-left: 400px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     transition: all 0.3s ease; /* Плавный переход */
+margin-top: 10px;
 }
 
-.payment-method-1 {
+.payment-method-2 {
     border-radius: 3px; /* Закругленные углы */
     border: 1px solid var(--Accent_2, #000); /* Граница */
     background: var(--Accent, #A0AECD); /* Основной фон */
-    width: 50%; /* Ширина кнопки */
+    width: 48%; /* Ширина кнопки */
     color: #000; /* Цвет текста */
     padding: 10px 20px; /* Внутренние отступы */
     font-size: 16px; /* Размер шрифта */
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     transition: all 0.3s ease; /* Плавный переход */
-    margin-top: 10px;
 }
+
+.payment-method-1 {
+    font-family: Montserrat;
+    font-size: 14px;
+    width: 160px;
+    height: 40px;
+    border-radius: 3px;
+    background: #A0AECD;
+    border: none;
+    margin: 10px;
+    margin-top: 20px;
+    transition: color 0.3s;
+    
+}
+
+
 
 .payment-method.active {
     background-color: #A0AECD;
@@ -519,6 +537,7 @@ input[type="text5"] {
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
+    margin-top: 20px;
 }
 
 /* Кнопки */

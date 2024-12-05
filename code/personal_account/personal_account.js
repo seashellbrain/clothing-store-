@@ -36,38 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-// Кнопки "Сразу" и "При получении"
-function togglePaymentMethod(button) {
-    // Убираем класс "active" у всех кнопок
-    const buttons = document.querySelectorAll('.payment-method');
-    buttons.forEach(btn => {
-        btn.classList.remove('active');
-    });
 
-    // класс "active"
-    button.classList.add('active');
-    
-   
-    const selectedMethod = button.getAttribute('data-method');
-    console.log('Выбран способ оплаты:', selectedMethod);
 
-    // "selectedMethod"
-}
-
-// Ввод новой карты
-function formatCardNumber(input) {
-    
-    let cardNumber = input.value;
-
-    cardNumber = cardNumber.replace(/\D/g, '');
-    cardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, '$1 ');
-
-    if (cardNumber.length > 19) {
-        cardNumber = cardNumber.substring(0, 19);
-    }
-
-    input.value = cardNumber;
-}
 
 document.addEventListener('DOMContentLoaded', async () => {
     // Получаем email из localStorage
@@ -140,6 +110,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 });
+
+
 
 // Функция для включения/выключения редактирования
 function toggleEdit(isEditing) {

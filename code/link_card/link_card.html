@@ -21,29 +21,28 @@
                 <form>
                     <div class="mb-3">
                         <label for="cardNumber" class="form-label d-block">Номер карты</label>
-                        <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000">
+                        <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
                     </div>
                     <div class="cvv-expiry-container mb-3">
                         <div>
                             <label for="cvv" class="form-label d-block">CVV</label>
-                            <input type="text" class="form-control-small" id="cvv" placeholder="***">
+                            <input type="text" class="form-control-small" id="cvv" placeholder="***" maxlength="3" required>
                         </div>
                         <div>
                             <label for="expiryDate" class="form-label d-block">Срок действия</label>
-                            <input type="text" class="form-control-small" id="expiryDate" placeholder="MM/ГГ">
+                            <input type="text" class="form-control-small" id="expiryDate" placeholder="MM/ГГ" required>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label d-block">E-mail</label>
-                        <input type="email" class="form-control" id="email">
-                    </div>
-                    <button type="submit" class="btn-primary">Отправить</button>
+                    <button type="submit" id="submitCardBtn" class="btn btn-primary">Отправить</button>
                     <div class="mt-4">
                         <button class="btn-secondary" >Главная</button>
                     </div>
+
+                    
                 </form>
             </div>
         </div>
     </div>
+    <script src="./link_card.js"></script>
 </body>
 </html>
