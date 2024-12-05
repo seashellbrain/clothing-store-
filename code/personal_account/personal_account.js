@@ -22,7 +22,20 @@ document.getElementById('fullName').addEventListener('input', function (e) {
     }
 });
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.getElementById('logout');
+    
+    // Проверяем наличие кнопки "Выйти"
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            // Удаляем email из localStorage
+            localStorage.removeItem('userEmail');
+            
+            // Перенаправляем на страницу входа
+            window.location.href = './../login_account/login_account.html'; // Здесь указываем путь к странице входа
+        });
+    }
+});
 // Кнопки "Сразу" и "При получении"
 function togglePaymentMethod(button) {
     // Убираем класс "active" у всех кнопок

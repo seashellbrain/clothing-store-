@@ -423,6 +423,20 @@ margin-left: 400px;
     transition: all 0.3s ease; /* Плавный переход */
 }
 
+.payment-method-1 {
+    border-radius: 3px; /* Закругленные углы */
+    border: 1px solid var(--Accent_2, #000); /* Граница */
+    background: var(--Accent, #A0AECD); /* Основной фон */
+    width: 50%; /* Ширина кнопки */
+    color: #000; /* Цвет текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Плавный переход */
+    margin-top: 10px;
+}
+
 .payment-method.active {
     background-color: #A0AECD;
     color: #fff;
@@ -432,7 +446,33 @@ margin-left: 400px;
 .payment-method:hover {
     background-color: #A0AECD;
 }
+.form-control {
+    flex: 1; /* Текстовое поле занимает доступное пространство */
+    height: 40px; /* Задать высоту для выравнивания */
+}
 
+.d-flex {
+    display: flex;
+    align-items: center; /* Центрирование по вертикали */
+}
+
+.form-check-input-1 {
+    width: 20px;
+    height: 20px;
+    accent-color: #A0AECD; /* Цвет галочки */
+    cursor: pointer;
+    margin-left: 10px; /* Отступ между текстовым полем и чекбоксом */
+    margin-bottom: 20px
+}
+
+.ms-3 {
+    margin-left: 12px;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+}
 
 /* Поле для ввода карты */
 .card-input {

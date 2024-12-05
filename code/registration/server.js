@@ -130,6 +130,8 @@ app.get('/api/cart/:userId', (req, res) => {
     });
 });
 
+
+
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
@@ -178,7 +180,15 @@ app.post('/user/update', (req, res) => {
     });
 });
 
-
+app.post('/logout', (req, res) => {
+    // Логика для выхода (например, удаление сессии)
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Ошибка выхода');
+        }
+        res.status(200).send('Выход успешен');
+    });
+});
 
 app.get('/api/products/:id/similar', (req, res) => {
     const productId = req.params.id;
