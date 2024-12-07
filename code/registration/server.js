@@ -222,58 +222,61 @@ app.get('/api/products/:id/similar', (req, res) => {
 
 
 app.post('/saveAddress', (req, res) => {
-    const token = req.headers['authorization'];  // Получаем токен
-  
-    if (!token) {
-      return res.status(403).json({ success: false, message: 'Необходима авторизация' });
+    const { address, email } = req.body;
+
+    if (!address || !email) {
+        return res.status(400).json({ success: false, message: 'Адрес и email обязательны' });
     }
-  
-    // Получаем email из запроса (или из токена, если используете JWT)
-    const { address, email } = req.body;  // Убедитесь, что email передается с запросом
-  
-    if (!address || address.trim() === '') {
-      return res.status(400).json({ success: false, message: 'Адрес не может быть пустым' });
-    }
-  
-    // Если email не передан в теле запроса, вы можете взять его из токена или сессии
-    if (!email) {
-      return res.status(400).json({ success: false, message: 'Email обязателен' });
-    }
-  
+
     const query = 'UPDATE users SET address = ? WHERE email = ?';
     db.query(query, [address, email], (err, result) => {
-      if (err) {
-        console.error('Ошибка при сохранении адреса в базе данных:', err);
-        return res.status(500).json({ success: false, message: 'Ошибка при сохранении адреса' });
-      }
-      console.log('Адрес успешно сохранен в базе данных');
-      res.json({ success: true });
+        if (err) {
+            console.error('Ошибка при сохранении адреса:', err);
+            return res.status(500).json({ success: false, message: 'Ошибка сервера' });
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ success: false, message: 'Пользователь не найден' });
+        }
+
+        res.json({ success: true, message: 'Адрес успешно сохранён' });
     });
-  });
+});
 
   
-  
-  // Маршрут для сохранения номера карты
-  app.post('/saveCard', (req, res) => {
-    const { cardNumber } = req.body;
-    const email = 'user@example.com'; // Здесь можно использовать email из сессии или токена
-  
-    // Проверка корректности номера карты (должен быть 16 символов)
+app.post('/saveCard', (req, res) => {
+    const { cardNumber, email } = req.body;
+
+    console.log('Полученные данные:', { cardNumber, email }); // Лог для проверки входных данных
+
     if (!cardNumber || cardNumber.length !== 16 || isNaN(cardNumber)) {
-      return res.status(400).json({ success: false, message: 'Неверный номер карты' });
+        console.error('Неверный номер карты');
+        return res.status(400).json({ success: false, message: 'Неверный номер карты' });
     }
-  
+
+    if (!email) {
+        console.error('Email отсутствует');
+        return res.status(400).json({ success: false, message: 'Email обязателен' });
+    }
+
     const query = 'UPDATE users SET card_number = ? WHERE email = ?';
     db.query(query, [cardNumber, email], (err, result) => {
-      if (err) {
-        console.error('Ошибка при сохранении карты в базе данных:', err);
-        return res.status(500).json({ success: false, message: 'Ошибка при сохранении карты' });
-      }
-      console.log('Карта успешно привязана в базе данных');
-      res.json({ success: true });
+        if (err) {
+            console.error('Ошибка при сохранении карты:', err);
+            return res.status(500).json({ success: false, message: 'Ошибка сервера' });
+        }
+
+        console.log('Результат обновления:', result); // Лог для проверки результата SQL-запроса
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ success: false, message: 'Пользователь не найден' });
+        }
+
+        res.json({ success: true, message: 'Карта успешно сохранена' });
     });
-  });
-  
+});
+
+
 
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
