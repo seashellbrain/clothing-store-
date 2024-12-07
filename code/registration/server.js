@@ -247,28 +247,20 @@ app.post('/saveAddress', (req, res) => {
 app.post('/saveCard', (req, res) => {
     const { cardNumber, email } = req.body;
 
-    console.log('Полученные данные:', { cardNumber, email }); // Лог для проверки входных данных
-
-    if (!cardNumber || cardNumber.length !== 16 || isNaN(cardNumber)) {
-        console.error('Неверный номер карты');
-        return res.status(400).json({ success: false, message: 'Неверный номер карты' });
-    }
-
-    if (!email) {
-        console.error('Email отсутствует');
-        return res.status(400).json({ success: false, message: 'Email обязателен' });
-    }
+    console.log('Полученные данные:', { cardNumber, email });
 
     const query = 'UPDATE users SET card_number = ? WHERE email = ?';
+
     db.query(query, [cardNumber, email], (err, result) => {
         if (err) {
-            console.error('Ошибка при сохранении карты:', err);
+            console.error('Ошибка SQL:', err);
             return res.status(500).json({ success: false, message: 'Ошибка сервера' });
         }
 
-        console.log('Результат обновления:', result); // Лог для проверки результата SQL-запроса
+        console.log('Результат выполнения SQL-запроса:', result);
 
         if (result.affectedRows === 0) {
+            console.error('Пользователь с указанным email не найден:', email);
             return res.status(404).json({ success: false, message: 'Пользователь не найден' });
         }
 

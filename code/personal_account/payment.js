@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const cardNumberInput = document.getElementById('newCard');
   const email = localStorage.getItem('userEmail'); // Получаем email пользователя
 
-  // Загрузка сохраненного номера карты
   if (email) {
       fetch(`http://localhost:3000/user?email=${encodeURIComponent(email)}`)
           .then(response => response.json())
@@ -91,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
               if (data.card_number) {
                   const formattedCard = data.card_number.replace(/(\d{4})(?=\d)/g, '$1 '); // Форматируем номер
                   cardNumberInput.value = formattedCard;
+              } else {
+                  cardNumberInput.value = 'Карта не привязана';
               }
               cardNumberInput.disabled = true; // Поле всегда заблокировано
           })

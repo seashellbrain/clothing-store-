@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cardNumber = cardNumberInput.value.replace(/\s+/g, ''); // Убираем пробелы
     const email = localStorage.getItem('userEmail'); // Получаем email пользователя
 
-    console.log('Отправляем данные:', { cardNumber, email }); // Лог для проверки
+    console.log('Отправляем данные:', { cardNumber, email }); // Лог отправляемых данных
 
     if (cardNumber.length !== 16 || isNaN(cardNumber)) {
         alert('Введите корректный номер карты.');
@@ -33,8 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(data => {
         console.log('Ответ сервера:', data);
-        alert('Карта успешно привязана!');
-        window.location.href = './../personal_account/payment_delivary.html';
+        if (data.success) {
+            alert('Карта успешно привязана!');
+            window.location.href = './../personal_account/payment_delivary.html';
+        } else {
+            alert(data.message);
+        }
     })
     .catch(error => console.error('Ошибка при привязке карты:', error));
 });
