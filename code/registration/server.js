@@ -331,7 +331,72 @@ app.get('/api/products/:id', async (req, res) => {
     }
 });
 
+app.post('/api/orders', (req, res) => {
+    const { email, totalAmount, totalCount, models, orderItems } = req.body;
 
+    if (!email || !totalAmount || !totalCount || !models || !orderItems) {
+        return res.status(400).json({ success: false, message: 'Все поля обязательны' });
+    }
+
+    const orderNumber = Math.floor(100000 + Math.random() * 900000).toString();
+
+    const query = `
+        INSERT INTO orders (order_number, email, total_amount, total_count, models, order_items) 
+        VALUES (?, ?, ?, ?, ?, ?)
+    `;
+
+    db.query(query, [orderNumber, email, totalAmount, totalCount, models, JSON.stringify(orderItems)], (err, result) => {
+        if (err) {
+            console.error('Ошибка при создании заказа:', err);
+            return res.status(500).json({ success: false, message: 'Ошибка сервера' });
+        }
+
+        res.json({ success: true, orderNumber, message: 'Заказ успешно оформлен' });
+    });
+});
+app.get('/api/orders', (req, res) => {
+    const email = req.query.email;
+
+    if (!email) {
+        return res.status(400).json({ message: 'Email обязателен' });
+    }
+
+    const query = 'SELECT order_number, order_date, total_count, total_amount FROM orders WHERE email = ? ORDER BY order_date DESC';
+
+    db.query(query, [email], (err, results) => {
+        if (err) {
+            console.error('Ошибка при получении заказов:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+
+        res.json(results);
+    });
+});
+
+app.get('/api/check-orders', (req, res) => {
+    const email = req.query.email;
+
+    if (!email) {
+        return res.status(400).json({ message: 'Email обязателен' });
+    }
+
+    const query = 'SELECT COUNT(*) AS orderCount FROM orders WHERE email = ?';
+
+    db.query(query, [email], (err, results) => {
+        if (err) {
+            console.error('Ошибка при получении количества заказов:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+
+        const orderCount = results[0].orderCount;
+
+        if (orderCount > 0) {
+            res.json({ hasOrders: true });
+        } else {
+            res.json({ hasOrders: false });
+        }
+    });
+});
 
 
 

@@ -155,42 +155,17 @@
         
     <div class="text_1"> История заказов </div>
  
-<div class="table_list">
+<div class="table_list align-items-center">
     <table>
         <thead>
             <tr>
-                <th>Номер</th>
+                <th>Номер заказа</th>
                 <th>Дата и время</th>
-                <th>Ссылка на заказ</th>
+                <th>Количество</th>
                 <th>Сумма заказа</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>350-198</td>
-                <td>09.10.2024</td>
-                <td><a href="/order-350-198">/order-350-198</a></td>
-                <td>2 500 BYN</td>
-            </tr>
-            <tr>
-                <td>350-197</td>
-                <td>08.10.2024</td>
-                <td><a href="/order-350-197">/order-350-197</a></td>
-                <td>1 500 BYN</td>
-            </tr>
-            <tr>
-                <td>350-196</td>
-                <td>07.10.2024</td>
-                <td><a href="/order-350-196">/order-350-196</a></td>
-                <td>2 700 BYN</td>
-            </tr>
-            <tr>
-                <td>350-195</td>
-                <td>06.10.2024</td>
-                <td><a href="/order-350-195">/order-350-195</a></td>
-                <td>1 000 BYN</td>
-            </tr>
-        </tbody>
+        <tbody id="order-list"></tbody>
     </table>
 
         </div>
@@ -237,7 +212,8 @@
     </div>
 </div>
     <script src="./../main.js/main.js" > </script>
-        <script src="./personal_account.js"> </script>
+        <script src="./order_full.js"> </script>
+        <script src="./order_check.js"> </script>
     </body>
     
     </html>

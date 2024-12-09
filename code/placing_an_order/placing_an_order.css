@@ -37,7 +37,6 @@ h5 {
     font-size: 18px;
     font-weight: 400;
 }
-
 /* Стили кнопок выбора оплаты */
 .payment-method {
     border-radius: 3px; /* Закругленные углы */
@@ -50,19 +49,78 @@ h5 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     transition: all 0.3s ease; /* Плавный переход */
+    margin-top: 10px;
 }
 
+.payment-method-2 {
+    border-radius: 3px; /* Закругленные углы */
+    border: 1px solid var(--Accent_2, #000); /* Граница */
+    background: var(--Accent, #A0AECD); /* Основной фон */
+    width: 48%; /* Ширина кнопки */
+    color: #000; /* Цвет текста */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease; /* Плавный переход */
+}
+
+.payment-method-1 {
+    font-family: Montserrat;
+    font-size: 14px;
+    width: 160px;
+    height: 40px;
+    border-radius: 3px;
+    background: #A0AECD;
+    border: none;
+    margin: 10px;
+    margin-top: 20px;
+    transition: color 0.3s;
+    
+}
+
+.tovar{
+    color: var(--Accent_2, #000);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.kol{
+    color: var(--Accent_2, #000);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: right;
+    margin-top: -40px;
+
+}
+.hr-1{
+    width: 540px;
+}
+.button {
+    font-family: Montserrat;
+    font-size: 14px;
+    width: 160px;
+    height: 40px;
+    border-radius: 3px;
+    background: #A0AECD;
+    border: none;
+    margin: 20px auto 0;
+    transition: color 0.3s;
+}
+
+
 .payment-method.active {
-    background-color: #6c8ab7;
+    background-color: #A0AECD;
     color: #fff;
-    border-color: #6c8ab7;
+    border-color: #A0AECD;
 }
 
 .payment-method:hover {
-    background-color: #6D7B99;
+    background-color: #A0AECD;
 }
-
-
 
 /* Поле для ввода карты */
 .card-input {

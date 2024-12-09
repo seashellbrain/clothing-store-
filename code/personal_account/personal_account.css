@@ -756,10 +756,13 @@ a {
     color: black;
 }
 .table_list{
-    max-width: 300px; /* Автоматическая ширина в зависимости от содержимого */
-    min-width: 300px; /* Минимальная ширина таблицы */
+    max-width: 550px; /* Автоматическая ширина в зависимости от содержимого */
+    min-width: 550px; /* Минимальная ширина таблицы */
     table-layout: auto; /* Отключить фиксированную ширину ячеек */
     margin: 0px;
     display: flex;
     justify-content: center; /* Центрируем по горизонтали */
+    align-items: center;
+    margin-bottom: 50px;
+    margin-left: 380px;
 }

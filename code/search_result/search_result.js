@@ -18,16 +18,19 @@ if (query) {
             }
 
             products.forEach(product => {
-                resultsContainer.innerHTML += `
-                    <li class="mix PC fade-in" id="product-${product.id}">
-                        <article class="products__card">
-                            <img class="products__card-img" src="${product.image1}" alt="${product.name}" />
-                            <h4 class="products__card-title">${product.name}
-                                <br>${product.description || ''}</h4>
-                            <span class="products__card-price">${product.price} <span>byn</span></span>
-                        </article>
-                    </li>
+                const productElement = document.createElement('li');
+                productElement.classList.add('mix', 'PC', 'fade-in');
+                productElement.innerHTML = `
+                    <article class="products__card" data-id="${product.id}">
+                        <img class="products__card-img" src="${product.image1}" alt="${product.name}" />
+                        <h4 class="products__card-title">${product.name}<br>${product.description || ''}</h4>
+                        <span class="products__card-price">${product.price} <span>byn</span></span>
+                    </article>
                 `;
+                productElement.addEventListener('click', () => {
+                    window.location.href = `./../product_card/product_card.html?id=${product.id}`;
+                });
+                resultsContainer.appendChild(productElement);
             });
         })
         .catch(error => console.error('Ошибка при поиске:', error));

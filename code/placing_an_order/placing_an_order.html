@@ -101,43 +101,38 @@
 
     <main class="container my-5 text-center">
         <h1 class="h1_1">Оформление заказа</h1>
-        <div class="row justify-content-center mb-5">
-            <!-- Блок доставки -->
-            <div class="col-md-5 bg shadow-sm">
-                <h5>Куда привезти заказ?</h5>
-                <input type="text5" class="form-control mt-3 mb-2" placeholder="Минск, улица Колесникова, 3" disabled>
-                <input type="text5" class="form-control mb-3" placeholder="Введите адрес">
-                <hr class="line1">
-                <div class="d-flex justify-content-between">
-                    <span class="text-muted">Послезавтра</span>
-                    <span class="text-muted">1 товар</span>
-                </div>
-            </div>
-        
-            <!-- Блок оплаты -->
-            <div class="col-md-5 bg shadow-sm ms-md-4">
-                <h5>Как оплатить заказ?</h5>
-                <div class="payment-methods mt-3">
-                    <!-- Кнопка "Сразу" -->
-                    <button class="payment-method " data-method="online">Сразу</button>
-                    <!-- Кнопка "При получении" -->
-                    <button class="payment-method " data-method="on-delivery">При получении</button>
-                </div>
-                <div class="mt-3">
-                    <input type="text5" class="form-control mb-2 card-input" value="**** **** **** 6064" disabled>
-                    <input type="text5" class="form-control mb-2 card-input" value="Привязать карту" disabled>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<div class="row justify-content-center mb-5">
+			<!-- Блок доставки -->
+			<div class="col-md-5 bg shadow-sm">
+			  <h5>Куда привезти заказ?</h5>
+			  <input type="text" class="form-control mb-3" id="addressInput" placeholder="Введите адрес">
+			  <div class="text-center">
+				  <button type="button" id="saveAddressBtn" class="button">Сохранить</button>
+				  <button type="button" id="editBtn-1" class="button" style="display:none;">Изменить</button>
+				  <hr class="hr_1">
+				  <p class="tovar">Послезавтра </p>
+				  <p class="kol">0 товар</p>
+			  </div>
+		  </div>
+			
+			<!-- Блок оплаты -->
+			<div class="col-md-5 bg shadow-sm ms-md-4">
+			  <h5>Как оплатить заказ?</h5>
+			  
+			  <div class="mt-3">
+				<input type="text" class="form-control mb-3" id="newCard" placeholder="0000 0000 0000 0000" maxlength="19" >
+			  </div>
+			  <button class="payment-method-1" data-method="on-delivery" id="linkCardBtn">
+				Привязать карту 
+			  </button>
+			</div>
+		  </div>
     
         <div class="order-summary text-center mb-4">
-            <h4>Итого: <span class="text-BYN">2500 BYN</span></h4>
+			<h4>Итого: <span id="order-total-price" class="text-BYN">0 BYN</span></h4>
             <p>Доставка: Бесплатно</p>
-            <p>Скидка: 175 BYN</p>
         </div>
-    
-        <button class="button_zak">Заказать</button>
+		<button class="button_zak" id="place-order-button">Заказать</button>
     </main>
 
 
@@ -181,7 +176,7 @@
 			<div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
 		</div>
 	</div>
-	
+	<script src="./../../code/main.js/main.js"> </script>
 	<script src="./placing_an_order.js"> </script>
 </body>
 
