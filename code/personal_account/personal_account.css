@@ -188,7 +188,7 @@
     background: #A0AECD;
     border: none;
     margin: 10px;
-    margin-top: 20px;
+    margin: 20px auto 0;
     transition: color 0.3s;
 }
 

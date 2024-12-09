@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Ответ сервера:', data);
         if (data.success) {
             alert('Карта успешно привязана!');
-            window.location.href = './../personal_account/payment_delivary.html';
+            window.location.href = './../../code/placing_an_order/placing_an_order.html';
         } else {
             alert(data.message);
         }
