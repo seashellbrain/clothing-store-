@@ -1,151 +1,78 @@
 function filterItems() {
-	// Получаем состояние каждого фильтра
-	const bagsChecked = document.getElementById('womenBagsFilter').checked;
-	const beltsChecked = document.getElementById('womenBeltsFilter').checked;
-	const hairAccessoriesChecked = document.getElementById('womenHairAccessoriesFilter').checked;
-	const headwearChecked = document.getElementById('womenHeadwearFilter').checked;
-	const glassesChecked = document.getElementById('womenGlassesFilter').checked;
-	const glovesChecked = document.getElementById('womenGlovesFilter').checked;
-	const ringsChecked = document.getElementById('womenRingsFilter').checked;
-	const earringsChecked = document.getElementById('womenEarringsFilter').checked;
-  
-	// Получаем все элементы товаров
-	const products = document.querySelectorAll('.products__card');
-  
-	// Проверка, выбраны ли фильтры
-	const noFiltersSelected = !bagsChecked && !beltsChecked && !hairAccessoriesChecked && !headwearChecked &&
-							  !glassesChecked && !glovesChecked && !ringsChecked && !earringsChecked;
-  
-	// Если фильтры не выбраны, показываем первые 9 товаров
-	if (noFiltersSelected) {
-	  products.forEach((product, index) => {
-		product.closest('li').style.display = index < 9 ? 'block' : 'none';
-	  });
-	  return;
-	}
-  
-	// Пробегаемся по каждому товару и проверяем его соответствие фильтрам
-	products.forEach(product => {
-	  const isBags = product.closest('li').classList.contains('women-bags');
-	  const isBelts = product.closest('li').classList.contains('women-belts');
-	  const isHairAccessories = product.closest('li').classList.contains('women-hair-accessories');
-	  const isHeadwear = product.closest('li').classList.contains('women-headwear');
-	  const isGlasses = product.closest('li').classList.contains('women-glasses');
-	  const isGloves = product.closest('li').classList.contains('women-gloves');
-	  const isRings = product.closest('li').classList.contains('women-rings');
-	  const isEarrings = product.closest('li').classList.contains('women-earrings');
-  
-	  // Логика отображения товаров при включенных фильтрах
-	  if (
-		(bagsChecked && isBags) ||
-		(beltsChecked && isBelts) ||
-		(hairAccessoriesChecked && isHairAccessories) ||
-		(headwearChecked && isHeadwear) ||
-		(glassesChecked && isGlasses) ||
-		(glovesChecked && isGloves) ||
-		(ringsChecked && isRings) ||
-		(earringsChecked && isEarrings)
-	  ) {
-		product.closest('li').style.display = 'block';
-	  } else {
-		product.closest('li').style.display = 'none';
-	  }
-	});
-  }
-  
-  function updatePriceRange() {
-	const priceRangeMin = document.getElementById('priceRangeMin');
-	const priceMin = document.getElementById('priceMin');
-	const priceMax = document.getElementById('priceMax');
-  
-	// Обновляем отображение минимальной цены
-	const minValue = parseInt(priceRangeMin.value);
-	priceMin.textContent = `${minValue} руб.`;
-  
-	// Предполагаем, что максимальная цена остается фиксированной
-	priceMax.textContent = `2 000 руб.`;
-  }
-  
-  function applyPriceFilter() {
-	const priceRangeMin = document.getElementById('priceRangeMin');
-	const minValue = parseInt(priceRangeMin.value);
-  
-	// Логика фильтрации товаров
-	console.log(`Фильтрация товаров с минимальной ценой: ${minValue} руб.`);
-  }
-  
-  
+    // Получаем все выбранные фильтры (женские и мужские)
+    const filters = [
+        'womenBagsFilter', 'womenBeltsFilter', 'womenHairAccessoriesFilter', 'womenHeadwearFilter', 'womenGlassesFilter', 'womenGlovesFilter', 'womenRingsFilter', 'womenEarringsFilter',
+        'manBagsFilter', 'manBeltsFilter', 'manHairAccessoriesFilter', 'manHeadwearFilter', 'manGlassesFilter', 'manJewelryFilter', 'manWalletsFilter'
+    ];
 
-  function filterItems() {
-	// Получаем состояние каждого фильтра для мужчин
-	const bagsChecked = document.getElementById('manBagsFilter').checked;
-	const beltsChecked = document.getElementById('manBeltsFilter').checked;
-	const hairAccessoriesChecked = document.getElementById('manHairAccessoriesFilter').checked;
-	const headwearChecked = document.getElementById('manHeadwearFilter').checked;
-	const glassesChecked = document.getElementById('manGlassesFilter').checked;
-	const jewelryChecked = document.getElementById('manJewelryFilter').checked;
-	const walletsChecked = document.getElementById('manWalletsFilter').checked;
-  
-	// Получаем все элементы товаров
-	const products = document.querySelectorAll('.products__card');
-  
-	// Проверка, выбраны ли фильтры
-	const noFiltersSelected = !bagsChecked && !beltsChecked && !hairAccessoriesChecked && !headwearChecked &&
-							  !glassesChecked && !jewelryChecked && !walletsChecked;
-  
-	// Если фильтры не выбраны, показываем первые 9 товаров
-	if (noFiltersSelected) {
-	  products.forEach((product, index) => {
-		product.closest('li').style.display = index < 9 ? 'block' : 'none';
-	  });
-	  return;
-	}
-  
-	// Пробегаемся по каждому товару и проверяем его соответствие фильтрам
-	products.forEach(product => {
-	  const isBags = product.closest('li').classList.contains('man-bags');
-	  const isBelts = product.closest('li').classList.contains('man-belts');
-	  const isHairAccessories = product.closest('li').classList.contains('man-hair-accessories');
-	  const isHeadwear = product.closest('li').classList.contains('man-headwear');
-	  const isGlasses = product.closest('li').classList.contains('man-glasses');
-	  const isJewelry = product.closest('li').classList.contains('man-jewelry');
-	  const isWallets = product.closest('li').classList.contains('man-wallets');
-  
-	  // Логика отображения товаров при включенных фильтрах
-	  if (
-		(bagsChecked && isBags) ||
-		(beltsChecked && isBelts) ||
-		(hairAccessoriesChecked && isHairAccessories) ||
-		(headwearChecked && isHeadwear) ||
-		(glassesChecked && isGlasses) ||
-		(jewelryChecked && isJewelry) ||
-		(walletsChecked && isWallets)
-	  ) {
-		product.closest('li').style.display = 'block';
-	  } else {
-		product.closest('li').style.display = 'none';
-	  }
-	});
-  }
-  
-  function updatePriceRange() {
-	const priceRangeMin = document.getElementById('priceRangeMin');
-	const priceMin = document.getElementById('priceMin');
-	const priceMax = document.getElementById('priceMax');
-  
-	// Обновляем отображение минимальной цены
-	const minValue = parseInt(priceRangeMin.value);
-	priceMin.textContent = `${minValue} руб.`;
-  
-	// Предполагаем, что максимальная цена остается фиксированной
-	priceMax.textContent = `2 000 руб.`;
-  }
-  
-  function applyPriceFilter() {
-	const priceRangeMin = document.getElementById('priceRangeMin');
-	const minValue = parseInt(priceRangeMin.value);
-  
-	// Логика фильтрации товаров
-	console.log(`Фильтрация товаров с минимальной ценой: ${minValue} руб.`);
-  }
-  
+    // Получаем все активные фильтры
+    const activeFilters = filters.filter(filterId => document.getElementById(filterId).checked);
+
+    // Получаем все элементы товаров
+    const products = document.querySelectorAll('.products__card');
+
+    // Проверка, выбраны ли фильтры
+    const noFiltersSelected = activeFilters.length === 0;
+
+    // Если фильтры не выбраны, показываем первые 9 товаров
+    if (noFiltersSelected) {
+        products.forEach((product, index) => {
+            product.closest('li').style.display = index < 9 ? 'block' : 'none';
+        });
+        return;
+    }
+
+    // Пробегаемся по каждому товару и проверяем его соответствие активным фильтрам
+    products.forEach(product => {
+        const productClasses = Array.from(product.closest('li').classList);
+        const matchesFilter = activeFilters.some(filterId => productClasses.includes(filterId.replace('Filter', '').toLowerCase()));
+
+        product.closest('li').style.display = matchesFilter ? 'block' : 'none';
+    });
+}
+
+function updatePriceRange() {
+    const priceRangeMin = document.getElementById('priceRangeMin');
+    const priceMin = document.getElementById('priceMin');
+    const priceMax = document.getElementById('priceMax');
+
+    // Обновляем отображение минимальной цены
+    const minValue = parseInt(priceRangeMin.value);
+    priceMin.textContent = `${minValue} руб.`;
+
+    // Предполагаем, что максимальная цена остается фиксированной
+    priceMax.textContent = `2 000 руб.`;
+}
+
+function applyPriceFilter() {
+    const priceRangeMin = document.getElementById('priceRangeMin');
+    const minValue = parseInt(priceRangeMin.value);
+
+    // Получаем все элементы товаров
+    const products = document.querySelectorAll('.products__card');
+
+    products.forEach(product => {
+        const priceElement = product.querySelector('.products__card-price');
+        if (priceElement) {
+            const price = parseFloat(priceElement.textContent);
+            product.closest('li').style.display = price >= minValue ? 'block' : 'none';
+        }
+    });
+}
+
+// Оптимизация работы фильтра для всех чекбоксов
+const filterCheckboxes = document.querySelectorAll('.filter-form input[type="checkbox"]');
+filterCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterItems));
+
+// Подключение ползунка цены
+const priceSlider = document.getElementById('priceRangeMin');
+if (priceSlider) {
+    priceSlider.addEventListener('input', updatePriceRange);
+    priceSlider.addEventListener('change', applyPriceFilter);
+} 
+
+// Инициализация начального состояния фильтра при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    filterItems(); // Отобразить первые 9 товаров при загрузке
+    updatePriceRange(); // Установить значения диапазона цен
+});
