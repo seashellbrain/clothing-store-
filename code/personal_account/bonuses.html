@@ -100,10 +100,6 @@
 		
 	</heder>
 
-
-
-
-
     <main class="container">
         <div class="container my-5">
             <div class="row">
@@ -164,24 +160,26 @@
             </div>
 
             <!-- Правый блок с формой -->
-            <form action="/submit_bonus" method="POST" class="bonus-form">
-                <label for="phoneNumber" class="form-label">Номер телефона:</label>
-                <input type="tel" id="phoneNumber" name="phone_number" class="form-control" placeholder="+375 (__) ___-__-__" required 
-                       oninput="this.value = this.value.replace(/[^0-9+]/g, '').substring(0, 20)">
-            
-                <label for="recipientName" class="form-label">Имя получателя:</label>
-                <input type="text" id="recipientName" name="recipient_name" class="form-control" placeholder="Имя получателя" required 
-                       oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '').substring(0, 20)">
-            
-                <label for="senderName" class="form-label">Имя отправителя:</label>
-                <input type="text" id="senderName" name="sender_name" class="form-control" placeholder="Имя отправителя" required 
-                       oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '').substring(0, 20)">
-            
-                <label for="greetingText" class="form-label">Текст поздравления:</label>
-                <textarea id="greetingText" name="greeting_text" class="form-control" placeholder="Введите текст поздравления" required></textarea>
-            
-                <button type="submit" class="submit-button">ЗАКАЗАТЬ</button>
-            </form>
+<!-- Правый блок с формой -->
+<form class="bonus-form" onsubmit="sendEmail(event)">
+    <label for="phoneNumber" class="form-label">Номер телефона:</label>
+    <input type="tel" id="phoneNumber" name="phone_number" class="form-control" placeholder="+375 (__) ___-__-__" required 
+           oninput="this.value = this.value.replace(/[^0-9+]/g, '').substring(0, 20)">
+  
+    <label for="recipientName" class="form-label">Имя получателя:</label>
+    <input type="text" id="recipientName" name="recipient_name" class="form-control" placeholder="Имя получателя" required 
+           oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '').substring(0, 20)">
+  
+    <label for="senderName" class="form-label">Имя отправителя:</label>
+    <input type="text" id="senderName" name="sender_name" class="form-control" placeholder="Имя отправителя" required 
+           oninput="this.value = this.value.replace(/[^a-zA-ZА-Яа-я\s]/g, '').substring(0, 20)">
+  
+    <label for="greetingText" class="form-label">Текст поздравления:</label>
+    <textarea id="greetingText" name="greeting_text" class="form-control" placeholder="Введите текст поздравления" required></textarea>
+  
+    <button type="submit" class="submit-button">ЗАКАЗАТЬ</button>
+</form>
+
         </div>
     </main>
 
@@ -228,7 +226,7 @@
     </div>
 
     <script src="./../main.js/main.js" > </script>
-        <script src="./personal_account.js"> </script>
+        <script src="./bonuses.js"> </script>
     </body>
     
     </html>
