@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalAmount = localStorage.getItem('totalAmount') || 0;
     const totalCount = localStorage.getItem('totalCount') || 0;
 
-    document.getElementById('order-total-price').textContent = `${totalAmount} BYN`;
+    document.getElementById('order-total-price').textContent = `${parseFloat(totalAmount).toFixed(2)} BYN`;
+
     document.querySelector('.kol').textContent = `${totalCount} товар(ов)`;
 });
 
@@ -134,7 +135,7 @@ document.getElementById('place-order-button').addEventListener('click', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             email,
-            totalAmount,
+            totalAmount: parseFloat(totalAmount).toFixed(2),
             totalCount,
             models: randomModels.join(', '),
             orderItems

@@ -7,7 +7,7 @@ function generateRandomModel() {
 }
 
 function loadCart() {
-    fetch('http://localhost:3000/api/cart/1') 
+    fetch('http://localhost:3000/api/cart/1')
         .then(response => response.json())
         .then(cartItems => {
             const cartItemsContainer = document.getElementById('cart-items');
@@ -41,7 +41,7 @@ function loadCart() {
                     </div>
                     <div class="col-5 d-flex flex-column product-info">
                         <h5>${item.name}</h5>
-                        <p>Модель: <span class="model">${model}</span></p> <!-- Отображаем модель -->
+                        <p>Модель: <span class="model">${model}</span></p> 
                         <p>Размер: <span class="product-size">${item.size}</span></p>
                         <p>Цена: <strong>${item.price} BYN</strong></p>
                     </div>
@@ -55,7 +55,7 @@ function loadCart() {
                 cartItemsContainer.appendChild(itemElement);
             });
 
-            totalAmountElement.textContent = `${totalPrice} BYN`;
+            totalAmountElement.textContent = `${totalPrice.toFixed(2)} BYN`;
 
             attachCheckboxHandlers(cartItems);
             attachDeleteHandlers();
@@ -86,7 +86,7 @@ function calculateSelectedItemsTotal() {
         });
     }
 
-    localStorage.setItem('totalAmount', totalAmount);
+    localStorage.setItem('totalAmount', totalAmount.toFixed(2));
     localStorage.setItem('totalCount', totalCount);
 }
 
@@ -110,7 +110,6 @@ function attachDeleteHandlers() {
     deleteButtons.forEach(button => {
         button.addEventListener('click', event => {
             const itemId = event.target.closest('.delete-item-btn').getAttribute('data-id');
-            console.log('Кнопка нажата! ID товара:', itemId);
             deleteItem(itemId);
         });
     });
@@ -131,8 +130,8 @@ function attachCheckboxHandlers(cartItems) {
                 totalCount += parseInt(checkbox.dataset.quantity, 10);
             }
         });
-        totalAmountElement.textContent = `${updatedTotal} BYN`;
-        localStorage.setItem('totalAmount', updatedTotal);
+        totalAmountElement.textContent = `${updatedTotal.toFixed(2)} BYN`;
+        localStorage.setItem('totalAmount', updatedTotal.toFixed(2));
         localStorage.setItem('totalCount', totalCount);
     });
 
@@ -146,8 +145,8 @@ function attachCheckboxHandlers(cartItems) {
                     totalCount += parseInt(cb.dataset.quantity, 10);
                 }
             });
-            totalAmountElement.textContent = `${updatedTotal} BYN`;
-            localStorage.setItem('totalAmount', updatedTotal);
+            totalAmountElement.textContent = `${updatedTotal.toFixed(2)} BYN`;
+            localStorage.setItem('totalAmount', updatedTotal.toFixed(2));
             localStorage.setItem('totalCount', totalCount);
         });
     });
