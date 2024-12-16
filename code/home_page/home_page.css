@@ -162,6 +162,8 @@ a:hover, a:focus, a:active {
 }
 
 .products__card-img {
+    width: 201px;
+ height: auto;
 	margin: auto;
 }
 

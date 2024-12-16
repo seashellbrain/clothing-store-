@@ -1,0 +1,258 @@
+.container {
+    display: flex;
+    gap: 20px; /* Отступ между фильтром и продуктами */
+    justify-content: flex-start; /* Выравнивание по левому краю */
+}
+
+.filter-container {
+    width: 260px; /* Ширина фильтра */
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #AEAEAE;
+    background-color: #F9F9F9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Фиксация при прокрутке */
+    align-self: flex-start; /* Прилипает при прокрутке */
+    margin-top: 20px;
+    margin-left: 15px; 
+    margin-bottom: 20px;
+}
+
+.filter-container1 {
+    width: 260px; /* Ширина фильтра */
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid #AEAEAE;
+    background-color: #F9F9F9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Фиксация при прокрутке */
+    align-self: flex-start; /* Прилипает при прокрутке */
+    margin-top: 500px;
+    margin-left: -280px; 
+    margin-bottom: 20px;
+    
+}
+
+a {
+    text-decoration: none !important; /* Убираем подчеркивание */
+    color: inherit; /* Цвет наследуется от родительского */
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none; /* Подчеркивание не появляется при наведении */
+    color: inherit; /* Цвет не меняется */
+}
+
+/* Заголовок фильтров */
+.filter-title {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-bottom: 1px solid #AEAEAE; /* Линия под заголовком */
+    padding-bottom: 5px;
+}
+
+
+
+/* Стили для групп фильтров */
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.text_cloth {
+    font-family: "Montserrat", sans-serif;
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Стили для чекбоксов и их меток */
+.filter-group label {
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.filter-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Стили для ползунка цены */
+.price-filter label {
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+}
+.products__card-title {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: #000; /* Устанавливаем цвет текста */
+}
+
+.products__card-title:hover {
+    text-decoration: none; /* Убираем эффекты при наведении */
+    color: #000; /* Сохраняем цвет */
+}
+.price-filter input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+    accent-color: #A0AECD; /* Цвет ползунка для лучшей стилизации */
+}
+.filter-submit {
+    background-color: #A0AECD;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    width: 100%; /* Кнопка по ширине фильтра */
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Перемещает кнопку вниз формы */
+}
+
+.filter-submit:hover {
+    background-color: #8A9BB8;
+}
+
+
+
+.filter-submit:hover {
+    background-color: #8A9BB8;
+}
+
+
+
+
+.products-container {
+    flex: 1; /* Занимает оставшееся пространство */
+}
+
+.products__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Отступы между карточками продуктов */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.products__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 300px;
+    min-height: 485px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.products__card:hover .products__card-nav {
+	opacity: 1;
+}
+
+.products__card-title {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	margin-bottom: 15px;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: 0.2px;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.products__card-price {
+	font-size: 16px;
+	color: #000000;
+	font-weight: bold;
+	font-size: 24px;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.products__card-img {
+    width: 201px;
+ height: auto;
+	margin: auto;
+}
+
+.products__card-nav {
+	position: absolute;
+	left: 50%;
+	top: 53%;
+	display: flex;
+	opacity: 0;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.3s;
+}
+
+.products__card-item:not(:last-child) {
+	margin-right: 15px; /* Этот отступ можно оставить без изменений, так как он применяется только к элементам навигации внутри карточки */
+}
+.price-filter {
+    margin-top: 20px;
+  }
+  
+  .slider-container {
+    position: relative;
+    margin: 10px 0;
+  }
+  
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #7c89e2;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .price-values span {
+    font-weight: bold;
+  }
+  

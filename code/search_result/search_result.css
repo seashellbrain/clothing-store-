@@ -55,9 +55,9 @@
 }
 
 .products__card-img {
-    margin: auto;
-    max-width: 100%;
-    height: auto;
+    width: 201px;
+ height: auto;
+	margin: auto;
 }
 @media (max-width: 768px) {
     .products__cards {
