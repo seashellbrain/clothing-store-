@@ -8,38 +8,33 @@ document.getElementById('registrationform').addEventListener('submit', async (ev
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Проверка на пустые поля
+ 
     if (!loginName || !email || !phone || !gender || !password || !confirmPassword) {
         alert("Все поля обязательны для заполнения");
         return;
     }
 
-    // Проверка на пробелы в email, телефоне и пароле
     if (/\s/.test(email) || /\s/.test(phone) || /\s/.test(password)) {
         alert("Email, телефон и пароль не могут содержать пробелы");
         return;
     }
-
-    // Проверка длины пароля
+   
     if (password.length < 8) {
         alert("Пароль должен быть не менее 8 символов");
         return;
     }
 
-    // Проверка совпадения паролей
     if (password !== confirmPassword) {
         alert("Пароли не совпадают");
         return;
     }
 
-    // Проверка номера телефона
-    const phoneRegex = /^(?:\+375|80)\d{9}$/; // Номер должен начинаться с +375 или 80 и содержать 7 цифр
+    const phoneRegex = /^(?:\+375|80)\d{9}$/; 
     if (!phoneRegex.test(phone)) {
         alert("Телефон должен начинаться с +375 или 80 и содержать 9 цифр.");
         return;
     }
 
-    // Отправка данных на сервер
     try {
         const response = await fetch('http://localhost:3000/register', {
             method: 'POST',
@@ -68,7 +63,7 @@ document.getElementById('registrationform').addEventListener('submit', async (ev
 
 
 
-// Получение информации о товаре
+
 app.get('/products/:id', (req, res) => {
     const productId = req.params.id;
 
@@ -83,6 +78,6 @@ app.get('/products/:id', (req, res) => {
             return res.status(404).send('Товар не найден');
         }
 
-        res.json(results[0]); // Отправляем первый найденный результат
+        res.json(results[0]); 
     });
 });
