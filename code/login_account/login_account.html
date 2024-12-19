@@ -21,11 +21,13 @@
             <form id="loginForm" method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label d-block" >E-mail</label>
-                    <input type="email" class="form-control mx-auto" id="email" >
+                    <input type="email" class="form-control mx-auto" id="email" required 
+                    oninput="this.value = this.value.replace(/[^@.a-zA-Z0-9+]/g, '').substring(0, 30)">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label d-block">Пароль</label>
-                    <input type="password" class="form-control mx-auto" id="password">
+                    <input type="password" class="form-control mx-auto" id="password" required 
+                    oninput="this.value = this.value.replace(/[^@!#$%a-zA-Z0-9+]/g, '').substring(0, 20)">
                 </div>
                 <div class="d-flex justify-content-center mb-3">
                     <a href="#" class="form-link" >Забыли пароль?</a>

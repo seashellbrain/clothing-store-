@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const cardNumberInput = document.getElementById('cardNumber');
   const submitCardBtn = document.getElementById('submitCardBtn');
-  const email = localStorage.getItem('userEmail'); // Получаем email пользователя
+  const email = localStorage.getItem('userEmail');
 
   if (!email) {
       alert('Ошибка: email не найден.');
@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   submitCardBtn.addEventListener('click', function(event) {
     event.preventDefault();
-    const cardNumber = cardNumberInput.value.replace(/\s+/g, ''); // Убираем пробелы
-    const email = localStorage.getItem('userEmail'); // Получаем email пользователя
+    const cardNumber = cardNumberInput.value.replace(/\s+/g, '');
+    const email = localStorage.getItem('userEmail');
 
-    console.log('Отправляем данные:', { cardNumber, email }); // Лог отправляемых данных
+    console.log('Отправляем данные:', { cardNumber, email });
 
     if (cardNumber.length !== 16 || isNaN(cardNumber)) {
         alert('Введите корректный номер карты.');
@@ -42,4 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.error('Ошибка при привязке карты:', error));
 });
+});
+
+document.getElementById('cardNumber').addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim().substring(0, 19);
+});
+
+document.getElementById('cvv').addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '');
+});
+
+document.getElementById('expiryDate').addEventListener('input', function () {
+    this.value = this.value.replace(/\D/g, '').replace(/(\d{2})(\d{1,2})/, '$1/$2').substring(0, 5);
 });
