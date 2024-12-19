@@ -48,7 +48,7 @@ h2 {
 .form-control {
     width: 396px;
     height: 32px;
-    border: 2px solid #a0aecd;
+    border: 2px solid #A0AECD;
     font-size: 12px;
     padding-left: 5px;
     margin: 0 auto; /* Центрирует поле */
@@ -79,7 +79,7 @@ h2 {
 .form-control-small {
     width: 193px;
     height: 32px;
-    border: 2px solid #a0aecd;
+    border: 2px solid #A0AECD;
     font-size: 12px;
     padding-left: 5px;
     border-radius: 3px;
@@ -88,7 +88,7 @@ h2 {
 .form-control:focus {
     outline: none;
     box-shadow: none;
-    border-color: #a0aecd;
+    border-color: #A0AECD;
 }
 
 .btn-primary {

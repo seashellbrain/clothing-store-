@@ -1,11 +1,3 @@
-.user-icon {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-left: 700px;
-    margin-top: -250px;
-}
-
 .personal-data-form {
     max-width: 600px;
     margin: 0 auto;
@@ -30,8 +22,7 @@
 }
 
 .filter-box ul li .filter-link.active {
-    color: #A0AECD; /* Выбранный цвет */
-    /* Можно добавить, чтобы выделить активный элемент */
+    color: #A0AECD;
 }
 
 .filter-box {
@@ -46,9 +37,9 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    align-self: center; /* Это оставьте, если используется flexbox */
-    text-align: center;  /* Центрирует текст внутри элемента */
-    width: 100%; /* Чтобы элемент занимал всю доступную ширину */
+    align-self: center;
+    text-align: center;
+    width: 100%;
     margin-bottom: 30px;
     
 }
@@ -56,7 +47,7 @@
 .form-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px; /* Отступ для разделения с полями формы */
+    margin-bottom: 20px;
     text-align: left;
 }
 
@@ -67,14 +58,14 @@
 }
 
 .filter-link {
-    text-decoration: none; /* Убираем подчеркивание, если нужно */
-    color: black; /* Цвет текста ссылки */
-    cursor: pointer; /* Добавляем указатель курсора для интерактивности */
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
 
 .filter-link:hover {
-    color: #A0AECD; /* Цвет ссылки при наведении */
-    text-decoration: underline; /* Подчеркивание при наведении */
+    color: #A0AECD;
+    text-decoration: underline;
 }
 
 
@@ -323,14 +314,12 @@ select#gender {
     font-size: 14px;
 }
 
-
-
 textarea.form-control {
     height: 80px;
 }
 
 .submit-button {
-    width: 250px; /* Фиксированная ширина */
+    width: 250px;
     padding: 10px;
     background: #A0AECD;
     border: none;
@@ -756,13 +745,64 @@ a {
     color: black;
 }
 .table_list{
-    max-width: 550px; /* Автоматическая ширина в зависимости от содержимого */
-    min-width: 550px; /* Минимальная ширина таблицы */
-    table-layout: auto; /* Отключить фиксированную ширину ячеек */
+    max-width: 550px;
+    min-width: 550px;
+    table-layout: auto;
     margin: 0px;
     display: flex;
-    justify-content: center; /* Центрируем по горизонтали */
+    justify-content: center;
     align-items: center;
     margin-bottom: 50px;
     margin-left: 380px;
+}
+
+/* фото профиля */
+.avatar-container {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin-left: 800px;
+    top: -200px;
+    margin-bottom: -400px;
+}
+
+.user-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #A0AECD;
+    object-fit: cover;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #A0AECD;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px; 
+    right: 15px;
+    display: flex;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pencil-icon {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.edit-icon:hover {
+    background-color: #8899C9;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 3px solid #A0AECD;
+    object-fit: cover;
+    background-color: #333;
 }

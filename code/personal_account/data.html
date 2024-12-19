@@ -23,12 +23,11 @@
 		</div>
 	</heder>
 
-
 		<div class="header">
 			<img class="img-0839-icon" alt="" src="./../../img/header/logotip.png">
 
 			<div class="header-center">
-				<div class="header-info-container"> <!-- Обертка для информационных блоков -->
+				<div class="header-info-container">
 					<div class="header-info-1">
 						<img class="header-icon" alt="" src="./../../img/header/icons8-кошелек.png">
 						<div class="div2">ВОЗВРАТ В ТЕЧЕНИЕ 14 ДНЕЙ</div>
@@ -42,7 +41,7 @@
 						<div class="div3">КУПОН НА 100 РУБЛЕЙ КАЖДОМУ</div>
 					</div>
 				</div>
-				<div class="header-search-container"> <!-- Контейнер для центрирования -->
+				<div class="header-search-container">
 					<div class="header-search">
 						<input id="search-input" type="text" placeholder="Поиск...">
 					</div>
@@ -105,14 +104,12 @@
         <div class="container my-5">
             <div class="row">
                 
-                <!-- Левый блок с фильтрами -->
                 <div class="col-md-3">
                     <div class="filter-box p-3">
                         <h5 class="filter_name">ЛИЧНЫЙ КАБИНЕТ</h5>
                         <hr class="line">
                         <ul>
                             
-                           <!-- Ссылка на "Мои данные" -->
                            <li class="ul">
                            <a href="./../../code/personal_account/data.html" class="dynamic-filter">
                             <img src="./../../img/personal_account/data.svg" alt="Data" class="icon-svg" width="24" height="24">
@@ -120,8 +117,6 @@
                                 Мои данные
                             </a>
                         </li>
-    
-                            <!-- Ссылка на страницу "Мои заказы" -->
 
                             <li class="ul">
                                 <a href="./../../code/personal_account/order_empty.html" class="dynamic-filter">
@@ -130,7 +125,6 @@
                                  </a>
                              </li>
 
-                            <!-- Ссылка на страницу "Способы оплаты и доставки" -->
                             <li class="ul">
                                 <a href="./../../code/personal_account/payment_delivary.html" class="dynamic-filter">
                                  <img src="./../../img/personal_account/card.svg" alt="Payment_delivary" class="icon-svg" width="24" height="24">
@@ -138,7 +132,6 @@
                                  </a>
                              </li>
     
-                            <!-- Ссылка на страницу "Бонусная программа" -->
                             <li class="ul">
                                 <a href="./../../code/personal_account/bonuses.html" class="dynamic-filter">
                                  <img src="./../../img/personal_account/bonus.svg" alt="Bonuses" class="icon-svg" width="24" height="24">
@@ -148,16 +141,19 @@
 
                         </ul>
                     </div>
-                    
                 </div>
-                   <div class="text-center mb-4">
-                <img src="./../../img/personal_account/person-1824147_1280.png" alt="User_icon" class="user-icon">
-            </div>
-            </div>
+            </div> 
         </div>
-    
-            <!-- Правый блок с формой -->
-         
+
+            <div class="avatar-container">
+                <img id="avatar" src="./../../img/personal_account/avatar.png" class="user-icon">
+                <label for="avatar-upload" class="edit-icon">
+                    <i class="pencil-icon">&#9998;</i>
+                </label>
+                <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+            </div>
+          
+        
             <h2 class="text">МОИ ДАННЫЕ</h2>
             <div class="form-container">
                 <form class="personal-data-form">
@@ -209,11 +205,9 @@
                             <button type="button" id="saveBtn" class="button" style="display:none;">Сохранить</button>
                             <button type="button" id="editBtn" class="button">Изменить</button>
                         </div>
-                        
             </div>
         </div>
     </div>
-    
 </main>
 
 <div class="footer-background">
@@ -256,9 +250,7 @@
         <div class="footer-copyring">(c) 2024 - Наш лучший магазин</div>
     </div>
 </div>
-    
     <script src="./../main.js/main.js" > </script>
-        <script src="./personal_account.js"> </script>
-    </body>
-    
-    </html>
+    <script src="./personal_account.js"> </script>
+ </body>
+</html>

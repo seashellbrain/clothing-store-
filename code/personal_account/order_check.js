@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const email = localStorage.getItem('userEmail'); // Получаем email пользователя
+    const email = localStorage.getItem('userEmail');
 
     if (!email) {
         alert('Вы не авторизованы. Пожалуйста, войдите в аккаунт.');
-        window.location.href = './../login.html'; // Перенаправляем на страницу входа
+        window.location.href = './../login.html';
         return;
     }
 

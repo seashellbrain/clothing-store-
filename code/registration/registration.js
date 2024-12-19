@@ -57,13 +57,6 @@ document.getElementById('registrationform').addEventListener('submit', async (ev
     }
 });
 
-
-
-
-
-
-
-
 app.get('/products/:id', (req, res) => {
     const productId = req.params.id;
 

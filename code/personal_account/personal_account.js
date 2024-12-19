@@ -1,22 +1,17 @@
-
-
 document.querySelectorAll('.filter-link').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault(); // Отключаем стандартное поведение
         document.querySelectorAll('.filter-link').forEach(el => el.classList.remove('active'));
         this.classList.add('active');
         // Логика для перехода на другую страницу
-        // window.location.href = this.href; // если переход нужен
+        // window.location.href = this.href;
     });
 });
 
-
 document.getElementById('fullName').addEventListener('input', function (e) {
-    // Разрешаем только буквы, пробелы и дефисы
     const regex = /^[а-яА-ЯёЁa-zA-Z\s-]+$/;
     const value = e.target.value;
 
-    // Если введенный текст не соответствует разрешенным символам, удаляем его
     if (!regex.test(value)) {
         e.target.value = value.replace(/[^а-яА-ЯёЁa-zA-Z\s-]/g, '');
     }
@@ -25,19 +20,15 @@ document.getElementById('fullName').addEventListener('input', function (e) {
 document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.getElementById('logout');
     
-    // Проверяем наличие кнопки "Выйти"
     if (logoutButton) {
         logoutButton.addEventListener('click', () => {
             // Удаляем email из localStorage
             localStorage.removeItem('userEmail');
             
-            // Перенаправляем на страницу входа
-            window.location.href = './../login_account/login_account.html'; // Здесь указываем путь к странице входа
+            window.location.href = './../login_account/login_account.html';
         });
     }
 });
-
-
 
 document.addEventListener('DOMContentLoaded', async () => {
     // Получаем email из localStorage
@@ -72,6 +63,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Ошибка при получении данных:', err);
         alert('Ошибка при загрузке данных пользователя');
     }
+
+
 
     // Логика для кнопки "Изменить"
     document.querySelector('#editBtn').addEventListener('click', () => {
@@ -111,9 +104,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
-
-
-// Функция для включения/выключения редактирования
 function toggleEdit(isEditing) {
     const fields = document.querySelectorAll('.editable');
     fields.forEach(field => {
@@ -124,3 +114,55 @@ function toggleEdit(isEditing) {
     document.querySelector('#editBtn').style.display = isEditing ? 'none' : 'inline-block';
 }
 
+window.onload = function () {
+    const defaultAvatar = './../../img/personal_account/avatar.png';
+    const savedAvatar = localStorage.getItem('avatar') || defaultAvatar;
+    document.getElementById('avatar').src = savedAvatar;
+
+    const savedData = JSON.parse(localStorage.getItem('profileData')) || {};
+    document.getElementById('fullName').value = savedData.fullName || '';
+    document.getElementById('phoneNumber').value = savedData.phoneNumber || '';
+    document.getElementById('birthDate').value = savedData.birthDate || '';
+    document.getElementById('email').value = savedData.email || '';
+    document.getElementById('loginName').value = savedData.loginName || '';
+    document.getElementById('gender').value = savedData.gender || '';
+};
+
+document.getElementById('saveBtn').addEventListener('click', function () {
+    const profileData = {
+        fullName: document.getElementById('fullName').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        birthDate: document.getElementById('birthDate').value,
+        email: document.getElementById('email').value,
+        loginName: document.getElementById('loginName').value,
+        gender: document.getElementById('gender').value,
+    };
+
+    localStorage.setItem('profileData', JSON.stringify(profileData));
+    alert('Изменения успешно сохранены!');
+    toggleEdit(false);
+});
+
+document.getElementById('avatar-upload').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const avatar = document.getElementById('avatar');
+            avatar.src = e.target.result;
+            localStorage.setItem('avatar', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        alert('Пожалуйста, выберите изображение.');
+    }
+});
+
+document.getElementById('editBtn').addEventListener('click', function () {
+    toggleEdit(true);
+});
+
+document.getElementById('logout').addEventListener('click', function () {
+    alert('Вы вышли из аккаунта!');
+    window.location.href = 'login.html';
+});

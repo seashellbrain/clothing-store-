@@ -1,4 +1,3 @@
-
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors'); 
@@ -9,8 +8,6 @@ const express = require('express');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
-
 
 const db = mysql.createConnection({
     host: '127.0.0.1', 
@@ -46,7 +43,6 @@ app.post('/forgot-password', (req, res) => {
     
 });
 
-
 app.post('/verify-code', (req, res) => {
     const { email, code } = req.body;
 
@@ -61,15 +57,14 @@ app.post('/verify-code', (req, res) => {
 
     res.status(400).json({ message: 'Неправильный код' });
 });
+
 app.post('/register', (req, res) => {
     const { loginName, email, phone, gender, password } = req.body;
 
-    // Проверка данных (например, на пустые поля)
     if (!loginName || !email || !phone || !gender || !password) {
         return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
     }
 
-    // Пример SQL-запроса для добавления нового пользователя
     const query = 'INSERT INTO users (loginName, email, phone, gender, password) VALUES (?, ?, ?, ?, ?)';
     db.query(query, [loginName, email, phone, gender, password], (err, result) => {
         if (err) {
@@ -130,20 +125,15 @@ app.get('/api/cart/:userId', (req, res) => {
     });
 });
 
-
-
 app.use(bodyParser.json());
 app.use(express.static('public'));
-
-// Обработчик для получения данных пользователя по email
 app.get('/user', (req, res) => {
-    const { email } = req.query;  // Получаем email из query-параметра
+    const { email } = req.query;
 
     if (!email) {
         return res.status(400).json({ message: 'Email не указан' });
     }
 
-    // SQL-запрос для получения данных пользователя по email
     const query = 'SELECT * FROM users WHERE email = ?';
     db.query(query, [email], (err, result) => {
         if (err) {
@@ -155,7 +145,6 @@ app.get('/user', (req, res) => {
             return res.status(404).json({ message: 'Пользователь не найден' });
         }
 
-        // Возвращаем данные пользователя
         res.status(200).json(result[0]);
     });
 });
@@ -218,7 +207,6 @@ app.get('/api/products/:id/similar', (req, res) => {
     });
 });
 
-
 app.post('/saveAddress', (req, res) => {
     const { address, email } = req.body;
 
@@ -241,7 +229,6 @@ app.post('/saveAddress', (req, res) => {
     });
 });
 
-  
 app.post('/saveCard', (req, res) => {
     const { cardNumber, email } = req.body;
 
@@ -265,8 +252,6 @@ app.post('/saveCard', (req, res) => {
         res.json({ success: true, message: 'Карта успешно сохранена' });
     });
 });
-
-
 
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
@@ -293,10 +278,6 @@ app.post('/login', (req, res) => {
     });
 });
 
-
-
-
-
 app.get('/search', (req, res) => {
     const query = req.query.query.toLowerCase();
 
@@ -311,7 +292,6 @@ app.get('/search', (req, res) => {
         }
     });
 });
-
 
 app.get('/api/products/:id', async (req, res) => {
     const productId = req.params.id;
@@ -352,6 +332,7 @@ app.post('/api/orders', (req, res) => {
         res.json({ success: true, orderNumber, message: 'Заказ успешно оформлен' });
     });
 });
+
 app.get('/api/orders', (req, res) => {
     const email = req.query.email;
 
@@ -396,19 +377,11 @@ app.get('/api/check-orders', (req, res) => {
     });
 });
 
-
-
-
 app.use((req, res, next) => {
     res.status(404).sendFile(__dirname + './../404/eror.html'); 
 });
 
-
-// Запуск сервера
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Сервер запущен на http://localhost:${PORT}`);
 });
-
-
-

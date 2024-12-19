@@ -2,18 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const addressInput = document.getElementById('addressInput');
   const saveAddressBtn = document.getElementById('saveAddressBtn');
   const editAddressBtn = document.getElementById('editBtn-1');
-  const email = localStorage.getItem('userEmail'); // Получаем email пользователя
+  const email = localStorage.getItem('userEmail');
 
-  // Загрузка сохраненного адреса
   if (email) {
       fetch(`http://localhost:3000/user?email=${encodeURIComponent(email)}`)
           .then(response => response.json())
           .then(data => {
               if (data.address) {
-                  addressInput.value = data.address; // Устанавливаем сохраненный адрес
-                  addressInput.disabled = true; // Блокируем поле
-                  saveAddressBtn.style.display = 'none'; // Скрываем кнопку "Сохранить"
-                  editAddressBtn.style.display = 'block'; // Показываем кнопку "Изменить"
+                  addressInput.value = data.address;
+                  addressInput.disabled = true;
+                  saveAddressBtn.style.display = 'none';
+                  editAddressBtn.style.display = 'block';
               }
           })
           .catch(error => console.error('Ошибка загрузки адреса:', error));
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Ошибка: email не найден.');
   }
 
-  // Обработчик для кнопки "Сохранить"
   saveAddressBtn.addEventListener('click', function() {
       const address = addressInput.value.trim();
 
@@ -34,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${localStorage.getItem('authToken')}`, // Если используется токен
+              'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
           },
           body: JSON.stringify({ address, email })
       })
@@ -51,28 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Ошибка при сохранении адреса:', error));
   });
 
-  // Обработчик для кнопки "Изменить"
   editAddressBtn.addEventListener('click', function() {
-      addressInput.disabled = false; // Разблокируем поле ввода
-      saveAddressBtn.style.display = 'block'; // Показываем кнопку "Сохранить"
-      editAddressBtn.style.display = 'none'; // Скрываем кнопку "Изменить"
+      addressInput.disabled = false;
+      saveAddressBtn.style.display = 'block';
+      editAddressBtn.style.display = 'none';
   });
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
   const cardNumberInput = document.getElementById('newCard');
-  const email = localStorage.getItem('userEmail'); // Получаем email пользователя
+  const email = localStorage.getItem('userEmail');
 
-  // Загрузка сохраненного номера карты
   if (email) {
       fetch(`http://localhost:3000/user?email=${encodeURIComponent(email)}`)
           .then(response => response.json())
           .then(data => {
               if (data.card_number) {
-                  const formattedCard = data.card_number.replace(/(\d{4})(?=\d)/g, '$1 '); // Форматируем номер
+                  const formattedCard = data.card_number.replace(/(\d{4})(?=\d)/g, '$1 ');
                   cardNumberInput.value = formattedCard;
-                  cardNumberInput.disabled = true; // Блокируем поле
+                  cardNumberInput.disabled = true;
               }
           })
           .catch(error => console.error('Ошибка загрузки карты:', error));
@@ -81,26 +76,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const cardNumberInput = document.getElementById('newCard');
-  const email = localStorage.getItem('userEmail'); // Получаем email пользователя
+  const email = localStorage.getItem('userEmail');
 
   if (email) {
       fetch(`http://localhost:3000/user?email=${encodeURIComponent(email)}`)
           .then(response => response.json())
           .then(data => {
               if (data.card_number) {
-                  const formattedCard = data.card_number.replace(/(\d{4})(?=\d)/g, '$1 '); // Форматируем номер
+                  const formattedCard = data.card_number.replace(/(\d{4})(?=\d)/g, '$1 ');
                   cardNumberInput.value = formattedCard;
               } else {
                   cardNumberInput.value = 'Карта не привязана';
               }
-              cardNumberInput.disabled = true; // Поле всегда заблокировано
+              cardNumberInput.disabled = true;
           })
           .catch(error => console.error('Ошибка загрузки карты:', error));
   }
 
-  // Обработчик кнопки привязки карты
   const linkCardBtn = document.getElementById('linkCardBtn');
   linkCardBtn.addEventListener('click', function() {
-      window.location.href = './../link_card/link_card.html'; // Редирект на страницу привязки карты
+      window.location.href = './../link_card/link_card.html';
   });
 });

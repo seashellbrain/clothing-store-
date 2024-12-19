@@ -1,8 +1,7 @@
-/* Общий стиль для страницы */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff; /* Светлый фон */
-    color: #333333; /* Основной цвет текста */
+    background-color: #ffffff;
+    color: #333333;
     margin: 0;
     padding: 0;
 }
@@ -13,8 +12,10 @@ body {
     font-size: 40px;
     font-weight: 600;
     letter-spacing: 3.6px;
-    margin-top: 30px;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
+
 h5 {
     color:  #000;
     font-family: Montserrat;
@@ -24,45 +25,47 @@ h5 {
     text-align: left;
 }
 
-/* Линия в блоке доставки */
+.placing{
+    margin-bottom: 17px;
+}
+
 .line1 {
     border: 0;
     border-top: 1px solid #000000;
     margin: 10px 0;
 }
 
-/* Текстовые элементы в блоке */
 .text-muted {
     color: #000;
     font-size: 18px;
     font-weight: 400;
 }
-/* Стили кнопок выбора оплаты */
+
 .payment-method {
-    border-radius: 3px; /* Закругленные углы */
-    border: 1px solid var(--Accent_2, #000); /* Граница */
-    background: var(--Accent, #A0AECD); /* Основной фон */
-    width: 48%; /* Ширина кнопки */
-    color: #000; /* Цвет текста */
-    padding: 10px 20px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
+    border-radius: 3px;
+    border: 1px solid var(--Accent_2, #000);
+    background: var(--Accent, #A0AECD);
+    width: 48%;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    transition: all 0.3s ease; /* Плавный переход */
+    transition: all 0.3s ease;
     margin-top: 10px;
 }
 
 .payment-method-2 {
-    border-radius: 3px; /* Закругленные углы */
-    border: 1px solid var(--Accent_2, #000); /* Граница */
-    background: var(--Accent, #A0AECD); /* Основной фон */
-    width: 48%; /* Ширина кнопки */
-    color: #000; /* Цвет текста */
-    padding: 10px 20px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
+    border-radius: 3px;
+    border: 1px solid var(--Accent_2, #000);
+    background: var(--Accent, #A0AECD);
+    width: 48%;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    transition: all 0.3s ease; /* Плавный переход */
+    transition: all 0.3s ease;
 }
 
 .payment-method-1 {
@@ -76,7 +79,6 @@ h5 {
     margin: 10px;
     margin-top: 20px;
     transition: color 0.3s;
-    
 }
 
 .tovar{
@@ -94,11 +96,12 @@ h5 {
     font-weight: 400;
     text-align: right;
     margin-top: -40px;
-
 }
+
 .hr-1{
     width: 540px;
 }
+
 .button {
     font-family: Montserrat;
     font-size: 14px;
@@ -111,7 +114,6 @@ h5 {
     transition: color 0.3s;
 }
 
-
 .payment-method.active {
     background-color: #A0AECD;
     color: #fff;
@@ -122,7 +124,6 @@ h5 {
     background-color: #A0AECD;
 }
 
-/* Поле для ввода карты */
 .card-input {
     font-size: 16px;
     border: 1px solid #ccc;
@@ -132,14 +133,13 @@ h5 {
     background-color: #f9f9f9;
 }
 
-/* Блоки доставки и оплаты */
 .bg {
     border-radius: 15px;
     background: var(--Light_Grey, #DCDCDC);
 }
 
 .shadow-sm {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container .col-md-5 {
@@ -149,17 +149,16 @@ h5 {
 
 p {
     font-size: 16px;
-    color: #555555; /* Второстепенный текст */
+    color: #555555;
     line-height: 1.5;
 }
 
 .text-end {
     font-size: 14px;
-    color: #666666; /* Слегка затемненный текст */
+    color: #555555;
     margin-top: 10px;
 }
 
-/* Поля ввода */
 input[type="text5"] {
     font-size: 16px;
     padding: 10px;
@@ -169,23 +168,23 @@ input[type="text5"] {
     box-sizing: border-box;
 }
 
-/* Кнопки */
 .button_zak {
     width: 350px;
     height: 60px;
     border-radius: 3px;
     background: var(--Accent, #A0AECD);
-    color: #000; /* Белый текст */
+    color: #000;
     padding: 12px 30px;
     font-family: Montserrat;
     font-size: 24px;
     font-weight: 700;
     transition: background-color 0.3s ease;
     border: none;
+    margin-bottom: 50px;
 }
 
 .button_zak:hover {
-    background-color: #5a77a3; /* Темнее при наведении */
+    background-color: #5a77a3;
 }
 
 .text-BYN{
@@ -213,7 +212,6 @@ input[type="text5"] {
     color: #5a77a3;
 }
 
-/* Итоговая информация */
 .order-summary h4 {
     font-family: Montserrat;
     font-size: 24px;
@@ -229,13 +227,11 @@ input[type="text5"] {
     font-weight: 400;
 }
 
-/* Дополнительные стили */
 .form-check-label {
     font-size: 14px;
     color: #555555;
 }
 
 .form-check-input {
-    accent-color: #6c8ab7; /* Цвет флажка чекбокса */
+    accent-color: #6c8ab7;
 }
-

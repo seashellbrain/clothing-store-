@@ -23,12 +23,10 @@
 		</div>
 	</heder>
 
-
 		<div class="header">
 			<img class="img-0839-icon" alt="" src="./../../img/header/logotip.png">
-
 			<div class="header-center">
-				<div class="header-info-container"> <!-- Обертка для информационных блоков -->
+				<div class="header-info-container">
 					<div class="header-info-1">
 						<img class="header-icon" alt="" src="./../../img/header/icons8-кошелек.png">
 						<div class="div2">ВОЗВРАТ В ТЕЧЕНИЕ 14 ДНЕЙ</div>
@@ -42,7 +40,7 @@
 						<div class="div3">КУПОН НА 100 РУБЛЕЙ КАЖДОМУ</div>
 					</div>
 				</div>
-				<div class="header-search-container"> <!-- Контейнер для центрирования -->
+				<div class="header-search-container">
 					<div class="header-search">
 						<input id="search-input" type="text" placeholder="Поиск...">
 					</div>
@@ -97,15 +95,14 @@
 			</div>			
 			</div>
 		</div>
-		
 	</heder>
 
     <main class="container my-5 text-center">
         <h1 class="h1_1">Оформление заказа</h1>
 		<div class="row justify-content-center mb-5">
-			<!-- Блок доставки -->
+			
 			<div class="col-md-5 bg shadow-sm">
-			  <h5>Куда привезти заказ?</h5>
+			  <h5 class="placing">Куда привезти заказ?</h5>
 			  <input type="text" class="form-control mb-3" id="addressInput" placeholder="Введите адрес" required 
 			  oninput="this.value = this.value.replace(/[^ а-яА-Я0-9+]/g, '').substring(0, 40)">
 			  <div class="text-center">
@@ -117,7 +114,6 @@
 			  </div>
 		  </div>
 			
-			<!-- Блок оплаты -->
 			<div class="col-md-5 bg shadow-sm ms-md-4">
 			  <h5>Как оплатить заказ?</h5>
 			  <div class="mt-3">
