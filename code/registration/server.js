@@ -163,12 +163,10 @@ app.get('/user', (req, res) => {
 app.post('/user/update', (req, res) => {
     const { email, full_name, phone, birthDate, loginName, gender } = req.body;
 
-    // Проверяем, что все необходимые поля присутствуют
     if (!email || !full_name || !phone || !birthDate || !loginName || !gender) {
         return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
     }
 
-    // SQL-запрос для обновления данных пользователя
     const query = `UPDATE users SET full_name = ?, phone = ?, birthDate = ?, loginName = ?, gender = ? WHERE email = ?`;
     db.query(query, [full_name, phone, birthDate, loginName, gender, email], (err, result) => {
         if (err) {
@@ -181,7 +179,7 @@ app.post('/user/update', (req, res) => {
 });
 
 app.post('/logout', (req, res) => {
-    // Логика для выхода (например, удаление сессии)
+
     req.session.destroy((err) => {
         if (err) {
             return res.status(500).send('Ошибка выхода');
